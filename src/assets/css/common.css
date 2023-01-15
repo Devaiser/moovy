@@ -1,0 +1,36 @@
+body {
+  font-family: 'Fact';
+  font-weight: 300;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.container {
+  /* max-width: 1728px; */
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 63px;
+  line-height: 1.25;
+  background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

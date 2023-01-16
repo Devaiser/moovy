@@ -32,96 +32,96 @@
       <div class="faq__model">
         <!-- <Transition mode="out-in"> -->
         <video
-          v-if="activeVideo === 'video-1-in'"
+          :class="{ active: activeVideo === 'video-1-in' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-1-in.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-1-out'"
+          :class="{ active: activeVideo === 'video-1-out' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-1-out.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-2-in'"
+          :class="{ active: activeVideo === 'video-2-in' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-2-in.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-3-in'"
+          :class="{ active: activeVideo === 'video-3-in' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-3-in.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-3-out'"
+          :class="{ active: activeVideo === 'video-3-out' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-3-out.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-4-in'"
+          :class="{ active: activeVideo === 'video-4-in' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-4-in.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-4-out'"
+          :class="{ active: activeVideo === 'video-4-out' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-4-out.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-5-in'"
+          :class="{ active: activeVideo === 'video-5-in' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-5-in.webm" />
         </video>
         <video
-          v-else-if="activeVideo === 'video-5-out'"
+          :class="{ active: activeVideo === 'video-5-out' }"
           preload="auto"
           autoplay
           muted
           playsinline
-          class="video-1"
+          class="video"
         >
           <source type="video/webm" src="/video/faq/faq-video-5-out.webm" />
         </video>
-        <div class="faq__img" v-else>
+        <div class="faq__img" :class="{ active: activeVideo === null }">
           <img src="/img/faq-model.png" alt="car-model" />
         </div>
         <!-- </Transition> -->
@@ -131,7 +131,7 @@
 </template>
 <script setup>
   import { Collapse } from 'vue-collapsed';
-  import { reactive, ref, watch } from 'vue';
+  import { reactive, ref, watch, onMounted } from 'vue';
 
   const faqData = [
     {
@@ -173,16 +173,18 @@
 
   const activeAccordion = ref(null);
   const activeVideo = ref(null);
+  const videos = ref(null);
 
   watch(activeAccordion, (newValue, oldValue) => {
+    for (const item of videos.value) {
+      item.currentTime = 0;
+    }
     let duration;
     if (oldValue === 4) {
       duration = 1200;
     } else {
       duration = 700;
     }
-    console.log('new value', newValue);
-    console.log('old value', oldValue);
     if (newValue === 0 && oldValue !== null) {
       setTimeout(() => {
         activeVideo.value = 'video-1-in';
@@ -243,11 +245,14 @@
         index === selectedIndex ? !questions[index].isExpanded : false;
     });
   };
+
+  onMounted(() => {
+    videos.value = document.getElementsByClassName('video');
+  });
 </script>
 <style scoped>
   .faq {
     margin-top: 140px;
-    min-height: 100vh;
     margin-left: 8vw;
   }
   .faq__accordion {
@@ -337,6 +342,10 @@
   .faq__img {
     width: calc(100% - 60px);
     height: 743px;
+    display: none;
+  }
+  .faq__img.active {
+    display: block;
   }
   .faq__img img {
     max-width: 100%;
@@ -346,10 +355,14 @@
   }
   .faq__model video {
     width: 100%;
-    height: 743px;
+    height: 900px;
     object-fit: cover;
+    margin-top: -100px;
   }
-  /* .video-1 {
-                                                                                                                  margin-top: -100px;
-                                                                                                                } */
+  .video {
+    display: none;
+  }
+  .video.active {
+    display: block;
+  }
 </style>

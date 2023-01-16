@@ -3,10 +3,24 @@
     <Collection />
     <TabsSection />
     <Faq />
+    <Containers />
+    <Licenses />
+    <Social />
+    <Subscribe />
+    <Footer />
   </div>
 </template>
 <script setup>
-  import { Collection, TabsSection, Faq } from "@/components";
+  import {
+    Collection,
+    TabsSection,
+    Faq,
+    Containers,
+    Licenses,
+    Social,
+    Footer,
+    Subscribe,
+  } from '@/components';
 </script>
 <style scoped>
   .scroll-view {

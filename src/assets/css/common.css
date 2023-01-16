@@ -24,6 +24,25 @@ body.lock {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.big-title {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 195px;
+  line-height: 207px;
+  background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-text {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  color: #fff;
+  max-width: 1102px;
+  margin: 0 auto;
+}
 
 .v-enter-active,
 .v-leave-active {

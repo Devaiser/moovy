@@ -5,6 +5,7 @@
     <Faq />
     <Containers />
     <Licenses />
+    <Roadmap />
     <Social />
     <Subscribe />
     <Footer />
@@ -20,6 +21,7 @@
     Social,
     Footer,
     Subscribe,
+    Roadmap,
   } from '@/components';
 </script>
 <style scoped>

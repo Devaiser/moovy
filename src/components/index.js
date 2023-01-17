@@ -10,3 +10,4 @@ export { default as Containers } from './Containers.vue';
 export { default as Licenses } from './Licenses.vue';
 export { default as Social } from './Social.vue';
 export { default as Subscribe } from './Subscribe.vue';
+export { default as Roadmap } from './Roadmap.vue';

@@ -142,5 +142,6 @@
   }
   .nav-button.swiper-button-disabled {
     opacity: 0.4;
+		cursor: auto;
   }
 </style>

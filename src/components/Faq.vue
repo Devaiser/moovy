@@ -32,94 +32,16 @@
       <div class="faq__model">
         <!-- <Transition mode="out-in"> -->
         <video
-          :class="{ active: activeVideo === 'video-1-in' }"
+          v-for="(video, idx) in videoData"
+          :key="idx"
+          :class="{ active: activeVideo === video.title }"
           preload="auto"
           autoplay
           muted
           playsinline
           class="video"
         >
-          <source type="video/webm" src="/video/faq/faq-video-1-in.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-1-out' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-1-out.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-2-in' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-2-in.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-3-in' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-3-in.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-3-out' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-3-out.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-4-in' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-4-in.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-4-out' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-4-out.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-5-in' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-5-in.webm" />
-        </video>
-        <video
-          :class="{ active: activeVideo === 'video-5-out' }"
-          preload="auto"
-          autoplay
-          muted
-          playsinline
-          class="video"
-        >
-          <source type="video/webm" src="/video/faq/faq-video-5-out.webm" />
+          <source type="video/webm" :src="video.src" />
         </video>
         <div class="faq__img" :class="{ active: activeVideo === null }">
           <img src="/img/faq-model.png" alt="car-model" />
@@ -132,6 +54,45 @@
 <script setup>
   import { Collapse } from 'vue-collapsed';
   import { reactive, ref, watch, onMounted } from 'vue';
+
+  const videoData = [
+    {
+      src: '/video/faq/faq-video-1-in.webm',
+      title: 'video-1-in',
+    },
+    {
+      src: '/video/faq/faq-video-1-out.webm',
+      title: 'video-1-out',
+    },
+    {
+      src: '/video/faq/faq-video-2-in.webm',
+      title: 'video-2-in',
+    },
+    {
+      src: '/video/faq/faq-video-3-in.webm',
+      title: 'video-3-in',
+    },
+    {
+      src: '/video/faq/faq-video-3-out.webm',
+      title: 'video-3-out',
+    },
+    {
+      src: '/video/faq/faq-video-4-in.webm',
+      title: 'video-4-in',
+    },
+    {
+      src: '/video/faq/faq-video-4-out.webm',
+      title: 'video-4-out',
+    },
+    {
+      src: '/video/faq/faq-video-5-in.webm',
+      title: 'video-5-in',
+    },
+    {
+      src: '/video/faq/faq-video-5-out.webm',
+      title: 'video-5-out',
+    },
+  ];
 
   const faqData = [
     {
@@ -340,16 +301,17 @@
     margin: 20px 80px 0 0;
   }
   .faq__img {
-    width: calc(100% - 60px);
-    height: 743px;
+    width: 100%;
+    height: 900px;
     display: none;
+    margin-top: -100px;
   }
   .faq__img.active {
     display: block;
   }
   .faq__img img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
   }

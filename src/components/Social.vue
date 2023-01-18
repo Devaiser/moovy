@@ -22,14 +22,14 @@
 </script>
 <style scoped>
   .social {
-    margin-top: 100px;
+    /* margin-top: 100px; */
     min-height: 100vh;
     position: relative;
   }
   .social__container {
     margin: 0 auto;
     max-width: 80%;
-    padding: 0 40px;
+    padding: 50px 40px;
   }
   .social__content {
     display: flex;

@@ -1,11 +1,13 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { MotionPlugin } from '@vueuse/motion';
 
-import "./assets/css/index.css";
+import './assets/css/index.css';
 
 const app = createApp(App);
 
 app.use(router);
 
-app.mount("#app");
+app.use(MotionPlugin);
+app.mount('#app');

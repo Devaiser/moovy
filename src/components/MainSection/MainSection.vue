@@ -1,5 +1,5 @@
 <template>
-  <section class="main-section">
+  <section class="main-section" :class="{ relative: isTouchScreen }">
     <MainSectionInfo :class="{ hidden: !isMainSectionVisible }" />
 
     <MainSectionGallery
@@ -15,10 +15,20 @@
   </section>
 </template>
 <script setup>
-  import { onMounted, ref, watch } from "vue";
-  import { MainSectionGallery, MainSectionInfo } from "@/components/MainSection";
+  import { onMounted, ref, watch } from 'vue';
+  import { MainSectionGallery, MainSectionInfo } from '@/components/MainSection';
 
-  const emit = defineEmits(["isVisible"]);
+  const isTouchScreen = ref(null);
+
+  const CheckTouchScreen = () => {
+    isTouchScreen.value =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+  };
+  CheckTouchScreen();
+
+  const emit = defineEmits(['isVisible']);
 
   const isMainSectionVisible = ref(true);
   const needToCheckScroll = ref(true);
@@ -29,34 +39,38 @@
 
   const toggleLockScreen = (value) => {
     const body = document.body;
-    value ? body.classList.add("lock") : body.classList.remove("lock");
+    value ? body.classList.add('lock') : body.classList.remove('lock');
   };
 
   watch(isMainSectionVisible, (newValue) => {
-    emit("isVisible", newValue);
-    if (newValue) {
-      toggleLockScreen(newValue);
-    } else {
-      setTimeout(() => {
+    if (!isTouchScreen.value) {
+      emit('isVisible', newValue);
+      if (newValue) {
         toggleLockScreen(newValue);
-      }, 3000);
+      } else {
+        setTimeout(() => {
+          toggleLockScreen(newValue);
+        }, 3000);
+      }
     }
   });
 
   onMounted(() => {
-    toggleLockScreen(isMainSectionVisible.value);
+    if (!isTouchScreen.value) {
+      toggleLockScreen(isMainSectionVisible.value);
 
-    window.addEventListener("wheel", (e) => {
-      if (needToCheckScroll.value && window.pageYOffset === 0) {
-        if (e.deltaY < 0) {
-          // scroll Up
-          isMainSectionVisible.value = true;
-        } else if (e.deltaY > 0) {
-          // scroll Down
-          isMainSectionVisible.value = false;
+      window.addEventListener('wheel', (e) => {
+        if (needToCheckScroll.value && window.pageYOffset === 0) {
+          if (e.deltaY < 0) {
+            // scroll Up
+            isMainSectionVisible.value = true;
+          } else if (e.deltaY > 0) {
+            // scroll Down
+            isMainSectionVisible.value = false;
+          }
         }
-      }
-    });
+      });
+    }
   });
 </script>
 <style scoped>
@@ -69,10 +83,13 @@
     overflow: hidden;
     width: 100%;
   }
+  .main-section.relative {
+    position: relative;
+  }
 
   .bg-video {
     opacity: 0.7;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

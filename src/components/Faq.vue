@@ -243,6 +243,7 @@
     border: none;
     text-align: start;
     backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
     /* transition: all 0.3s ease-in-out 0s; */
     position: relative;
   }
@@ -271,6 +272,7 @@
     padding: 0px 32px 20px 32px;
     background: rgba(35, 35, 35, 0.17);
     backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
     position: relative;
   }
   .faq__body-wrapper::after {

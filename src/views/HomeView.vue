@@ -7,9 +7,20 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from "vue";
-  import { MainSection } from "@/components/MainSection";
-  import { ScrollView } from "@/components";
+  import { ref, onMounted } from 'vue';
+  import { MainSection } from '@/components/MainSection';
+  import { ScrollView } from '@/components';
+
+  const isTouchScreen = ref(null);
+
+  const CheckTouchScreen = () => {
+    isTouchScreen.value =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+  };
+
+  CheckTouchScreen();
 
   const isScrollViewVisible = ref(false);
 
@@ -19,9 +30,15 @@
   };
 
   onMounted(() => {
-    setTimeout(() => {
+    console.log(isTouchScreen.value);
+
+    if (isTouchScreen.value) {
       isScrollViewVisible.value = true;
-    }, 300);
+    } else {
+      setTimeout(() => {
+        isScrollViewVisible.value = true;
+      }, 300);
+    }
   });
 </script>
 

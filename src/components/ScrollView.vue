@@ -1,14 +1,14 @@
 <template>
-  <div class="scroll-view">
+  <div class="scroll-view" :class="{ touch: isTouchScreen }">
     <Collection />
-    <TabsSection />
+    <!-- <TabsSection />
     <Faq />
     <Containers />
     <Licenses />
     <Roadmap />
     <Social />
     <Subscribe />
-    <Footer />
+    <Footer /> -->
   </div>
 </template>
 <script setup>
@@ -23,12 +23,24 @@
     Subscribe,
     Roadmap,
   } from '@/components';
+  import { ref } from 'vue';
+
+  const isTouchScreen = ref(null);
+
+  const CheckTouchScreen = () => {
+    isTouchScreen.value =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+  };
+  CheckTouchScreen();
 </script>
 <style scoped>
   .scroll-view {
     position: relative;
     color: #fff;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transform: translateY(100%);
     transition: transform 2s ease-in-out 0s;
     padding-top: 94px;
@@ -37,5 +49,8 @@
   .scroll-view.visible {
     transform: translateY(0);
     transition: transform 2s ease-in-out 1s;
+  }
+  .scroll-view.touch {
+    transform: translateY(0);
   }
 </style>

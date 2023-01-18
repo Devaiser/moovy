@@ -38,38 +38,38 @@
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
-  import { Swiper, SwiperSlide } from "swiper/vue";
-  import { Mousewheel } from "swiper";
-  import "swiper/css";
+  import { ref } from 'vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Mousewheel } from 'swiper';
+  import 'swiper/css';
 
   const modules = ref([Mousewheel]);
 
   const carsList = [
     {
-      name: "Benefactor",
-      type: "Type D",
-      img: "/img/cars-gallery/benefactor.png",
+      name: 'Benefactor',
+      type: 'Type D',
+      img: '/img/cars-gallery/benefactor.png',
     },
     {
-      name: "Crystall",
-      type: "Type D",
-      img: "/img/cars-gallery/crystall.png",
+      name: 'Crystall',
+      type: 'Type D',
+      img: '/img/cars-gallery/crystall.png',
     },
     {
-      name: "Hawk RS",
-      type: "Type A",
-      img: "/img/cars-gallery/hawkRS.png",
+      name: 'Hawk RS',
+      type: 'Type A',
+      img: '/img/cars-gallery/hawkRS.png',
     },
     {
-      name: "Buffalo",
-      type: "Type B",
-      img: "/img/cars-gallery/buffalo.png",
+      name: 'Buffalo',
+      type: 'Type B',
+      img: '/img/cars-gallery/buffalo.png',
     },
     {
-      name: "Stunt",
-      type: "Type C",
-      img: "/img/cars-gallery/stunt.png",
+      name: 'Stunt',
+      type: 'Type C',
+      img: '/img/cars-gallery/stunt.png',
     },
   ];
 </script>
@@ -83,6 +83,7 @@
       rgba(4, 48, 48, 0.54) 99.73%
     );
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 0 44px;
     position: relative;
     z-index: 2;
@@ -103,7 +104,7 @@
     position: relative;
   }
   .car-item::after {
-    content: "";
+    content: '';
     transition: all 0.5s ease-in-out;
     opacity: 0;
     visibility: hidden;
@@ -129,7 +130,7 @@
     width: fit-content;
   }
   .car-name::after {
-    content: "";
+    content: '';
     position: absolute;
     height: 1px;
     width: 1300px;
@@ -174,5 +175,11 @@
     top: 50%;
     transform: translate(-50%, -50%);
     left: 0;
+  }
+
+  @media (max-width: 992px) {
+    .main-section__right {
+      display: none;
+    }
   }
 </style>

@@ -12,20 +12,68 @@
       <h2 class="title__title-text">ROADMAP</h2>
     </div>
     <div class="stage stage-1">
-      <div class="stage-1__banner">
-        <span>open beta version</span>
-      </div>
-      <div class="stage-1__element">
-        <span>for Moovy Boxowners only</span>
+      <div
+        v-motion
+        :initial="{
+          opacity: 0,
+          x: 1000,
+        }"
+        :visibleOnce="{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1000,
+          },
+        }"
+      >
+        <div class="stage-1__body">
+          <div class="stage-1__banner">
+            <span>open beta version</span>
+          </div>
+          <div class="stage-1__element">
+            <span>for Moovy Boxowners only</span>
+          </div>
+        </div>
       </div>
       <div class="stage-1__date"><span>December 2022</span></div>
-      <div class="roadmap__arrow">
+      <div
+        class="roadmap__arrow"
+        v-motion
+        :initial="{
+          opacity: 0,
+          y: -50,
+          rotate: 90,
+        }"
+        :visibleOnce="{
+          rotate: 90,
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 700,
+            delay: 400,
+          },
+        }"
+      >
         <img src="/img/arrow.png" alt="arrow" />
       </div>
     </div>
     <div class="stage stage-2">
-      <div class="stage-2__body">
-        <div class="stage-2__date"><span>January 2023</span></div>
+      <div class="stage-2__date"><span>January 2023</span></div>
+      <div
+        class="stage-2__body"
+        v-motion
+        :initial="{
+          opacity: 0,
+          x: 500,
+        }"
+        :visibleOnce="{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1000,
+          },
+        }"
+      >
         <img src="/img/border.png" class="stage__border" alt="border" />
         <div class="stage-2__banner">
           <span>Ready - Steady - Earn</span>
@@ -74,8 +122,22 @@
       </div>
     </div>
     <div class="stage stage-3">
-      <div class="stage-3__body">
-        <div class="stage-3__date"><span>January 2023</span></div>
+      <div class="stage-3__date"><span>January 2023</span></div>
+      <div
+        class="stage-3__body"
+        v-motion
+        :initial="{
+          opacity: 0,
+          x: -500,
+        }"
+        :visibleOnce="{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1000,
+          },
+        }"
+      >
         <img src="/img/border.png" class="stage__border rotate" alt="border" />
         <div class="stage-3__banner">
           <span>Individualization</span>
@@ -97,8 +159,22 @@
       </div>
     </div>
     <div class="stage stage-4">
-      <div class="stage-4__body">
-        <div class="stage-4__date"><span>January 2023</span></div>
+      <div class="stage-4__date"><span>January 2023</span></div>
+      <div
+        class="stage-4__body"
+        v-motion
+        :initial="{
+          opacity: 0,
+          x: -500,
+        }"
+        :visibleOnce="{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1000,
+          },
+        }"
+      >
         <img src="/img/border.png" class="stage__border rotate" alt="border" />
         <div class="stage-4__banner">
           <span>Socializing</span>
@@ -135,6 +211,7 @@
   .roadmap {
     margin-top: 230px;
     position: relative;
+    overflow: hidden;
   }
   .roadmap__video {
     position: absolute;
@@ -181,6 +258,11 @@
     align-items: center;
     margin-bottom: 5vw;
   }
+  .stage-1__body {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
   .stage-1__date,
   .stage-2__date {
     height: 281px;
@@ -216,6 +298,7 @@
     width: 47vw;
     border: 3px solid;
     border-image: linear-gradient(to right, #ff7a00, black) 1;
+    border-right: none;
   }
   .stage-1__element span {
     color: #fff;
@@ -314,6 +397,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 3;
   }
   .stage-2__banner {
     position: absolute;
@@ -370,6 +454,7 @@
     box-shadow: 27.9624px 27.9624px 79.8926px rgba(0, 0, 0, 0.75),
       -13.9812px -13.9812px 59.9195px #1f2021;
     border-radius: 0px 59.8119px 59.8119px 0px;
+    z-index: 3;
   }
   .stage__border.rotate {
     transform: rotate(180deg);

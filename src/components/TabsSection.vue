@@ -142,6 +142,7 @@
     width: 80%;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(29px);
+		-webkit-backdrop-filter: blur(29px);
     border-radius: 999px;
     position: absolute;
     bottom: 5%;

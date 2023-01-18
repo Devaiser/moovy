@@ -1,39 +1,64 @@
 <template>
   <header class="header">
-    <div class="container header__body">
+    <div class="container header__container">
       <div class="header__logo">
         <router-link to="/"><img src="/img/logo.svg" alt="logo" /></router-link>
       </div>
-      <ul class="menu">
-        <li class="menu__item"><router-link to="/">about</router-link></li>
-        <li class="menu__item">
-          <router-link to="/">whitepaper</router-link>
-        </li>
-        <li class="menu__item">
-          <router-link to="/">wallet connect</router-link>
-        </li>
-      </ul>
-      <div class="header__social">
-        <a
-          href="https://discord.gg/yqkyNFVSZf"
-          target="_blank"
-          class="header__social-item"
+      <div class="menu">
+        <div
+          class="menu__icon"
+          @click="toggleMenu"
+          :class="{ active: isMenuVisible }"
         >
-          <IconDiscord />
-        </a>
-        <a
-          href="https://twitter.com/moovy_io"
-          target="_blank"
-          class="header__social-item"
-        >
-          <IconTwitter />
-        </a>
+          <span></span>
+        </div>
+        <nav class="menu__body" :class="{ active: isMenuVisible }">
+          <ul class="menu__list">
+            <li><router-link class="menu__link" to="/">about</router-link></li>
+            <li>
+              <router-link class="menu__link" to="/">whitepaper</router-link>
+            </li>
+            <li>
+              <router-link class="menu__link" to="/"
+                >wallet connect</router-link
+              >
+            </li>
+          </ul>
+          <div class="header__social">
+            <a
+              href="https://discord.gg/yqkyNFVSZf"
+              target="_blank"
+              class="header__social-item"
+            >
+              <IconDiscord />
+            </a>
+            <a
+              href="https://twitter.com/moovy_io"
+              target="_blank"
+              class="header__social-item"
+            >
+              <IconTwitter />
+            </a>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
 </template>
 <script setup>
-  import { IconDiscord, IconTwitter } from "@/components/icons";
+  import { ref } from 'vue';
+  import { IconDiscord, IconTwitter } from '@/components/icons';
+
+  const isMenuVisible = ref(false);
+
+  const toggleMenu = () => {
+    isMenuVisible.value = !isMenuVisible.value;
+    if (isMenuVisible.value) {
+      document.body.classList.add('lock');
+    } else {
+      document.body.classList.remove('lock');
+    }
+  };
 </script>
 <style scoped>
   .header {
@@ -49,8 +74,9 @@
       rgba(131, 218, 255, 0.16) 105.42%
     );
     backdrop-filter: blur(29px);
+    -webkit-backdrop-filter: blur(29px);
   }
-  .header__body {
+  .header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,21 +93,17 @@
     display: block;
     object-fit: cover;
   }
-  .menu {
-    display: flex;
-    margin-left: 20%;
-  }
-  .menu__item {
+  .menu__list > li {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1.25;
     font-size: 15px;
   }
-  .menu__item:not(:last-child) {
+  .menu__list > li:not(:last-child) {
     margin-right: 120px;
   }
-  .menu__item a {
+  .menu__list > li a {
     color: inherit;
   }
   .header__social {
@@ -90,5 +112,117 @@
   }
   .header__social-item:not(:last-child) {
     margin-right: 20px;
+  }
+  .menu__icon {
+    display: none;
+  }
+  @media (min-width: 767px) {
+    .menu__body {
+      display: flex;
+    }
+    .menu__list {
+      display: flex;
+      align-items: center;
+      margin-right: 100px;
+    }
+  }
+  @media (max-width: 1200px) {
+    .menu__list li:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+  @media (max-width: 992px) {
+    .menu__list li:not(:last-child) {
+      margin-right: 40px;
+    }
+    .menu__list {
+      margin-right: 40px;
+    }
+  }
+  @media (max-width: 768px) {
+    .header__container {
+      padding: 0 20px;
+    }
+    .header {
+      height: 78px;
+    }
+    .menu__icon {
+      z-index: 15;
+      display: block;
+      position: relative;
+      width: 37px;
+      height: 26px;
+      cursor: pointer;
+    }
+    .menu__icon::before,
+    .menu__icon::after,
+    .menu__icon span {
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      transition: all 0.3s ease-in-out 0s;
+      background-color: #fff;
+    }
+    .menu__icon::before,
+    .menu__icon::after {
+      content: '';
+    }
+    .menu__icon::before {
+      top: 0;
+    }
+    .menu__icon::after {
+      bottom: 0;
+    }
+    .menu__icon span {
+      top: 50%;
+      transform: scale(1) translate(0, -50%);
+    }
+
+    .menu__icon.active span {
+      transform: scale(0) translate(0, -50%);
+    }
+    .menu__icon.active::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0, -50%);
+    }
+    .menu__icon.active::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0, 50%);
+    }
+    .menu__body {
+      /* backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px); */
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 1);
+      padding: 100px 74px 160px 55px;
+      box-sizing: border-box;
+      transition: left 0.5s ease-in-out 0s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: auto;
+    }
+    .menu__body.active {
+      left: 0;
+    }
+    .menu__list {
+      margin-right: 0;
+    }
+    .menu__list li:not(:last-child) {
+      margin-right: 0;
+    }
+    .menu__list li {
+      margin-bottom: 32px;
+      text-align: end;
+      font-size: 20px;
+    }
+    .header__social {
+      justify-content: flex-end;
+    }
   }
 </style>

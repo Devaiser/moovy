@@ -367,8 +367,8 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(9.72deg, #000000 1.33%, #1a1c1f 100%);
-    box-shadow: 27.9122px 27.9122px 79.7492px rgba(0, 0, 0, 0.75),
-      -13.9561px -13.9561px 59.8119px #1f2021;
+    box-shadow: 27.9624px 27.9624px 79.8926px rgba(0, 0, 0, 0.75),
+      -13.9812px -13.9812px 59.9195px #1f2021;
     border-radius: 0px 59.8119px 59.8119px 0px;
   }
   .stage__border.rotate {
@@ -403,4 +403,4 @@
     border-radius: 54px;
     transform: rotate(90deg);
   }
-</style> 
+</style>

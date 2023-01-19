@@ -7,10 +7,13 @@
       </video>
     </div>
     <p class="section-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      Minting is the process of creating a new digital car from two existing NFT
+      cars.
+    </p>
+    <p class="section-text">
+      In the Moovy metaverse, you choose two NFT parent cars that may have
+      different levels. You start minting to get a container with a new car
+      after minting.
     </p>
   </div>
 </template>

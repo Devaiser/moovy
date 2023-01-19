@@ -18,10 +18,11 @@
         class="slider"
         :slides-per-view="'auto'"
         :centered-slides="true"
-        :space-between="-270"
+        :space-between="-100"
         :speed="700"
         :navigation="navigation"
         :modules="modules"
+        :breakpoints="breakpoints"
       >
         <swiper-slide class="slide" v-for="(car, idx) in carsList" :key="idx">
           <div class="car-image">
@@ -40,6 +41,18 @@
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { Navigation } from 'swiper';
   import 'swiper/css';
+
+  const breakpoints = ref({
+    1400: {
+      spaceBetween: -270,
+    },
+    768: {
+      spaceBetween: -200,
+    },
+    768: {
+      spaceBetween: -120,
+    },
+  });
 
   const navigation = ref({
     enabled: true,
@@ -91,6 +104,9 @@
   .collection-control {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
   }
   .control-left {
     transform: rotate(180deg);
@@ -120,7 +136,8 @@
     flex-direction: column;
     align-items: center;
   }
-  .car-image img {
+  .car-image img,
+  .car-model img {
     width: 100%;
     height: 100%;
     display: block;
@@ -142,6 +159,56 @@
   }
   .nav-button.swiper-button-disabled {
     opacity: 0.4;
-		cursor: auto;
+    cursor: auto;
+  }
+  @media (max-width: 1200px) {
+    .slide {
+      width: 75vw;
+    }
+    .collection {
+      min-height: auto;
+      padding-bottom: 40px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .collection {
+      margin-top: 100px;
+    }
+    .collection {
+      min-height: auto;
+      padding-bottom: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide {
+      width: 85vw;
+    }
+    .collection {
+      min-height: auto;
+      padding-bottom: 40px;
+    }
+  }
+  @media (max-width: 556px) {
+    .slide {
+      width: 100vw;
+    }
+    .car-model {
+      width: 25%;
+      margin-top: 20px;
+    }
+    .collection-control {
+      justify-content: space-between;
+    }
+    .collection-button-prev {
+      order: 2;
+    }
+    .section-title {
+      order: 1;
+    }
+    .collection-button-next {
+      order: 3;
+    }
   }
 </style>

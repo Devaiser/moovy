@@ -1,13 +1,28 @@
 <template>
   <div class="main-section__right">
+    <div class="gallery__control">
+      <img
+        src="/img/arrow.png"
+        class="control-left nav-button gallery-button-prev"
+        alt="arrow"
+      />
+      <img
+        src="/img/arrow.png"
+        class="control-right nav-button gallery-button-next"
+        alt="arrow"
+      />
+    </div>
     <swiper
       class="slider"
-      :direction="'vertical'"
+      :direction="'horizontal'"
       :slides-per-view="'auto'"
+      :centered-slides="true"
       :mousewheel="true"
       :modules="modules"
       :speed="500"
+      :navigation="navigation"
       :space-between="36"
+      :breakpoints="breakpoints"
     >
       <swiper-slide
         class="slider-item"
@@ -40,10 +55,27 @@
 <script setup>
   import { ref } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { Mousewheel } from 'swiper';
+  import { Mousewheel, Navigation } from 'swiper';
   import 'swiper/css';
 
-  const modules = ref([Mousewheel]);
+  const breakpoints = {
+    992: {
+      direction: 'vertical',
+      slidesPerView: 'auto',
+      centeredSlides: false,
+    },
+    556: {
+      slidesPerView: 1.4,
+    },
+  };
+
+  const navigation = ref({
+    enabled: true,
+    nextEl: '.gallery-button-next',
+    prevEl: '.gallery-button-prev',
+  });
+
+  const modules = ref([Mousewheel, Navigation]);
 
   const carsList = [
     {
@@ -85,6 +117,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 0 44px;
+    padding-top: 150px;
     position: relative;
     z-index: 2;
     transition: transform 1s ease-in-out;
@@ -95,7 +128,7 @@
   }
   .slider {
     max-height: calc(100vh - 190px);
-    margin-top: 150px;
+    /* margin-top: 150px; */
     padding-bottom: 40px;
   }
   .car-item {
@@ -167,7 +200,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to right bottom, #4ebfcc, transparent 100%);
-    z-index: 0;
+    z-index: -1;
   }
   .double-arrows {
     position: absolute;
@@ -176,10 +209,82 @@
     transform: translate(-50%, -50%);
     left: 0;
   }
-
+  .gallery__control {
+    display: none;
+  }
   @media (max-width: 992px) {
-    .main-section__right {
+    .double-arrows {
       display: none;
+    }
+    .main-section__right {
+      width: 100vw;
+      padding: 20px;
+      box-sizing: border-box;
+      background: linear-gradient(
+        174.62deg,
+        rgba(8, 119, 119, 0.295) 0.94%,
+        rgba(8, 119, 119, 0) 100%
+      );
+      backdrop-filter: blur(0);
+      -webkit-backdrop-filter: blur(0);
+    }
+    .slider {
+      max-height: none;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+    .car-img {
+      padding: 20px 0 0 0;
+    }
+    .car-info {
+      overflow: hidden;
+    }
+    .control-left {
+      transform: rotate(180deg);
+    }
+    .nav-button {
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out 0s;
+    }
+    .nav-button.swiper-button-disabled {
+      opacity: 0.4;
+      cursor: auto;
+    }
+    .gallery__control {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    .gallery-button-prev {
+      margin-right: 20px;
+    }
+  }
+  @media (max-width: 556px) {
+    .double-arrows {
+      display: none;
+    }
+    .main-section__right {
+      width: 100vw;
+      padding: 20px;
+      box-sizing: border-box;
+      background: linear-gradient(
+        174.62deg,
+        rgba(8, 119, 119, 0.295) 0.94%,
+        rgba(8, 119, 119, 0) 100%
+      );
+      backdrop-filter: blur(0);
+      -webkit-backdrop-filter: blur(0);
+    }
+    .slider {
+      max-height: none;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+    .car-img {
+      padding: 20px 0 0 0;
+    }
+    .car-info {
+      overflow: hidden;
     }
   }
 </style>

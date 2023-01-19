@@ -42,6 +42,7 @@
           class="video"
         >
           <source type="video/webm" :src="video.src" />
+          <source type="video/mp4" :src="video.srcMov" />
         </video>
         <div class="faq__img" :class="{ active: activeVideo === null }">
           <img src="/img/faq-model.png" alt="car-model" />
@@ -58,38 +59,47 @@
   const videoData = [
     {
       src: '/video/faq/faq-video-1-in.webm',
+      srcMov: '/video/faq/faq-video-1-in.mov',
       title: 'video-1-in',
     },
     {
       src: '/video/faq/faq-video-1-out.webm',
+      srcMov: '/video/faq/faq-video-1-out.mov',
       title: 'video-1-out',
     },
     {
       src: '/video/faq/faq-video-2-in.webm',
+      srcMov: '/video/faq/faq-video-2-in.mov',
       title: 'video-2-in',
     },
     {
       src: '/video/faq/faq-video-3-in.webm',
+      srcMov: '/video/faq/faq-video-3-in.mov',
       title: 'video-3-in',
     },
     {
       src: '/video/faq/faq-video-3-out.webm',
+      srcMov: '/video/faq/faq-video-3-out.mov',
       title: 'video-3-out',
     },
     {
       src: '/video/faq/faq-video-4-in.webm',
+      srcMov: '/video/faq/faq-video-4-in.mov',
       title: 'video-4-in',
     },
     {
       src: '/video/faq/faq-video-4-out.webm',
+      srcMov: '/video/faq/faq-video-4-out.mov',
       title: 'video-4-out',
     },
     {
       src: '/video/faq/faq-video-5-in.webm',
+      srcMov: '/video/faq/faq-video-5-in.mov',
       title: 'video-5-in',
     },
     {
       src: '/video/faq/faq-video-5-out.webm',
+      srcMov: '/video/faq/faq-video-5-out.mov',
       title: 'video-5-out',
     },
   ];
@@ -243,7 +253,7 @@
     border: none;
     text-align: start;
     backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     /* transition: all 0.3s ease-in-out 0s; */
     position: relative;
   }
@@ -272,7 +282,7 @@
     padding: 0px 32px 20px 32px;
     background: rgba(35, 35, 35, 0.17);
     backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: relative;
   }
   .faq__body-wrapper::after {

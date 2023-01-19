@@ -1,12 +1,13 @@
 <template>
   <section class="main-section" :class="{ relative: isTouchScreen }">
     <MainSectionInfo :class="{ hidden: !isMainSectionVisible }" />
-
-    <MainSectionGallery
-      :class="{ hidden: !isMainSectionVisible }"
-      @mouseover="toggleCheckScroll(false)"
-      @mouseleave="toggleCheckScroll(true)"
-    />
+    <div class="gallery">
+      <MainSectionGallery
+        :class="{ hidden: !isMainSectionVisible }"
+        @mouseover="toggleCheckScroll(false)"
+        @mouseleave="toggleCheckScroll(true)"
+      />
+    </div>
 
     <video preload="auto" autoplay muted loop playsinline class="bg-video">
       <source type="video/webm" src="/video/main-bg.webm" />
@@ -93,8 +94,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     z-index: 0;
+  }
+  @media (max-width: 992px) {
+    .gallery {
+      display: none;
+    }
   }
 </style>

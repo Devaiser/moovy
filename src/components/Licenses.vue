@@ -18,10 +18,13 @@
       </video>
     </div>
     <p class="section-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      During the registration process you will have to get your driver's
+      license, personalized avatar-character and will be able to create a name
+      for it.
+    </p>
+    <p class="section-text">
+      A Moovy’s maturity, degree of evolution, and (in the future) combat
+      strength are tracked via a system of Talents and Levels.
     </p>
   </div>
 </template>

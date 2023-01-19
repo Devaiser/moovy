@@ -16,7 +16,9 @@
           <ul class="menu__list">
             <li><router-link class="menu__link" to="/">about</router-link></li>
             <li>
-              <router-link class="menu__link" to="/">whitepaper</router-link>
+              <a href="/pdf/moovyWP.pdf" target="_blank" class="menu__link"
+                >whitepaper</a
+              >
             </li>
             <li>
               <router-link class="menu__link" to="/"
@@ -192,7 +194,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px); */
+              -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

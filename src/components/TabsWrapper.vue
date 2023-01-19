@@ -15,7 +15,7 @@
   </div>
 </template>
 <script setup>
-  import { ref, useSlots, provide } from "vue";
+  import { ref, useSlots, provide } from 'vue';
 
   const props = defineProps({});
   const slots = useSlots();
@@ -23,7 +23,7 @@
   const tabTitles = ref(slots.default().map((tab) => tab.props.title));
   const selectedTitle = ref(tabTitles.value[0]);
 
-  provide("selectedTitle", selectedTitle);
+  provide('selectedTitle', selectedTitle);
 </script>
 <style scoped>
   .tabs {
@@ -56,7 +56,7 @@
     margin-right: 2px;
   }
   .tabs__item::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -73,5 +73,17 @@
     opacity: 1;
     background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 70.42%);
     z-index: -1;
+  }
+  @media (max-width: 1200px) {
+    .tabs__item {
+      height: 180px;
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 992px) {
+    .tabs__item {
+      font-size: 20px;
+      padding: 20px 5px 0 5px;
+    }
   }
 </style>

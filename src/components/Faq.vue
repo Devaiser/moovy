@@ -225,6 +225,7 @@
   .faq {
     margin-top: 140px;
     margin-left: 8vw;
+    overflow: hidden;
   }
   .faq__accordion {
     margin-top: 60px;
@@ -235,6 +236,7 @@
   .faq__item {
     width: 32vw;
     border: 1px solid;
+    box-sizing: border-box;
     border-image: linear-gradient(to bottom, #fff, transparent) 1;
   }
   .faq__item:not(:last-child) {
@@ -268,6 +270,8 @@
     /* transition: opacity 0.3s ease-in-out 0s; */
     background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
     z-index: -1;
+    margin-top: -2px;
+    padding-bottom: 4px;
   }
   .faq__title.active::after {
     opacity: 1;
@@ -308,15 +312,14 @@
   }
   .faq__model {
     width: 100%;
-    /* height: 700px; */
-    /* margin: 20px 80px 0 -80px; */
+    height: 900px;
     margin: 20px 80px 0 0;
+    margin-top: -100px;
   }
   .faq__img {
     width: 100%;
-    height: 900px;
+    height: 100%;
     display: none;
-    margin-top: -100px;
   }
   .faq__img.active {
     display: block;
@@ -329,14 +332,62 @@
   }
   .faq__model video {
     width: 100%;
-    height: 900px;
+    height: 100%;
     object-fit: cover;
-    margin-top: -100px;
   }
   .video {
     display: none;
+    position: relative;
+    z-index: -1;
   }
   .video.active {
     display: block;
+  }
+  @media (max-width: 1200px) {
+    .faq__model {
+      margin: 20px 0 0 -100px;
+    }
+  }
+  @media (max-width: 992px) {
+    .faq {
+      padding: 0 40px;
+      margin-left: 0;
+      margin-top: 40px;
+    }
+    .faq__model {
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+    }
+    .faq__model {
+      margin: 20px 0 0 0;
+    }
+    .faq__item {
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .faq__wrapper {
+      flex-direction: column;
+    }
+    .faq__model {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: -1;
+      transform: scale(1.5);
+    }
+  }
+  @media (max-width: 556px) {
+    .faq__title {
+      font-size: 16px;
+    }
+    .faq {
+      padding: 0 20px;
+    }
+    .faq__model {
+      transform: scale(2);
+      margin-top: 50px;
+    }
   }
 </style>

@@ -15,6 +15,7 @@
       </video> -->
       <video preload="auto" autoplay muted loop playsinline id="license-video">
         <source type="video/webm" src="/video/licenses.webm" />
+        <source type="video/mp4" src="/video/licenses.mov" />
       </video>
     </div>
     <p class="section-text">
@@ -67,6 +68,7 @@
 <style scoped>
   .licenses {
     margin-top: 150px;
+    padding: 0 40px;
   }
   .licenses__titles {
     z-index: 0;
@@ -88,5 +90,39 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  @media (max-width: 1400px) {
+    .licenses__video {
+      margin-top: -270px;
+      width: 100%;
+    }
+  }
+  @media (max-width: 1200px) {
+    .licenses__video {
+      margin-top: -230px;
+    }
+  }
+  @media (max-width: 992px) {
+    .licenses__video {
+      margin-top: -200px;
+    }
+  }
+  @media (max-width: 768px) {
+    .licenses__video {
+      margin-top: -190px;
+    }
+  }
+  @media (max-width: 556px) {
+    .licenses__video {
+      margin-top: -80px;
+    }
+    .licenses {
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 420px) {
+    .licenses__video {
+      margin-top: -70px;
+    }
   }
 </style>

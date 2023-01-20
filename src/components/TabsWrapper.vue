@@ -27,7 +27,7 @@
 </script>
 <style scoped>
   .tabs {
-    min-width: 60vw;
+    max-width: 1130px;
     margin: 0 auto;
   }
   .tabs__header {

@@ -5,10 +5,10 @@
     </div>
     <Collection />
     <TabsSection />
-    <!--  <Faq />
+    <Faq />
     <Containers />
     <Licenses />
-    <Roadmap />
+    <!--  <Roadmap />
     <Social />
     <Subscribe />
     <Footer /> -->

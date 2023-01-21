@@ -30,4 +30,35 @@
     background: none;
     cursor: pointer;
   }
+  .subscribe__button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 992px) {
+    .subscribe {
+      flex-direction: column;
+      padding: 20px;
+      padding-bottom: 0;
+    }
+    .subscribe__text {
+      font-size: 26px;
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 556px) {
+    .subscribe {
+      margin-top: -100px;
+      z-index: 2;
+      position: relative;
+    }
+    .subscribe__text {
+      font-size: 20px;
+      text-align: center;
+    }
+    .subscribe__button {
+      width: 200px;
+    }
+  }
 </style>

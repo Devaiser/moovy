@@ -50,7 +50,7 @@
     IconMedium,
     IconTelegram,
     IconTwitter,
-  } from "@/components/icons";
+  } from '@/components/icons';
 </script>
 <style scoped>
   .footer {
@@ -106,5 +106,13 @@
   .footer__text {
     font-size: 16px;
     color: #fff;
+    text-align: center;
+  }
+  @media (max-width: 556px) {
+    .footer__logo {
+      width: 170px;
+      height: 37px;
+      margin-bottom: 30px;
+    }
   }
 </style>

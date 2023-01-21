@@ -13,9 +13,13 @@
         </div>
       </div>
     </div>
-    <video preload="auto" autoplay loop muted playsinline class="bg-video">
-      <source type="video/webm" src="/video/bbsoft.webm" />
-    </video>
+    <div class="video-wrapper">
+      <video preload="auto" autoplay loop muted playsinline class="bg-video">
+        <source type="video/webm" src="/video/bbsoft.webm" />
+        <source type="video/mp4" src="/video/bbsoft.mov" />
+      </video>
+      <div class="gradient"></div>
+    </div>
   </div>
 </template>
 <script setup>
@@ -25,6 +29,27 @@
     /* margin-top: 100px; */
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .social::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+  }
+  .social::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: -200px;
+    left: 0;
+    height: 200px;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    z-index: 3;
   }
   .social__container {
     margin: 0 auto;
@@ -40,12 +65,138 @@
   .social__content h2 {
     margin-right: 20px;
   }
-  .bg-video {
+  .video-wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
     top: -30px;
     left: 0;
     z-index: 0;
+  }
+  .video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .social__link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gradient {
+    position: relative;
+  }
+  .gradient::after {
+    content: '';
+    width: 100%;
+    height: 200px;
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  }
+  .gradient::before {
+    content: '';
+    width: 100%;
+    height: 200px;
+    bottom: -200px;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+  }
+  @media (max-width: 1400px) {
+    .social__container {
+      max-width: 100%;
+    }
+    .video-wrapper {
+      width: 200%;
+      transform: translateX(-25%);
+      height: 100%;
+    }
+  }
+  @media (max-width: 1200px) {
+    .social__container {
+      max-width: 100%;
+    }
+    .section-title {
+      font-size: 50px;
+    }
+  }
+  @media (max-width: 992px) {
+    .social__link {
+      width: 300px;
+    }
+  }
+  @media (max-width: 768px) {
+    .social__container {
+      padding: 50px 20px;
+    }
+    .social__content h2 {
+      margin-right: 0;
+    }
+    .section-title {
+      font-size: 40px;
+      text-align: center;
+    }
+    .social__content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .social__link {
+      width: 200px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 200%;
+      transform: translateX(-25%);
+      height: 100%;
+    }
+    .video-wrapper {
+      position: relative;
+      margin-top: -100px;
+    }
+    .video-wrapper::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+    }
+    .video-wrapper::before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: -200px;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    }
+    .social::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 200px;
+      background: none;
+    }
+    .social::before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: -200px;
+      left: 0;
+      height: 200px;
+      background: none;
+    }
+  }
+  @media (max-width: 556px) {
+    .section-title {
+      font-size: 36px;
+      text-align: center;
+    }
   }
 </style>

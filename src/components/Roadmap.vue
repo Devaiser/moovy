@@ -3,6 +3,7 @@
     <div class="roadmap__video">
       <video preload="auto" autoplay muted playsinline>
         <source type="video/webm" src="/video/roadmap.webm" />
+        <source type="video/mp4" src="/video/roadmap.mov" />
       </video>
     </div>
     <div class="roadmap__title">
@@ -16,7 +17,7 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: 1000,
+          x: 500,
         }"
         :visibleOnce="{
           opacity: 1,
@@ -128,7 +129,7 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: -500,
+          x: -300,
         }"
         :visibleOnce="{
           opacity: 1,
@@ -211,7 +212,17 @@
   .roadmap {
     margin-top: 230px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+  }
+  .roadmap::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 200px;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    z-index: 3;
   }
   .roadmap__video {
     position: absolute;
@@ -248,6 +259,9 @@
   .roadmap__stage {
     display: flex;
     flex-direction: column;
+  }
+  .stage {
+    overflow: hidden;
   }
   .stage-1 {
     z-index: 1;
@@ -487,5 +501,17 @@
     background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
     border-radius: 54px;
     transform: rotate(90deg);
+  }
+
+  @media (max-width: 768px) {
+    .roadmap::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 200px;
+      background: none;
+    }
   }
 </style>

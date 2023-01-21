@@ -8,10 +8,10 @@
     <Faq />
     <Containers />
     <Licenses />
-    <!--  <Roadmap />
+    <Roadmap />
     <Social />
     <Subscribe />
-    <Footer /> -->
+    <Footer />
   </div>
 </template>
 <script setup>

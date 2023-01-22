@@ -17,13 +17,13 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: 500,
+          x: width > 992 ? 500 : 200,
         }"
         :visibleOnce="{
           opacity: 1,
           x: 0,
           transition: {
-            duration: 1000,
+            duration: width > 992 ? 1000 : 700,
           },
         }"
       >
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <div class="stage-1__date"><span>December 2022</span></div>
+      <div class="stage-1__date"><span>Q1 2023</span></div>
       <div
         class="roadmap__arrow"
         v-motion
@@ -59,23 +59,31 @@
       </div>
     </div>
     <div class="stage stage-2">
-      <div class="stage-2__date"><span>January 2023</span></div>
+      <div class="stage-2__date"><span>Q1 2023</span></div>
       <div
         class="stage-2__body"
         v-motion
         :initial="{
           opacity: 0,
-          x: 500,
+          x: width > 992 ? 500 : 0,
+          y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
           opacity: 1,
           x: 0,
+          y: 0,
           transition: {
-            duration: 1000,
+            duration: width > 992 ? 1000 : 500,
           },
         }"
       >
+        <div class="stage__date_media"><span>Q1 2023</span></div>
         <img src="/img/border.png" class="stage__border" alt="border" />
+        <img
+          src="/img/media-border.png"
+          class="stage__border_media"
+          alt="border"
+        />
         <div class="stage-2__banner">
           <span>Ready - Steady - Earn</span>
         </div>
@@ -122,24 +130,35 @@
         </ul>
       </div>
     </div>
+    <div class="roadmap__arrow_media">
+      <img src="/img/arrow.png" alt="arrow" />
+    </div>
     <div class="stage stage-3">
-      <div class="stage-3__date"><span>January 2023</span></div>
+      <div class="stage-3__date"><span>Q2 2023</span></div>
       <div
         class="stage-3__body"
         v-motion
         :initial="{
           opacity: 0,
-          x: -300,
+          x: width > 992 ? 500 : 0,
+          y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
           opacity: 1,
           x: 0,
+          y: 0,
           transition: {
-            duration: 1000,
+            duration: width > 992 ? 1000 : 500,
           },
         }"
       >
+        <div class="stage__date_media"><span>Q2 2023</span></div>
         <img src="/img/border.png" class="stage__border rotate" alt="border" />
+        <img
+          src="/img/media-border.png"
+          class="stage__border_media"
+          alt="border"
+        />
         <div class="stage-3__banner">
           <span>Individualization</span>
         </div>
@@ -159,24 +178,35 @@
         </ul>
       </div>
     </div>
+    <div class="roadmap__arrow_media">
+      <img src="/img/arrow.png" alt="arrow" />
+    </div>
     <div class="stage stage-4">
-      <div class="stage-4__date"><span>January 2023</span></div>
+      <div class="stage-4__date"><span>Q3 2023</span></div>
       <div
         class="stage-4__body"
         v-motion
         :initial="{
           opacity: 0,
-          x: -500,
+          x: width > 992 ? 500 : 0,
+          y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
           opacity: 1,
           x: 0,
+          y: 0,
           transition: {
-            duration: 1000,
+            duration: width > 992 ? 1000 : 500,
           },
         }"
       >
+        <div class="stage__date_media"><span>Q3 2023</span></div>
         <img src="/img/border.png" class="stage__border rotate" alt="border" />
+        <img
+          src="/img/media-border.png"
+          class="stage__border_media"
+          alt="border"
+        />
         <div class="stage-4__banner">
           <span>Socializing</span>
         </div>
@@ -207,6 +237,9 @@
   </div>
 </template>
 <script setup>
+  import { useWindowSize } from '@vueuse/core';
+
+  const { width, height } = useWindowSize();
 </script>
 <style scoped>
   .roadmap {
@@ -372,6 +405,9 @@
     height: 100%;
     pointer-events: none;
   }
+  .stage__border_media {
+    display: none;
+  }
   .stage__body-title {
     color: #8df6e9;
     font-weight: 700;
@@ -502,6 +538,106 @@
     border-radius: 54px;
     transform: rotate(90deg);
   }
+  .roadmap__arrow_media {
+    display: none;
+  }
+  .stage__date_media {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .roadmap__title-logo {
+      transform: rotate(90deg) scale(0.7);
+      margin-right: 0px;
+      margin-left: -153px;
+      margin-top: -15px;
+      width: 153px;
+    }
+    .title__title-text {
+      font-size: 150px;
+    }
+    .stage-2,
+    .stage-3,
+    .stage-4 {
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5vw;
+      padding: 0 40px;
+      overflow: visible !important;
+      margin-top: 150px;
+    }
+    .stage__border {
+      display: none;
+    }
+    .stage__border_media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      display: block;
+    }
+    .stage-2__banner,
+    .stage-3__banner,
+    .stage-4__banner {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      padding: 33px 40px;
+      transform: rotate(0deg) translateX(-50%);
+      z-index: 4;
+      text-align: center;
+    }
+    .stage-2__body,
+    .stage-3__body,
+    .stage-4__body {
+      max-width: 700px;
+      width: fit-content;
+      padding: 109px 80px 100px 80px;
+      box-sizing: border-box;
+    }
+    .stage-2__date,
+    .stage-3__date,
+    .stage-4__date {
+      display: none;
+    }
+    .stage__date_media {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.25;
+      padding: 20px 30px;
+      background: linear-gradient(9.72deg, #000000 1.33%, #1a1c1f 100%);
+      box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.75), -7px -7px 30px #1f2021;
+      border-radius: 30px 0px;
+      display: block;
+    }
+    .roadmap__arrow {
+      display: none;
+    }
+    /* .roadmap__video {
+        position: absolute;
+        top: 48%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        z-index: 0;
+      } */
+    .roadmap__video {
+      display: none;
+    }
+    .roadmap__arrow_media {
+      display: flex;
+      justify-content: center;
+    }
+    .roadmap__arrow_media img {
+      transform: rotate(90deg);
+    }
+  }
 
   @media (max-width: 768px) {
     .roadmap::after {
@@ -512,6 +648,183 @@
       left: 0;
       height: 200px;
       background: none;
+    }
+    .stage-1__date {
+      height: 170px;
+      width: 50px;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .stage-1__date span {
+      font-size: 20px;
+    }
+    .stage-1__element {
+      height: 90px;
+      width: 47vw;
+      border: 3px solid;
+      border-image: linear-gradient(to right, #ff7a00, black) 1;
+      border-right: none;
+    }
+    .stage-1__element span {
+      font-size: 18px;
+      text-align: center;
+      margin-right: -10px;
+    }
+    .stage-1__banner {
+      border-radius: 40px;
+      width: 200px;
+      padding: 30px 10px;
+      margin-right: -10px;
+    }
+    .stage-2__banner,
+    .stage-3__banner,
+    .stage-4__banner {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      padding: 20px 30px;
+      transform: rotate(0deg) translateX(-50%);
+      z-index: 4;
+      text-align: center;
+    }
+    .stage-1__banner span,
+    .stage-2__banner span,
+    .stage-3__banner span,
+    .stage-4__banner span {
+      font-size: 40px;
+      line-height: 99.5%;
+    }
+    .stage-2__body,
+    .stage-3__body,
+    .stage-4__body {
+      max-width: 700px;
+      width: fit-content;
+      padding: 80px 40px 100px 40px;
+      box-sizing: border-box;
+    }
+    .stage__list-item:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .stage-2,
+    .stage-3,
+    .stage-4 {
+      margin-bottom: 20px;
+      margin-top: 80px;
+    }
+    .stage-2 {
+      margin-top: 120px;
+    }
+    .stage__body-title {
+      font-size: 20px;
+    }
+    .stage__list-text {
+      font-size: 18px;
+    }
+    .stage__list-text_bold {
+      font-size: 18px;
+    }
+    .roadmap {
+      margin-top: 100px;
+    }
+  }
+  @media (max-width: 556px) {
+    .roadmap__title-logo {
+      transform: rotate(90deg) scale(0.6);
+      margin-right: -20px;
+      margin-left: -100px;
+      margin-top: -10px;
+      width: 153px;
+    }
+    .title__title-text {
+      font-size: 115px;
+    }
+    .stage-1__banner {
+      width: 143px;
+    }
+    .stage-1__banner span {
+      font-size: 30px;
+    }
+    .stage-1__element span {
+      max-width: 150px;
+    }
+    .stage-2__banner,
+    .stage-3__banner,
+    .stage-4__banner {
+      width: fit-content;
+    }
+    .stage-1__banner span,
+    .stage-2__banner span,
+    .stage-3__banner span,
+    .stage-4__banner span {
+      font-size: 30px;
+    }
+    .stage-2__body,
+    .stage-3__body,
+    .stage-4__body {
+      padding: 60px 20px 80px 20px;
+      box-sizing: border-box;
+    }
+    .stage__body-title {
+      font-size: 18px;
+    }
+    .stage__list-text {
+      font-size: 16px;
+    }
+    .stage__list-text_bold {
+      font-size: 16px;
+    }
+    .stage__date_media {
+      font-size: 18px;
+    }
+    .stage-2,
+    .stage-3,
+    .stage-4 {
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 420px) {
+    .roadmap__title-logo {
+      transform: rotate(90deg) scale(0.45);
+      margin-right: -35px;
+      margin-left: -100px;
+      margin-top: -10px;
+      width: 153px;
+    }
+    .title__title-text {
+      font-size: 90px;
+    }
+    .stage-1__banner {
+      width: 120px;
+      padding: 30px 10px;
+    }
+    .stage-1__banner span {
+      font-size: 24px;
+    }
+    .stage-1__element span {
+      font-size: 14px;
+      max-width: 150px;
+    }
+    .stage-1__element {
+      height: 70px;
+      width: 47vw;
+      border: 3px solid;
+      border-image: linear-gradient(to right, #ff7a00, black) 1;
+      border-right: none;
+    }
+    .stage-1__date {
+      height: 130px;
+      width: 40px;
+    }
+    .stage-1__date span {
+      font-size: 16px;
+    }
+    .stage__body-title {
+      font-size: 16px;
+    }
+    .stage__list-text_bold {
+      font-size: 14px;
+    }
+    .stage__date_media {
+      font-size: 14px;
     }
   }
 </style>

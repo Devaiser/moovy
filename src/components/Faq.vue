@@ -375,7 +375,6 @@
       height: 100%;
       position: relative;
       z-index: -1;
-      transform: scale(1.5);
     }
   }
   @media (max-width: 556px) {
@@ -386,8 +385,8 @@
       padding: 0 20px;
     }
     .faq__model {
-      transform: scale(2);
       margin-top: 50px;
+      transform: scale(1.2);
     }
   }
 </style>

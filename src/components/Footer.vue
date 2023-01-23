@@ -3,7 +3,6 @@
     <div class="footer__logo">
       <img src="/img/logo.svg" alt="logo" />
     </div>
-    <span class="footer__line"></span>
     <div class="footer__social">
       <p class="footer__social-text">Social media</p>
       <div class="footer__social-list">
@@ -36,8 +35,68 @@
           <IconMedium />
         </a>
       </div>
+      <div class="footer__links">
+        <div class="footer__links-column">
+          <a href="https://bbsoft.io" target="_blank">BBSOFT</a>
+          <a href="https://bbapp.io" target="_blank">BBAPP</a>
+          <a href="https://bbplace.io" target="_blank">BBPLACE</a>
+        </div>
+        <div class="footer__links-column">
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars"
+            target="_blank"
+            >AVATARS</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars/who-are-you-in-the-moovy/technician"
+            target="_blank"
+            >TECHNICIAN</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars/who-are-you-in-the-moovy/driver"
+            target="_blank"
+            >DRIVER</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars/who-are-you-in-the-moovy/ecologist"
+            target="_blank"
+            >ECOLOGIST</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars/talent-system"
+            target="_blank"
+            >TALENT SYSTEM</a
+          >
+        </div>
+        <div class="footer__links-column">
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars/car-types-and-rarity"
+            target="_blank"
+            >CAR SYSTEM</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars/car-types-and-rarity"
+            target="_blank"
+            >CAR TYPES</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars/car-types-and-rarity"
+            target="_blank"
+            >RARITY</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/fuel-system"
+            target="_blank"
+            >FUEL SYSTEM</a
+          >
+          <a
+            href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars/car-attributes"
+            target="_blank"
+            >CAR ATTRIBUTES</a
+          >
+        </div>
+      </div>
     </div>
-    <span class="footer__line"></span>
     <router-link class="footer__link" to="/">User Agreement</router-link>
     <p class="footer__text">
       Copyright © 2022 MOOVY GEM FZE. All rights reserved
@@ -64,7 +123,7 @@
   .footer__logo {
     width: 260px;
     height: 58px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .footer__logo img {
     display: block;
@@ -72,14 +131,9 @@
     height: 100%;
     object-fit: cover;
   }
-  .footer__line {
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(90deg, #0a0d0f 0%, #1fe5d3 49.27%, #0a0d0f 100%);
-  }
   .footer__social {
     margin-top: 15px;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
   }
   .footer__social-text {
     color: #fff;
@@ -97,7 +151,7 @@
     margin-right: 17px;
   }
   .footer__link {
-    margin-top: 40px;
+    margin-top: 20px;
     color: #1fe5d3;
     font-weight: 700;
     font-size: 16px;
@@ -107,6 +161,27 @@
     font-size: 16px;
     color: #fff;
     text-align: center;
+  }
+  .footer__links {
+    display: flex;
+    margin-top: 20px;
+  }
+  .footer__links-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer__links-column:not(:last-child) {
+    margin-right: 45px;
+  }
+  .footer__links-column a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #888686;
+  }
+  .footer__links-column a:not(:last-child) {
+    margin-bottom: 3px;
   }
   @media (max-width: 556px) {
     .footer__logo {

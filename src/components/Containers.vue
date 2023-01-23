@@ -4,7 +4,7 @@
     <div class="conteiners__video">
       <video preload="auto" autoplay muted loop playsinline>
         <source type="video/webm" src="/video/containers.webm" />
-        <source type="video/mp4" src="/video/containers.mov" />
+        <source type="video/mp4" :src="movVideo" />
       </video>
     </div>
     <p class="section-text">
@@ -19,6 +19,7 @@
   </div>
 </template>
 <script setup>
+  const movVideo = '/video/containersMov.mov';
 </script>
 <style scoped>
   .containers {

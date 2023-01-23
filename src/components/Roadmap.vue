@@ -3,7 +3,7 @@
     <div class="roadmap__video">
       <video preload="auto" autoplay muted playsinline loop>
         <source type="video/webm" src="/video/roadmap.webm" />
-        <source type="video/mp4" src="/video/roadmap.mov" />
+        <source type="video/mp4" :src="movVideo" />
       </video>
     </div>
     <div class="roadmap__title">
@@ -240,6 +240,8 @@
   import { useWindowSize } from '@vueuse/core';
 
   const { width, height } = useWindowSize();
+
+  const movVideo = '/video/roadmapMov.mov';
 </script>
 <style scoped>
   .roadmap {
@@ -620,13 +622,13 @@
       display: none;
     }
     /* .roadmap__video {
-          position: absolute;
-          top: 48%;
-          left: 0;
-          width: 100%;
-          height: 50%;
-          z-index: 0;
-        } */
+                  position: absolute;
+                  top: 48%;
+                  left: 0;
+                  width: 100%;
+                  height: 50%;
+                  z-index: 0;
+                } */
     .roadmap__video {
       display: none;
     }

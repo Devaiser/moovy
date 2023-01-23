@@ -5,12 +5,12 @@
     </div>
     <Collection />
     <TabsSection />
+    <Secured />
     <Faq />
     <Containers />
     <Licenses />
     <Roadmap />
     <Social />
-    <Subscribe />
     <Footer />
   </div>
 </template>
@@ -23,8 +23,8 @@
     Licenses,
     Social,
     Footer,
-    Subscribe,
     Roadmap,
+    Secured,
   } from '@/components';
   import { MainSectionGallery } from '@/components/MainSection';
   import { ref } from 'vue';

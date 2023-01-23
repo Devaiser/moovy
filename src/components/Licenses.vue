@@ -15,7 +15,7 @@
       </video> -->
       <video preload="auto" autoplay muted loop playsinline id="license-video">
         <source type="video/webm" src="/video/licenses.webm" />
-        <source type="video/mp4" src="/video/licenses.mov" />
+        <source type="video/mp4" :src="movVideo" />
       </video>
     </div>
     <p class="section-text">
@@ -31,6 +31,7 @@
 </template>
 <script setup>
   import { onMounted, ref } from 'vue';
+  const movVideo = '/video/licensesMov.mov';
   const isFirstTitleVisible = ref(true);
   onMounted(() => {
     const video = document.getElementById('license-video');

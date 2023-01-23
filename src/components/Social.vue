@@ -16,13 +16,23 @@
     <div class="video-wrapper">
       <video preload="auto" autoplay loop muted playsinline class="bg-video">
         <source type="video/webm" src="/video/bbsoft.webm" />
-        <source type="video/mp4" src="/video/bbsoft.mov" />
+        <source type="video/mp4" :src="movVideo" />
       </video>
       <div class="gradient"></div>
+    </div>
+    <div class="subscribe">
+      <p class="subscribe__text">Subscribe to our newsteller</p>
+      <div class="subscribe__button">
+        <span>subscribe</span>
+      </div>
+      <!-- <button class="subscribe__button">
+        <img src="/img/subscribe-button.png" alt="subscribe-button" />
+      </button> -->
     </div>
   </div>
 </template>
 <script setup>
+  const movVideo = '/video/bbsoftMov.mov';
 </script>
 <style scoped>
   .social {
@@ -197,6 +207,80 @@
     .section-title {
       font-size: 36px;
       text-align: center;
+    }
+  }
+  .subscribe {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .subscribe__text {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 1.25;
+    text-shadow: 0px 0px 2.61896px #ffffff;
+    margin-right: 33px;
+  }
+  .subscribe__button {
+    width: 262px;
+    height: 55px;
+
+    background: radial-gradient(
+      100% 100% at 0% 0%,
+      rgba(63, 63, 63, 0.7) 0%,
+      rgba(167, 167, 167, 0) 100%
+    );
+    filter: drop-shadow(0px 1.16591px 14.3444px rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(7.1722px);
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.342);
+  }
+  .subscribe__button span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-shadow: 0.673997px 0.673997px 1.34799px rgba(255, 255, 255, 0.3),
+      -0.673997px -0.673997px 1.34799px rgba(102, 102, 102, 0.5);
+  }
+  @media (max-width: 992px) {
+    .subscribe {
+      flex-direction: column;
+      padding: 20px;
+      padding-bottom: 0;
+    }
+    .subscribe__text {
+      font-size: 26px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 556px) {
+    .subscribe {
+      margin-top: -100px;
+      z-index: 2;
+      position: relative;
+    }
+    .subscribe__text {
+      font-size: 20px;
+      text-align: center;
+    }
+    .subscribe__button {
+      width: 200px;
     }
   }
 </style>

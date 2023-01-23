@@ -21,8 +21,8 @@
               >
             </li>
             <li>
-              <router-link class="menu__link" to="/"
-                >wallet connect</router-link
+              <a class="menu__link" target="_blank" href="https://t.me/moovy_io"
+                >wallet connect</a
               >
             </li>
           </ul>
@@ -194,7 +194,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px); */
+                  -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

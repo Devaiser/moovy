@@ -1,7 +1,7 @@
 <template>
   <div class="roadmap">
     <div class="roadmap__video">
-      <video preload="auto" autoplay muted playsinline>
+      <video preload="auto" autoplay muted playsinline loop>
         <source type="video/webm" src="/video/roadmap.webm" />
         <source type="video/mp4" src="/video/roadmap.mov" />
       </video>
@@ -620,13 +620,13 @@
       display: none;
     }
     /* .roadmap__video {
-        position: absolute;
-        top: 48%;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        z-index: 0;
-      } */
+          position: absolute;
+          top: 48%;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          z-index: 0;
+        } */
     .roadmap__video {
       display: none;
     }

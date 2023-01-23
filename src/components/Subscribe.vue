@@ -19,7 +19,7 @@
   .subscribe__text {
     color: #fff;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 33px;
     line-height: 1.25;
     text-shadow: 0px 0px 2.61896px #ffffff;

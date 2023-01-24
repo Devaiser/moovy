@@ -52,16 +52,16 @@
 
   const isVideoVisible = ref(true);
 
-  onMounted(() => {
-    const securedVideo = document.getElementById('secured-video');
-    securedVideo.addEventListener(
-      'ended',
-      () => {
-        isVideoVisible.value = false;
-      },
-      false
-    );
-  });
+  // onMounted(() => {
+  //   const securedVideo = document.getElementById('secured-video');
+  //   securedVideo.addEventListener(
+  //     'ended',
+  //     () => {
+  //       isVideoVisible.value = false;
+  //     },
+  //     false
+  //   );
+  // });
 </script>
 <style scoped>
   .secured {
@@ -146,5 +146,39 @@
     font-size: 20px;
     line-height: 1.25;
     max-width: 376px;
+  }
+  @media (max-width: 1600px) {
+    .coin {
+      padding: 80px 80px;
+      width: 90%;
+      height: 18%;
+    }
+  }
+  @media (max-width: 1200px) {
+    .coin {
+      box-sizing: border-box;
+      width: fit-content;
+      height: 50%;
+      background: linear-gradient(
+        0.41deg,
+        rgba(33, 231, 214, 0.72) 10.33%,
+        rgba(0, 0, 0, 0.12) 90.65%
+      );
+      border-radius: 329px;
+      padding: 100px 100px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .coin__text {
+      margin-top: 20px;
+      max-width: 276px;
+      text-align: center;
+    }
+    .coin__title {
+      margin: 0 auto;
+    }
+    .coin__title::after {
+      left: -25%;
+    }
   }
 </style>

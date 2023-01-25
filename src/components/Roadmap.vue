@@ -140,7 +140,7 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: width > 992 ? 500 : 0,
+          x: width > 992 ? -500 : 0,
           y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
@@ -188,7 +188,7 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: width > 992 ? 500 : 0,
+          x: width > 992 ? -500 : 0,
           y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
@@ -622,13 +622,13 @@
       display: none;
     }
     /* .roadmap__video {
-                  position: absolute;
-                  top: 48%;
-                  left: 0;
-                  width: 100%;
-                  height: 50%;
-                  z-index: 0;
-                } */
+                        position: absolute;
+                        top: 48%;
+                        left: 0;
+                        width: 100%;
+                        height: 50%;
+                        z-index: 0;
+                      } */
     .roadmap__video {
       display: none;
     }

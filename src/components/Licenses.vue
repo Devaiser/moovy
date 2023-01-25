@@ -13,7 +13,14 @@
       >
         <source type="video/webm" src="/video/licenses.webm" />
       </video> -->
-      <video preload="auto" autoplay muted loop playsinline id="license-video">
+      <video
+        preload="metadata"
+        autoplay
+        muted
+        loop
+        playsinline
+        id="license-video"
+      >
         <source type="video/webm" src="/video/licenses.webm" />
         <source type="video/mp4" :src="movVideo" />
       </video>

@@ -35,7 +35,7 @@
           v-for="(video, idx) in videoData"
           :key="idx"
           :class="{ active: activeVideo === video.title }"
-          preload="auto"
+          preload="metadata"
           autoplay
           muted
           playsinline

@@ -2,7 +2,7 @@
   <div class="containers">
     <h2 class="big-title">Containers</h2>
     <div class="conteiners__video">
-      <video preload="auto" autoplay muted loop playsinline>
+      <video preload="metadata" autoplay muted loop playsinline>
         <source type="video/webm" src="/video/containers.webm" />
         <source type="video/mp4" :src="movVideo" />
       </video>

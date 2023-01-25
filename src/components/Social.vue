@@ -14,7 +14,14 @@
       </div>
     </div>
     <div class="video-wrapper">
-      <video preload="auto" autoplay loop muted playsinline class="bg-video">
+      <video
+        preload="metadata"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="bg-video"
+      >
         <source type="video/webm" src="/video/bbsoft.webm" />
         <source type="video/mp4" :src="movVideo" />
       </video>

@@ -327,6 +327,11 @@
       max-width: 800px;
     }
   }
+  @media (max-width: 992px) {
+    .tabs-section {
+      min-height: auto;
+    }
+  }
   @media (max-width: 768px) {
     .tabs-wrapper {
       display: none;

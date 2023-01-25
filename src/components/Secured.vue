@@ -17,8 +17,11 @@
         </video>
       </div>
       <div class="coin__wrapper" v-else>
-        <div class="coin">
-          <div class="coin__left-text">
+        <div class="coin" @click="onCoinClick">
+          <div
+            class="coin__left-text coin__text-wrapper"
+            :class="{ hidden: isTokenOnStart }"
+          >
             <h3 class="coin__title">$MGAS</h3>
             <p class="coin__text">
               $MGAS is an unlimited-emission utility token that functions as a
@@ -30,7 +33,16 @@
               opening new garages and gift boxes.
             </p>
           </div>
-          <div class="coin__right-text">
+          <!-- <div class="token__arrows" :class="{ rotated: !isTokenOnStart }">
+            <video autoplay muted preload="metadata" loop id="token-arrows">
+              <source type="video/webm" src="/video/token-arrows.webm" />
+              <source type="video/mp4" src="/video/token-arrows.mov" />
+            </video>
+          </div> -->
+          <div
+            class="coin__right-text coin__text-wrapper"
+            :class="{ hidden: !isTokenOnStart }"
+          >
             <h3 class="coin__title">$moil</h3>
             <p class="coin__text">
               The $MOIL token performs the functions of a governance token. It
@@ -42,18 +54,47 @@
               The token has a limited supply - 1,000,000,000 $MOIL.
             </p>
           </div>
+          <div class="token-video" :class="isTokenOnStart ? 'start' : 'end'">
+            <video
+              preload="auto"
+              muted
+              :autoplay="width <= 556"
+              playsinline
+              class="token-video-item"
+              :class="{ hidden: !isStartVideoTokenVisible }"
+            >
+              <source type="video/webm" src="/video/token-in.webm" />
+              <source type="video/mp4" src="/video/token-in.mov" />
+            </video>
+            <video
+              preload="auto"
+              muted
+              playsinline
+              :autoplay="width <= 556"
+              class="token-video-item"
+              :class="{ hidden: isStartVideoTokenVisible }"
+            >
+              <source type="video/webm" src="/video/token-out.webm" />
+              <source type="video/mp4" src="/video/token-out.mov" />
+            </video>
+          </div>
         </div>
       </div>
     </Transition>
   </div>
 </template>
 <script setup>
-  import { onMounted, ref } from 'vue';
+  import { useWindowSize } from '@vueuse/core';
+
+  import { onMounted, ref, watch } from 'vue';
   const movVideo = '/video/secured.mov';
+  const { width, height } = useWindowSize();
 
   const isVideoVisible = ref(true);
+  const tokenVideos = ref(null);
 
   onMounted(() => {
+    tokenVideos.value = document.getElementsByClassName('token-video-item');
     const securedVideo = document.getElementById('secured-video');
     securedVideo.addEventListener(
       'ended',
@@ -63,6 +104,21 @@
       false
     );
   });
+  const isStartVideoTokenVisible = ref(true);
+  const isTokenOnStart = ref(true);
+  const onCoinClick = () => {
+    for (const video of tokenVideos.value) {
+      console.log(video.duration);
+      if (!video.classList.contains('hidden')) {
+        video.play();
+        isTokenOnStart.value = !isTokenOnStart.value;
+        setTimeout(() => {
+          isStartVideoTokenVisible.value = !isStartVideoTokenVisible.value;
+        }, video.duration * 1000);
+      }
+      video.currentTime = 0;
+    }
+  };
 </script>
 <style scoped>
   .secured {
@@ -95,6 +151,25 @@
   .secured__video {
     width: 100%;
     margin-top: -300px;
+    position: relative;
+  }
+  .secured__video::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  }
+  .secured__video::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
   }
   .secured__video video {
     width: 100%;
@@ -107,6 +182,7 @@
   }
   .coin {
     /* margin: 0 40px; */
+    position: relative;
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
@@ -122,6 +198,8 @@
     max-width: 1500px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
   }
   .coin__title {
     font-weight: 900;
@@ -148,14 +226,119 @@
     line-height: 1.25;
     max-width: 376px;
   }
+  .token-video {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 1.341s ease-in-out 0s;
+  }
+  .token-video.start {
+    left: 0;
+  }
+  .token-video.end {
+    left: 1000px;
+  }
+  .token-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.12);
+  }
+  .token-video-item.hidden {
+    display: none;
+  }
+  .coin__text-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.7s ease 0.2s;
+  }
+  .coin__text-wrapper.hidden {
+    transform: translateY(50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .token__arrows {
+    height: fit-content;
+    transition: all 0s ease 0.6s;
+  }
+  .token__arrows.rotated {
+    transform: rotate(180deg);
+  }
   @media (max-width: 1600px) {
     .coin {
       padding: 80px 80px;
-      width: 90%;
+      width: 1190px;
       height: 18%;
+    }
+    .token-video.end {
+      left: 715px;
+    }
+  }
+  @media (max-width: 1400px) {
+    .coin {
+      padding: 80px 80px;
+      width: 1020px;
+      height: 18%;
+    }
+    .token-video.end {
+      left: 550px;
     }
   }
   @media (max-width: 1200px) {
+    .coin {
+      width: 900px;
+    }
+    .token-video video {
+      height: 440px;
+      width: 440px;
+    }
+    .token-video.end {
+      left: 460px;
+    }
+    .coin__text {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.25;
+      max-width: 300px;
+    }
+    .coin__title::after {
+      width: 130%;
+    }
+    .secured__video {
+      margin-top: -200px;
+    }
+  }
+  @media (max-width: 992px) {
+    .secured__video {
+      margin-top: -100px;
+    }
+    .secured {
+      min-height: auto;
+      margin-top: 150px;
+      margin-bottom: 200px;
+    }
+    .token-video video {
+      height: auto;
+      width: 100%;
+    }
+    .token-video {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: all 1.341s ease-in-out 0s;
+    }
+    .token-video.start {
+      top: 0;
+      left: 0;
+    }
+    .token-video.end {
+      top: 49%;
+      left: 0;
+    }
     .coin {
       box-sizing: border-box;
       width: fit-content;
@@ -170,6 +353,9 @@
       flex-direction: column;
       align-items: center;
     }
+    .coin__left-text {
+      margin-bottom: 150px;
+    }
     .coin__text {
       margin-top: 20px;
       max-width: 276px;
@@ -179,7 +365,89 @@
       margin: 0 auto;
     }
     .coin__title::after {
-      left: -25%;
+      left: -12.5%;
+    }
+    .secured__title {
+      display: flex;
+      align-items: center;
+    }
+    .secured__title h2 {
+      font-size: 100px;
+    }
+    .secured__title span {
+      font-size: 58px;
+    }
+  }
+  @media (max-width: 768px) {
+    .coin {
+      padding: 70px 70px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .token-video.end {
+      top: 52%;
+    }
+    .secured__title h2 {
+      font-size: 70px;
+    }
+    .secured__title span {
+      font-size: 48px;
+    }
+  }
+  @media (max-width: 556px) {
+    .secured {
+      margin-top: 100px;
+    }
+    .coin__wrapper {
+      padding: 0 20px;
+      margin-top: 20px;
+    }
+    .coin {
+      width: 360px;
+      padding: 70px 40px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .token-video.end {
+      top: 400px;
+    }
+    .secured__title h2 {
+      font-size: 31px;
+    }
+    .secured__title span {
+      font-size: 31px;
+    }
+    .secured__title-img {
+      width: 240px;
+      margin-left: -20px;
+    }
+    .coin__left-text {
+      margin-bottom: 40px;
+    }
+    .secured__video {
+      margin-top: -70px;
+    }
+  }
+  @media (max-width: 420px) {
+    .coin__title {
+      font-size: 50px;
+    }
+    .coin {
+      width: 300px;
+    }
+    .token-video.end {
+      top: 480px;
+    }
+    .coin__left-text {
+      margin-bottom: 0px;
+    }
+  }
+  @media (max-width: 360px) {
+    .coin {
+      width: 260px;
+    }
+    .token-video.end {
+      top: 620px;
     }
   }
 </style>

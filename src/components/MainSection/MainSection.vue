@@ -9,7 +9,7 @@
       />
     </div>
 
-    <video preload="auto" autoplay muted loop playsinline class="bg-video">
+    <video preload="metadata" autoplay muted loop playsinline class="bg-video">
       <source type="video/webm" src="/video/main-bg.webm" />
       <source type="video/mp4" src="/video/main-bg.mp4" />
     </video>

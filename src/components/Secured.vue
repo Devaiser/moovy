@@ -33,12 +33,12 @@
               opening new garages and gift boxes.
             </p>
           </div>
-          <!-- <div class="token__arrows" :class="{ rotated: !isTokenOnStart }">
+          <div class="token__arrows" :class="{ rotated: !isTokenOnStart }">
             <video autoplay muted preload="metadata" loop id="token-arrows">
               <source type="video/webm" src="/video/token-arrows.webm" />
               <source type="video/mp4" src="/video/token-arrows.mov" />
             </video>
-          </div> -->
+          </div>
           <div
             class="coin__right-text coin__text-wrapper"
             :class="{ hidden: !isTokenOnStart }"

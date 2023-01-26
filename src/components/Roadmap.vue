@@ -3,7 +3,7 @@
     <div class="roadmap__video">
       <video preload="metadata" autoplay muted playsinline loop>
         <source type="video/webm" src="/video/roadmap.webm" />
-        <source type="video/mp4" :src="movVideo" />
+        <!-- <source type="video/mp4" :src="movVideo" /> -->
       </video>
     </div>
     <div class="roadmap__title">
@@ -140,7 +140,7 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: width > 992 ? -500 : 0,
+          x: width > 992 ? -300 : 0,
           y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
@@ -188,7 +188,7 @@
         v-motion
         :initial="{
           opacity: 0,
-          x: width > 992 ? -500 : 0,
+          x: width > 992 ? -300 : 0,
           y: width <= 992 ? -100 : 0,
         }"
         :visibleOnce="{
@@ -247,7 +247,6 @@
   .roadmap {
     margin-top: 230px;
     position: relative;
-    /* overflow: hidden; */
   }
   .roadmap::after {
     content: '';
@@ -547,6 +546,17 @@
     display: none;
   }
 
+  @media (max-width: 1200px) {
+    .stage-3__body {
+      width: 24.31vw;
+      position: relative;
+      padding: 83px 10vw 116px 11.2vw;
+    }
+    .stage-3__banner {
+      right: -230px;
+    }
+  }
+
   @media (max-width: 992px) {
     .roadmap__title-logo {
       transform: rotate(90deg) scale(0.7);
@@ -622,13 +632,13 @@
       display: none;
     }
     /* .roadmap__video {
-                          position: absolute;
-                          top: 48%;
-                          left: 0;
-                          width: 100%;
-                          height: 50%;
-                          z-index: 0;
-                        } */
+                                                                                          position: absolute;
+                                                                                          top: 48%;
+                                                                                          left: 0;
+                                                                                          width: 100%;
+                                                                                          height: 50%;
+                                                                                          z-index: 0;
+                                                                                        } */
     .roadmap__video {
       display: none;
     }

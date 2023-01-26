@@ -6,14 +6,10 @@
     <div class="main-section__store-links">
       <div class="store-link-item-text">coming soon</div>
       <div class="store-link-item store-link-item_blur">
-        <a href="/">
-          <img src="/img/app-store.svg" alt="App Store" />
-        </a>
+        <img src="/img/app-store.svg" alt="App Store" />
       </div>
       <div class="store-link-item">
-        <a href="/">
-          <img src="/img/google-play.svg" alt="Google Play" />
-        </a>
+        <img src="/img/google-play.svg" alt="Google Play" />
       </div>
     </div>
   </div>

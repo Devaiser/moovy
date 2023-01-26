@@ -65,31 +65,55 @@
   const carsList = [
     {
       img: '/img/cars-collection/car-1.png',
-      model: '/img/daitana.svg',
+      model: '/img/cars-collection/logos/MoovyVVSLogo.png',
     },
     {
       img: '/img/cars-collection/car-2.png',
-      model: '/img/daitana.svg',
+      model: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
     },
-    {
-      img: '/img/cars-collection/car-3.png',
-      model: '/img/daitana.svg',
-    },
-    {
-      img: '/img/cars-collection/car-4.png',
-      model: '/img/lumia.svg',
-    },
-    {
-      img: '/img/cars-collection/car-5.png',
-      model: '/img/vvs.svg',
-    },
-    {
-      img: '/img/cars-collection/car-6.png',
-      model: '/img/vvs.svg',
-    },
+    // {
+    //   img: '/img/cars-collection/car-3.png',
+    //   model: '/img/daitana.svg',
+    // },
+    // {
+    //   img: '/img/cars-collection/car-4.png',
+    //   model: '/img/lumia.svg',
+    // },
+    // {
+    //   img: '/img/cars-collection/car-5.png',
+    //   model: '/img/vvs.svg',
+    // },
+    // {
+    //   img: '/img/cars-collection/car-6.png',
+    //   model: '/img/vvs.svg',
+    // },
     {
       img: '/img/cars-collection/car-7.png',
-      model: '/img/daitana.svg',
+      model: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+    },
+    // {
+    //   img: '/img/cars-collection/MoovyCarAstorX1.png',
+    //   model: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+    // },
+    {
+      img: '/img/cars-collection/MoovyCarDaitanaX2.png',
+      model: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+    },
+    {
+      img: '/img/cars-collection/MoovyCarHectorOffroad.png',
+      model: '/img/cars-collection/logos/MoovyHectorLogo.png',
+    },
+    {
+      img: '/img/cars-collection/MoovyCarShumanCrystal.png',
+      model: '/img/cars-collection/logos/MoovyShumanLogo.png',
+    },
+    {
+      img: '/img/cars-collection/MoovyCarTrorT7.png',
+      model: '/img/cars-collection/logos/MoovyTrorLogo.png',
+    },
+    {
+      img: '/img/cars-collection/MoovyCarTrorX2.png',
+      model: '/img/cars-collection/logos/MoovyTrorLogo.png',
     },
   ];
 </script>
@@ -148,6 +172,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s;
+    width: 150px;
   }
   .slide.swiper-slide-active .car-model {
     opacity: 1;

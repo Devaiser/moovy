@@ -57,7 +57,7 @@
           </div>
         </div>
         <a href="/" target="_blank" class="social-link">
-          <img src="/img/moovy.svg" alt="moovy" />
+          <img src="/img/moovy.png" alt="moovy" />
           <p>Go to About page</p>
         </a>
       </Tab>
@@ -176,7 +176,7 @@
             </p>
           </div>
           <a href="/" target="_blank" class="social-link">
-            <img src="/img/moovy.svg" alt="moovy" />
+            <img src="/img/moovy.png" alt="moovy" />
             <p>Go to About page</p>
           </a>
         </swiper-slide>

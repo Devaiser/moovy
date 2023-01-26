@@ -34,7 +34,14 @@
             </p>
           </div>
           <div class="token__arrows" :class="{ rotated: !isTokenOnStart }">
-            <video autoplay muted preload="metadata" loop id="token-arrows">
+            <video
+              autoplay
+              muted
+              preload="auto"
+              playsinline
+              loop
+              id="token-arrows"
+            >
               <source type="video/webm" src="/video/token-arrows.webm" />
               <source type="video/mp4" src="/video/token-arrows.mov" />
             </video>
@@ -108,7 +115,6 @@
   const isTokenOnStart = ref(true);
   const onCoinClick = () => {
     for (const video of tokenVideos.value) {
-      console.log(video.duration);
       if (!video.classList.contains('hidden')) {
         video.play();
         isTokenOnStart.value = !isTokenOnStart.value;
@@ -284,7 +290,11 @@
       height: 18%;
     }
     .token-video.end {
-      left: 550px;
+      left: 530px;
+    }
+    .token__arrows {
+      transform: scale(0.7);
+      display: none;
     }
   }
   @media (max-width: 1200px) {
@@ -336,7 +346,7 @@
       left: 0;
     }
     .token-video.end {
-      top: 49%;
+      top: 57%;
       left: 0;
     }
     .coin {
@@ -353,9 +363,9 @@
       flex-direction: column;
       align-items: center;
     }
-    .coin__left-text {
-      margin-bottom: 150px;
-    }
+    /* .coin__left-text {
+                                                                                              margin-bottom: 100px;
+                                                                                            } */
     .coin__text {
       margin-top: 20px;
       max-width: 276px;
@@ -377,6 +387,14 @@
     .secured__title span {
       font-size: 58px;
     }
+    .token__arrows {
+      display: block;
+      transform: rotate(90deg) scale(0.7);
+      margin: 100px 0;
+    }
+    .token__arrows.rotated {
+      transform: rotate(-90deg) scale(0.7);
+    }
   }
   @media (max-width: 768px) {
     .coin {
@@ -385,13 +403,16 @@
       align-items: center;
     }
     .token-video.end {
-      top: 52%;
+      top: 58%;
     }
     .secured__title h2 {
       font-size: 70px;
     }
     .secured__title span {
       font-size: 48px;
+    }
+    .token__arrows {
+      margin: 70px 0;
     }
   }
   @media (max-width: 556px) {
@@ -409,7 +430,7 @@
       align-items: center;
     }
     .token-video.end {
-      top: 400px;
+      top: 540px;
     }
     .secured__title h2 {
       font-size: 31px;
@@ -421,11 +442,11 @@
       width: 240px;
       margin-left: -20px;
     }
-    .coin__left-text {
-      margin-bottom: 40px;
-    }
     .secured__video {
       margin-top: -70px;
+    }
+    .token__arrows {
+      margin: 30px 0;
     }
   }
   @media (max-width: 420px) {
@@ -435,19 +456,30 @@
     .coin {
       width: 300px;
     }
-    .token-video.end {
-      top: 480px;
+    .token__arrows {
+      transform: rotate(90deg) scale(0.6);
+      margin: 0px 0;
     }
-    .coin__left-text {
-      margin-bottom: 0px;
+    .token__arrows.rotated {
+      transform: rotate(-90deg) scale(0.6);
+    }
+    .token-video.end {
+      top: 600px;
     }
   }
   @media (max-width: 360px) {
     .coin {
       width: 260px;
     }
+    .token__arrows {
+      transform: rotate(90deg) scale(0.5);
+      margin: 0px 0;
+    }
+    .token__arrows.rotated {
+      transform: rotate(-90deg) scale(0.5);
+    }
     .token-video.end {
-      top: 620px;
+      top: 720px;
     }
   }
 </style>

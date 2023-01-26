@@ -43,7 +43,7 @@
               id="token-arrows"
             >
               <source type="video/webm" src="/video/token-arrows.webm" />
-              <source type="video/mp4" src="/video/token-arrows.mov" />
+              <source type="video/mp4" :src="arrowsMov" />
             </video>
           </div>
           <div
@@ -71,7 +71,7 @@
               :class="{ hidden: !isStartVideoTokenVisible }"
             >
               <source type="video/webm" src="/video/token-in.webm" />
-              <source type="video/mp4" src="/video/token-in.mov" />
+              <source type="video/mp4" :src="tokenInMov" />
             </video>
             <video
               preload="auto"
@@ -82,7 +82,7 @@
               :class="{ hidden: isStartVideoTokenVisible }"
             >
               <source type="video/webm" src="/video/token-out.webm" />
-              <source type="video/mp4" src="/video/token-out.mov" />
+              <source type="video/mp4" :src="tokenOutMov" />
             </video>
           </div>
         </div>
@@ -95,6 +95,9 @@
 
   import { onMounted, ref, watch } from 'vue';
   const movVideo = '/video/secured.mov';
+  const arrowsMov = '/video/token-arrows.mov';
+  const tokenOutMov = '/video/token-out.mov';
+  const tokenInMov = '/video/token-in.mov';
   const { width, height } = useWindowSize();
 
   const isVideoVisible = ref(true);
@@ -364,8 +367,8 @@
       align-items: center;
     }
     /* .coin__left-text {
-                                                                                              margin-bottom: 100px;
-                                                                                            } */
+                                                                                                      margin-bottom: 100px;
+                                                                                                    } */
     .coin__text {
       margin-top: 20px;
       max-width: 276px;

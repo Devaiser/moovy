@@ -195,7 +195,7 @@
   .car-model-text {
     margin-top: 20px;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 600;
     font-size: 30px;
     line-height: 1.25;
     background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 100%);

@@ -4,7 +4,8 @@
       <MainSectionGallery />
     </div>
     <Collection />
-    <TabsSection />
+    <!-- <TabsSection /> -->
+    <Experience />
     <Secured />
     <Faq />
     <Containers />
@@ -25,6 +26,7 @@
     Footer,
     Roadmap,
     Secured,
+    Experience,
   } from '@/components';
   import { MainSectionGallery } from '@/components/MainSection';
   import { ref } from 'vue';

@@ -79,27 +79,27 @@
 
   const carsList = [
     {
-      name: 'Benefactor',
+      name: 'Avatti Lumia',
       type: 'Type D',
       img: '/img/cars-gallery/benefactor.png',
     },
     {
-      name: 'Crystall',
+      name: 'Shuman Crystal',
       type: 'Type D',
       img: '/img/cars-gallery/crystall.png',
     },
     {
-      name: 'Hawk RS',
+      name: 'Daitana Katsu',
       type: 'Type A',
       img: '/img/cars-gallery/hawkRS.png',
     },
     {
-      name: 'Buffalo',
+      name: 'Tror T7',
       type: 'Type B',
       img: '/img/cars-gallery/buffalo.png',
     },
     {
-      name: 'Stunt',
+      name: 'Hector Zeus',
       type: 'Type C',
       img: '/img/cars-gallery/stunt.png',
     },

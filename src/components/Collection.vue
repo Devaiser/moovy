@@ -29,7 +29,8 @@
             <img :src="car.img" :alt="`car-${idx + 1}`" />
           </div>
           <div class="car-model">
-            <img :src="car.model" :alt="car.model" />
+            <img :src="car.logo" :alt="car.logo" />
+            <p class="car-model-text">{{ car.model }}</p>
           </div>
         </swiper-slide>
       </swiper>
@@ -65,55 +66,68 @@
   const carsList = [
     {
       img: '/img/cars-collection/car-1.png',
-      model: '/img/cars-collection/logos/MoovyVVSLogo.png',
+      logo: '/img/cars-collection/logos/MoovyVVSLogo.png',
+      model: 'VVS 6',
     },
     {
       img: '/img/cars-collection/car-2.png',
-      model: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+      logo: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+      model: 'Daitana Katsu',
     },
     {
       img: '/img/cars-collection/car-3.png',
-      model: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+      logo: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+      model: 'Daitana Katsu',
     },
     {
       img: '/img/cars-collection/car-4.png',
-      model: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+      logo: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+      model: 'Avatti Lumia',
     },
     {
       img: '/img/cars-collection/car-5.png',
-      model: '/img/cars-collection/logos/MoovyVVSLogo.png',
+      logo: '/img/cars-collection/logos/MoovyVVSLogo.png',
+      model: 'VVS 6',
     },
     {
       img: '/img/cars-collection/car-6.png',
-      model: '/img/cars-collection/logos/MoovyFolkLogo.png',
+      logo: '/img/cars-collection/logos/MoovyFolkLogo.png',
+      model: 'Folk Westen',
     },
     {
       img: '/img/cars-collection/car-7.png',
-      model: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+      logo: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+      model: 'Avatti Lumia',
     },
     {
       img: '/img/cars-collection/MoovyCarAstorX1.png',
-      model: '/img/cars-collection/logos/MoovyAstorLogoX.png',
+      logo: '/img/cars-collection/logos/MoovyAstorLogoX.png',
+      model: 'Astor Wizard',
     },
     {
       img: '/img/cars-collection/MoovyCarDaitanaX2.png',
-      model: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+      logo: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
+      model: 'Daitana X2',
     },
     {
       img: '/img/cars-collection/MoovyCarHectorOffroad.png',
-      model: '/img/cars-collection/logos/MoovyHectorLogo.png',
+      logo: '/img/cars-collection/logos/MoovyHectorLogo.png',
+      model: 'Hector offroad',
     },
     {
       img: '/img/cars-collection/MoovyCarShumanCrystal.png',
-      model: '/img/cars-collection/logos/MoovyShumanLogo.png',
+      logo: '/img/cars-collection/logos/MoovyShumanLogo.png',
+      model: 'Shuman Crystal',
     },
     {
       img: '/img/cars-collection/MoovyCarTrorT7.png',
-      model: '/img/cars-collection/logos/MoovyTrorLogo.png',
+      logo: '/img/cars-collection/logos/MoovyTrorLogo.png',
+      model: 'Tror T7',
     },
     {
       img: '/img/cars-collection/MoovyCarTrorX2.png',
-      model: '/img/cars-collection/logos/MoovyTrorLogo.png',
+      logo: '/img/cars-collection/logos/MoovyTrorLogo.png',
+      model: 'Tror T1',
     },
   ];
 </script>
@@ -173,6 +187,22 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s;
     width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .car-model-text {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1.25;
+    background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
   }
   .slide.swiper-slide-active .car-model {
     opacity: 1;
@@ -214,6 +244,14 @@
       min-height: auto;
       padding-bottom: 40px;
     }
+    .car-model {
+      margin-top: 20px;
+      width: 100px;
+    }
+    .car-model-text {
+      margin-top: 10px;
+      font-size: 24px;
+    }
   }
   @media (max-width: 556px) {
     .slide {
@@ -234,6 +272,14 @@
     }
     .collection-button-next {
       order: 3;
+    }
+    .car-model {
+      margin-top: 20px;
+      width: 70px;
+    }
+    .car-model-text {
+      margin-top: 10px;
+      font-size: 20px;
     }
   }
 </style>

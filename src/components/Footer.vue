@@ -189,5 +189,9 @@
       height: 37px;
       margin-bottom: 30px;
     }
+    .footer__links-column a {
+      font-weight: 300;
+      font-size: 14px;
+    }
   }
 </style>

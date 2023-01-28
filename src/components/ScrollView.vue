@@ -18,7 +18,7 @@
 <script setup>
   import {
     Collection,
-    TabsSection,
+    // TabsSection,
     Faq,
     Containers,
     Licenses,

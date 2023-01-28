@@ -13,13 +13,13 @@
         >
           <IconTelegram />
         </a>
-        <a
+        <!-- <a
           href="https://discord.gg/yqkyNFVSZf"
           target="_blank"
           class="footer__social-item"
         >
           <IconDiscord :width="24" :height="16" />
-        </a>
+        </a> -->
         <a
           href="https://twitter.com/moovy_io"
           target="_blank"
@@ -105,7 +105,7 @@
 </template>
 <script setup>
   import {
-    IconDiscord,
+    // IconDiscord,
     IconMedium,
     IconTelegram,
     IconTwitter,

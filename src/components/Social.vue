@@ -3,12 +3,12 @@
     <div class="social__container">
       <div class="social__content">
         <h2 class="section-title">
-          Moovy is endorsed <br />
+          Moovy <br />
           by bbsoft
         </h2>
         <div class="social__link">
           <a href="https://bbsoft.io/" target="_blank">
-            <img src="/img/bbsoft-logo.svg" alt="bbsoft" />
+            <img src="/img/bbsoft-logo.png" alt="bbsoft" />
           </a>
         </div>
       </div>

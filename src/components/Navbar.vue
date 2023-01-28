@@ -27,13 +27,13 @@
             </li>
           </ul>
           <div class="header__social">
-            <a
+            <!-- <a
               href="https://discord.gg/yqkyNFVSZf"
               target="_blank"
               class="header__social-item"
             >
               <IconDiscord />
-            </a>
+            </a> -->
             <a
               href="https://twitter.com/moovy_io"
               target="_blank"
@@ -49,7 +49,7 @@
 </template>
 <script setup>
   import { ref } from 'vue';
-  import { IconDiscord, IconTwitter } from '@/components/icons';
+  import { IconTwitter } from '@/components/icons';
 
   const isMenuVisible = ref(false);
 
@@ -194,7 +194,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                  -webkit-backdrop-filter: blur(20px); */
+                    -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

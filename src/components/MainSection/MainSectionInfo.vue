@@ -1,7 +1,7 @@
 <template>
   <div class="main-section__left">
     <div class="main-section__logo">
-      <img src="/img/logo-text.svg" alt="logo" />
+      <img src="/img/logo-text-new.png" alt="logo" />
     </div>
     <div class="main-section__store-links">
       <div class="store-link-item-text">coming soon</div>

@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container header__container">
       <div class="header__logo">
-        <a href="/"><img src="/img/logo.svg" alt="logo" /></a>
+        <a href="/"><img src="/img/logo-new.png" alt="logo" /></a>
       </div>
       <div class="menu">
         <div
@@ -194,7 +194,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px); */
+                      -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

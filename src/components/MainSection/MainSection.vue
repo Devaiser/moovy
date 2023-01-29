@@ -44,6 +44,9 @@
   };
 
   watch(isMainSectionVisible, (newValue) => {
+    if (!newValue) {
+      needToCheckScroll.value = false;
+    }
     if (!isTouchScreen.value) {
       emit('isVisible', newValue);
       if (newValue) {
@@ -51,6 +54,7 @@
       } else {
         setTimeout(() => {
           toggleLockScreen(newValue);
+          needToCheckScroll.value = true;
         }, 3000);
       }
     }

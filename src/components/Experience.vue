@@ -30,8 +30,10 @@
               </div>
               <div class="slide-img-text">
                 <p>
-                  Download M<span>oo</span>vy - Get your Driving License - Get
-                  your free Garage - buy you NFT Car - Earn MGAS
+                  Download M<span>oo</span>vy & pave the way to obtaining your
+                  driver's license, receive a garage and the opportunity to
+                  purchase your very own NFT car. And, earn MGAS while you're at
+                  it.
                 </p>
               </div>
             </div>
@@ -61,8 +63,8 @@
               </div>
               <div class="slide-img-text">
                 <p>
-                  Choose NFT Car from your garage - go to Solo Ride or Rally and
-                  start earning $MGAS Token
+                  Transform your garage into a crypto-maker with NFT Cars &
+                  explore Solo Ride, FreeRide or Rally to earn $MGAS Tokens
                 </p>
               </div>
             </div>
@@ -100,8 +102,10 @@
               <div class="content-text-item">
                 <p class="content-title">Vehicle Specifications</p>
                 <p class="content-text">
-                  Every car in the Moovy universe has a number of specs that
-                  affect the earnings, mint, and functionality.
+                  Each car at Moovy boasts a variety of specs that unlocks its
+                  true earning potential, mint value and functionality. Dive
+                  into the Moovy universe to enjoy the full capabilities of you
+                  car.
                 </p>
               </div>
               <div class="content-blocks">
@@ -114,9 +118,8 @@
                     />
                     <p class="main-block__title">Tank Capacity</p>
                     <p class="main-block__text">
-                      The volume of the fuel tank shows how many liters of fuel
-                      the car can store. depends on the class of the vehicle and
-                      its rarity level.
+                      Tank capacity is astonishingly vast, providing remarkable
+                      potential for fuel storage.
                     </p>
                   </div>
                   <div class="main-block" v-else-if="activeItem === 'respect'">
@@ -127,9 +130,10 @@
                     />
                     <p class="main-block__title">Respect</p>
                     <p class="main-block__text">
-                      Depends on the class and rarity of the car. The higher the
-                      respect is, the more $MGAS you earn. It can be increased
-                      by leveling up your car
+                      Respect is a marker of prestige when it comes to vehicles.
+                      Enhancing respect for your car can enhance its overall
+                      performance, providing you with an enriching driving
+                      experience.
                     </p>
                   </div>
                   <div class="main-block" v-else-if="activeItem === 'earning'">
@@ -140,9 +144,9 @@
                     />
                     <p class="main-block__title">Earning Capacity</p>
                     <p class="main-block__text">
-                      The amount of MGAS tokens that the car can earn with
-                      during the ride due to the combination of its
-                      characteristics.
+                      The MGAS tokens earned during the ride are determined by a
+                      stunningly intricate combination of car characteristics.
+                      Enjoy your journey and reward yourself in Tokens.
                     </p>
                   </div>
                   <div
@@ -156,9 +160,10 @@
                     />
                     <p class="main-block__title">Consumption</p>
                     <p class="main-block__text">
-                      Consumption shows how much fuel the car consumes for every
-                      100 kilometers traveled. The numerical value depends on
-                      the class of the car and its rarity level.
+                      Monitoring fuel consumption can provide key insight into
+                      the efficiency of your vehicle. Keeping an eye on how much
+                      gas you're using for every 100km travelled allows you to
+                      maximize its performance and get more out of each journey.
                     </p>
                   </div>
                   <div
@@ -172,9 +177,10 @@
                     />
                     <p class="main-block__title">Efficiency</p>
                     <p class="main-block__text">
-                      a mode that occurs at a certain mileage (each car has its
-                      own). Еhe onset of this mode leads to the need for car
-                      repairs
+                      At a certain mileage, your vehicle may enter an unexpected
+                      and undesirable mode which could result in costly repairs.
+                      Avoid unpleasant surprises by maintaining regular service
+                      checks.
                     </p>
                   </div>
                 </Transition>
@@ -239,8 +245,9 @@
               </div>
               <div class="slide-img-text">
                 <p>
-                  Get a Rally ticket and compete with other players to get
-                  bonuses, special cars and NFT assets
+                  Give yourself the edge with a Rally ticket - unlock bonuses,
+                  drive away in exclusive cars and collect valuable NFT assets -
+                  Take on the competition.
                 </p>
               </div>
             </div>
@@ -266,9 +273,9 @@
               </div>
               <div class="slide-img-text">
                 <p>
-                  We are ready to offer our players a lot of different game
-                  modes that allow you to maximize the potential of each avatar
-                  and each car
+                  Unleash the full potential of your avatars and cars with our
+                  diverse selection of game modes, tailor-made for maximum
+                  player enjoyment.
                 </p>
               </div>
             </div>
@@ -298,8 +305,9 @@
               </div>
               <div class="slide-img-text">
                 <p>
-                  Immerse yourself in the Moovy ecosystem as much as possible
-                  with our Avatar System
+                  Step into the captivating and connected Moovy world through
+                  our state-of-the-art Avatar System. Enhance your digital
+                  journey with a one-of-a-kind, immersive experience
                 </p>
               </div>
             </div>

@@ -26,13 +26,10 @@
       </video>
     </div>
     <p class="section-text">
-      During the registration process you will have to get your driver's
-      license, personalized avatar-character and will be able to create a name
-      for it.
-    </p>
-    <p class="section-text">
-      A Moovy’s maturity, degree of evolution, and (in the future) combat
-      strength are tracked via a system of Talents and Levels.
+      Register with Moovy and create your personalized avatar character,
+      complete with a unique driver's license and name. As you progress through
+      our app's Talents system of Levels, you can unlock potent abilities that
+      will catapult your gaming character into exciting new dimensions.
     </p>
   </div>
 </template>

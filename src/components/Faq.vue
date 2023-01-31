@@ -108,36 +108,31 @@
     {
       title: 'WHAT IS MOOVY?',
       description: [
-        'Moovy is a large-scale GameFi project that will immerse you in a universe of the future, opening up new opportunities for growth within the crypto industry. Participate in rally, complete daily missions with other players while claiming prizes and tokens. With the help of NFTs, players can raise their status and improve their in-game stats by unlocking various new leveling mechanics.',
+        'Moovy GameFi provides an amazing gaming experience. You can engage in exciting rallies and collaborate with other players to complete daily missions, all while earning valuable prizes. Level up by collecting NFTs that unlock the full potential of crypto technology - bringing an immersive new universe closer than ever before. Take part in this innovative world today and let your imagination run wild.',
       ],
     },
     {
       title: 'WHAT DO THE MOOVY NFTs LOOK LIKE?',
       description: [
-        'The Moovy NFT collection includes the coolest hyper-realistic cars, number plates, containers, boxes, garages, land (TBA), gas stations (TBA), service stations (TBA), and more! Buy, develop and earn together with Moovy',
+        'Indulge your automotive ambitions with the Moovy NFT Collection: a robust portfolio that includes cards, plates, and even garages. In addition to these impressive creations - land packs, gas stations & service stations are coming soon. Hook into this unique community of car lovers where you can purchase, grow and receive rewards.',
       ],
     },
     {
       title: 'WHAT MODES ARE THERE IN MOOVY?',
       description: [
-        '	We offer multiple play modes with different opportunities:',
-        '• Solo Ride;',
-        '• Rally;',
-        '• Free (Freeride);',
-        '• Raids (TBA).',
-        'All players can earn, but your earnings depend not only on your driving skills, but also on the class, type and characteristics of the NFT you own.',
+        "Uncover new and thrilling gaming opportunities with Moovy's array of action-packed play modes. From Solo Ride to Rally, Free (Freeride), or upcoming Raids - the NFTs you own can contribute significantly towards your success. Showcase your driving skills on our innovative platform now and take a step closer to unlocking colossal earning potential.",
       ],
     },
     {
       title: 'HOW CAN I GET AN NFT?',
       description: [
-        'In order to become a proud owner of one of Moovy’s NFTs right now, you need to get onto the Whitelist, which we will open in the near future. Then, you will have the opportunity to purchase Moovy’s very first utility-NFTs.',
+        "Take the plunge and secure access to some of Moovy's most coveted utility NFTs. Join our upcoming Whitelist for a limited-time opportunity & become one of the few selected who can purchase these rare digital assets.",
       ],
     },
     {
       title: 'HOW CAN I BUY $MOIL?',
       description: [
-        'You can purchase $MOIL at our IDO. But remember, you’ll need to be on the Whitelist to do so.',
+        "Secure your access to our exclusive IDO and purchase $MOIL. Don't delay & make sure you're on the Whitelist today for a chance to take part in this unprecedented opportunity.",
       ],
     },
   ];

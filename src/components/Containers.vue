@@ -8,13 +8,10 @@
       </video>
     </div>
     <p class="section-text">
-      Minting is the process of creating a new digital car from two existing NFT
-      cars.
-    </p>
-    <p class="section-text">
-      In the Moovy metaverse, you choose two NFT parent cars that may have
-      different levels. You start minting to get a container with a new car
-      after minting.
+      Step into the Moovy metaverse and design your very own unique NFT car. By
+      combining two existing cars with varying levels, you enter a minting
+      process that results in an excellent new digital vehicle of one-of-a-kind
+      value. Forge ahead to create something distinctive - it's waiting for you.
     </p>
   </div>
 </template>

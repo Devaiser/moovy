@@ -32,7 +32,7 @@
             <span>open beta version</span>
           </div>
           <div class="stage-1__element">
-            <span>for Moovy Boxowners only</span>
+            <span>for Moovy closed test drive</span>
           </div>
         </div>
       </div>
@@ -79,17 +79,12 @@
       >
         <div class="stage__date_media"><span>Q1 2023</span></div>
         <img src="/img/border.png" class="stage__border" alt="border" />
-        <img
-          src="/img/media-border.png"
-          class="stage__border_media"
-          alt="border"
-        />
         <div class="stage-2__banner">
           <span>Ready - Steady - Earn</span>
         </div>
         <div class="stage__body-title">
-          This version will include next core mechanics that will be used as
-          base for the next big updates.
+          Get ready to be blown away by the next generation of gaming with our
+          latest release.
         </div>
         <ul class="stage__list">
           <li class="stage__list-item">
@@ -109,8 +104,9 @@
           <li class="stage__list-item">
             <img src="/img/list-point.svg" alt="list-point" />
             <p class="stage__list-text">
-              <span class="stage__list-text_bold">Marathons</span> - Socialfy
-              mechanic that will be used in the future for PvP and Raid Systems.
+              <span class="stage__list-text_bold">Rallies</span> - Special
+              Gaming modes for Group Ridings with specific goals. Includes
+              leaderboard and special benefits for participants
             </p>
           </li>
           <li class="stage__list-item">
@@ -154,17 +150,13 @@
       >
         <div class="stage__date_media"><span>Q2 2023</span></div>
         <img src="/img/border.png" class="stage__border rotate" alt="border" />
-        <img
-          src="/img/media-border.png"
-          class="stage__border_media"
-          alt="border"
-        />
         <div class="stage-3__banner">
           <span>Individualization</span>
         </div>
         <div class="stage__body-title">
-          This version will let our users to upgrade their cars via graphic
-          redactor and will include new Socialfy mechanics - hall of fame.
+          Transform your ride and elevate your status with our latest update!
+          Our groundbreaking graphic editor lets you give your car a unique look
+          that will make heads turn.
         </div>
         <ul class="stage__list">
           <li class="stage__list-item">
@@ -202,18 +194,14 @@
       >
         <div class="stage__date_media"><span>Q3 2023</span></div>
         <img src="/img/border.png" class="stage__border rotate" alt="border" />
-        <img
-          src="/img/media-border.png"
-          class="stage__border_media"
-          alt="border"
-        />
         <div class="stage-4__banner">
           <span>Socializing</span>
         </div>
         <div class="stage__body-title">
-          Rental System launch - Have you ever heard about sharing economy? And
-          in M2E projects? Literally everyone will be able to earn by driving
-          even without owning a car. Just use your BBWallet.
+          Revolutionize the way you travel with our brand new rental system! Say
+          goodbye to the hassle and expense of owning a car - with our
+          innovative sharing economy platform, you can easily earn money on the
+          go, all with the convenience of your BBApp.
         </div>
         <ul class="stage__list">
           <li class="stage__list-item">
@@ -226,8 +214,9 @@
             <img src="/img/list-point.svg" alt="list-point" />
             <p class="stage__list-text">
               <span class="stage__list-text_bold">BBChat Integration</span> - To
-              succeed in Raid System users have to be active in BBChat and unite
-              in teams guilds.
+              achieve dominance in the Raid system, teamwork and communication
+              is key. Utilize BBChat for your advantage by forming powerful
+              guilds with unified goals! Together success awaits.
             </p>
           </li>
         </ul>
@@ -406,9 +395,6 @@
     height: 100%;
     pointer-events: none;
   }
-  .stage__border_media {
-    display: none;
-  }
   .stage__body-title {
     color: #8df6e9;
     font-weight: 700;
@@ -581,15 +567,6 @@
     .stage__border {
       display: none;
     }
-    .stage__border_media {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      display: block;
-    }
     .stage-2__banner,
     .stage-3__banner,
     .stage-4__banner {
@@ -616,29 +593,22 @@
     }
     .stage__date_media {
       position: absolute;
-      bottom: 0;
-      right: 0;
+      top: -110px;
+      right: 50%;
+      transform: translateX(50%);
       color: #fff;
       font-weight: 700;
       font-size: 24px;
       line-height: 1.25;
-      padding: 20px 30px;
+      padding: 10px 30px;
       background: linear-gradient(9.72deg, #000000 1.33%, #1a1c1f 100%);
       box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.75), -7px -7px 30px #1f2021;
-      border-radius: 30px 0px;
+      border-radius: 20px 20px 0px 0px;
       display: block;
     }
     .roadmap__arrow {
       display: none;
     }
-    /* .roadmap__video {
-                                                                                          position: absolute;
-                                                                                          top: 48%;
-                                                                                          left: 0;
-                                                                                          width: 100%;
-                                                                                          height: 50%;
-                                                                                          z-index: 0;
-                                                                                        } */
     .roadmap__video {
       display: none;
     }
@@ -737,6 +707,9 @@
     .roadmap {
       margin-top: 100px;
     }
+    .stage__date_media {
+      top: -90px;
+    }
   }
   @media (max-width: 556px) {
     .roadmap__title-logo {
@@ -761,7 +734,7 @@
     .stage-2__banner,
     .stage-3__banner,
     .stage-4__banner {
-      width: fit-content;
+      min-width: 80vw;
     }
     .stage-1__banner span,
     .stage-2__banner span,
@@ -774,6 +747,7 @@
     .stage-4__body {
       padding: 60px 20px 80px 20px;
       box-sizing: border-box;
+      width: 300px;
     }
     .stage__body-title {
       font-size: 18px;
@@ -792,6 +766,9 @@
     .stage-4 {
       padding: 0 20px;
     }
+    .stage__date_media {
+      top: -80px;
+    }
   }
   @media (max-width: 420px) {
     .roadmap__title-logo {
@@ -803,6 +780,12 @@
     }
     .title__title-text {
       font-size: 90px;
+    }
+    .stage-2__banner,
+    .stage-3__banner,
+    .stage-4__banner {
+      width: 80%;
+      min-width: auto;
     }
     .stage-1__banner {
       width: 120px;

@@ -52,10 +52,9 @@
           >
             <h3 class="coin__title">$moil</h3>
             <p class="coin__text">
-              The $MOIL token performs the functions of a governance token. It
-              was created to manage the ecosystem, users will be able to use
-              $MOIL to make transactions on the BBPlace, upgrade their vehicles,
-              etc.
+              Take control of the Moovy ecosystem with the $MOIL token - the
+              ultimate governance tool. Use it to manage transactions on
+              BBPlace, upgrade your vehicles, and more.
             </p>
             <p class="coin__text">
               The token has a limited supply - 1,000,000,000 $MOIL.

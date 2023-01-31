@@ -129,6 +129,26 @@
       logo: '/img/cars-collection/logos/MoovyTrorLogo.png',
       model: 'Tror T1',
     },
+    {
+      img: '/img/cars-collection/MoovyVesna.png',
+      logo: '/img/cars-collection/logos/MoovyVesnaLogo.png',
+      model: 'Vesna a27',
+    },
+    {
+      img: '/img/cars-collection/MoovyCarXX.png',
+      // logo: '/img/cars-collection/logos/MoovyVesnaLogo.png',
+      model: 'Hodge Model X',
+    },
+    {
+      img: '/img/cars-collection/MoovyHodgeX.png',
+      // logo: '/img/cars-collection/logos/MoovyVesnaLogo.png',
+      model: 'Hodge Model Z',
+    },
+    {
+      img: '/img/cars-collection/MoovyAvaOld.png',
+      logo: '/img/cars-collection/logos/MoovyAvattiLogo.png',
+      model: 'Avatti Lumia',
+    },
   ];
 </script>
 <style scoped>

@@ -584,7 +584,6 @@
       font-size: 14px;
       line-height: 1.25;
       text-align: center;
-      text-transform: lowercase;
       color: #fff;
     }
     .small-blocks {

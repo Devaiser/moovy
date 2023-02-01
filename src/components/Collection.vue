@@ -136,12 +136,12 @@
     },
     {
       img: '/img/cars-collection/MoovyCarXX.png',
-      // logo: '/img/cars-collection/logos/MoovyVesnaLogo.png',
+      logo: '/img/cars-collection/logos/MoovyHodgeLogo.png',
       model: 'Hodge Model X',
     },
     {
       img: '/img/cars-collection/MoovyHodgeX.png',
-      // logo: '/img/cars-collection/logos/MoovyVesnaLogo.png',
+      logo: '/img/cars-collection/logos/MoovyHodgeLogo.png',
       model: 'Hodge Model Z',
     },
     {

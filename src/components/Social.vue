@@ -289,5 +289,18 @@
     .subscribe__button {
       width: 200px;
     }
+    .subscribe {
+      position: relative;
+    }
+    .subscribe::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: -150px;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+      z-index: -1;
+    }
   }
 </style>

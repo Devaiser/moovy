@@ -3,7 +3,7 @@
     <div class="roadmap__video">
       <video preload="metadata" autoplay muted playsinline loop>
         <source type="video/webm" src="/video/roadmap.webm" />
-        <!-- <source type="video/mp4" :src="movVideo" /> -->
+        <source type="video/mp4" :src="movVideo" />
       </video>
     </div>
     <div class="roadmap__title">
@@ -230,7 +230,7 @@
 
   const { width, height } = useWindowSize();
 
-  const movVideo = '/video/roadmapMov.mov';
+  const movVideo = '/video/roadmap.mov';
 </script>
 <style scoped>
   .roadmap {
@@ -253,6 +253,8 @@
     left: 0;
     width: 100%;
     height: 100%;
+    transform: rotate(-90deg);
+    transform-origin: 30% 100%;
     z-index: 0;
   }
   .roadmap__video video {

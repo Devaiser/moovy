@@ -14,7 +14,14 @@
         </div>
         <nav class="menu__body" :class="{ active: isMenuVisible }">
           <ul class="menu__list">
-            <li><router-link class="menu__link" to="/">about</router-link></li>
+            <li>
+              <a
+                class="menu__link"
+                target="_blank"
+                href="https://moovy-io.gitbook.io/moovy.io-whitepaper/"
+                >about</a
+              >
+            </li>
             <li>
               <a href="/pdf/moovyWP.pdf" target="_blank" class="menu__link"
                 >whitepaper</a
@@ -194,7 +201,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                      -webkit-backdrop-filter: blur(20px); */
+                              -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

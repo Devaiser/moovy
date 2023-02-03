@@ -97,7 +97,9 @@
         </div>
       </div>
     </div>
-    <router-link class="footer__link" to="/">User Agreement</router-link>
+    <a class="footer__link" target="_blank" href="/agreements"
+      >User Agreement</a
+    >
     <p class="footer__text">
       Copyright © 2022 MOOVY GEM FZE. All rights reserved
     </p>

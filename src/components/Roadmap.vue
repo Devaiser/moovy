@@ -6,6 +6,12 @@
         <source type="video/mp4" :src="movVideo" />
       </video>
     </div>
+    <!-- <div class="roadmap__video-media">
+      <video preload="metadata" autoplay muted playsinline loop>
+        <source type="video/webm" src="/video/roadmap-media.webm" />
+        <source type="video/mp4" :src="movVideoMedia" />
+      </video>
+    </div> -->
     <div class="roadmap__title">
       <div class="roadmap__title-logo">
         <img src="/img/logo.svg" alt="moovy-logo" />
@@ -231,11 +237,13 @@
   const { width, height } = useWindowSize();
 
   const movVideo = '/video/roadmap.mov';
+  // const movVideoMedia = '/video/roadmap-media.mov';
 </script>
 <style scoped>
   .roadmap {
     margin-top: 230px;
     position: relative;
+    padding-top: 100px;
   }
   .roadmap::after {
     content: '';
@@ -250,11 +258,10 @@
   .roadmap__video {
     position: absolute;
     top: 0;
+    /* margin-top: -50px; */
     left: 0;
     width: 100%;
     height: 100%;
-    transform: rotate(-90deg);
-    transform-origin: 30% 100%;
     z-index: 0;
   }
   .roadmap__video video {

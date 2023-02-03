@@ -68,7 +68,11 @@
                 </p>
               </div>
             </div>
-            <a href="/" target="_blank" class="slide-img-link">
+            <a
+              href="https://moovy-io.gitbook.io/moovy.io-whitepaper/"
+              target="_blank"
+              class="slide-img-link"
+            >
               <span>Learn more about Moovy</span>
             </a>
           </div>
@@ -223,7 +227,11 @@
                 </div>
               </div>
             </div>
-            <a href="/" target="_blank" class="slide-img-link mt-20">
+            <a
+              href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars"
+              target="_blank"
+              class="slide-img-link mt-20"
+            >
               <span>Learn More about Cars</span>
             </a>
           </div>
@@ -251,8 +259,12 @@
                 </p>
               </div>
             </div>
-            <a href="/" target="_blank" class="slide-img-link">
-              <span>Tell me who you are</span>
+            <a
+              href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/game-modes"
+              target="_blank"
+              class="slide-img-link"
+            >
+              <span>How to win?</span>
             </a>
           </div>
         </swiper-slide>
@@ -311,7 +323,11 @@
                 </p>
               </div>
             </div>
-            <a href="/" target="_blank" class="slide-img-link">
+            <a
+              href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars"
+              target="_blank"
+              class="slide-img-link"
+            >
               <span>Tell me who you are</span>
             </a>
           </div>
@@ -366,6 +382,7 @@
   }
   .slide-img {
     position: relative;
+    width: 100%;
   }
   .slide-img img {
     width: 100%;

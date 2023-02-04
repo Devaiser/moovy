@@ -11,6 +11,7 @@
     <Containers />
     <Licenses />
     <Roadmap />
+    <TeamPage />
     <Social />
     <Footer />
   </div>
@@ -27,6 +28,7 @@
     Roadmap,
     Secured,
     Experience,
+    TeamPage,
   } from '@/components';
   import { MainSectionGallery } from '@/components/MainSection';
   import { ref } from 'vue';

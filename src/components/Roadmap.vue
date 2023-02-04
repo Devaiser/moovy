@@ -417,7 +417,7 @@
     align-items: center;
   }
   .stage__list-item:not(:last-child) {
-    margin-bottom: 39px;
+    margin-bottom: 20px;
   }
   .stage__list-item img {
     width: 30px;
@@ -446,7 +446,7 @@
   .stage-2__banner {
     position: absolute;
     top: 40%;
-    left: -260px;
+    left: -210px;
     /* transform: translateY(50%); */
     padding: 33px 40px;
     background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
@@ -458,7 +458,7 @@
   .stage-4__banner span {
     color: #000;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 50px;
     font-family: 'Bebas Neue', cursive;
     white-space: nowrap;
   }
@@ -472,7 +472,8 @@
   .stage-3__body {
     width: 24.31vw;
     position: relative;
-    padding: 83px 8vw 116px 11.2vw;
+    /* padding: 83px 8vw 116px 11.2vw; */
+    padding: 43px 8vw 70px 11.2vw;
   }
   .stage-3__date span,
   .stage-4__date span {
@@ -506,7 +507,7 @@
   .stage-3__banner {
     position: absolute;
     top: 36%;
-    right: -200px;
+    right: -170px;
     padding: 33px 40px;
     background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
     border-radius: 54px;
@@ -521,7 +522,7 @@
   .stage-4__body {
     width: 28.23vw;
     position: relative;
-    padding: 77px 11vw 89px 11.63vw;
+    padding: 43px 11vw 70px 11.63vw;
   }
   .stage-4__banner {
     position: absolute;

@@ -4,12 +4,17 @@
     v-if="isScrollViewVisible"
     :class="{ visible: !isMainSectionVisible }"
   />
+  <Preloader :isVisible="isPreloaderVisible" />
 </template>
 
 <script setup>
   import { ref, onMounted } from 'vue';
   import { MainSection } from '@/components/MainSection';
-  import { ScrollView } from '@/components';
+  import { ScrollView, Preloader } from '@/components';
+  import { useScrollLock } from '@vueuse/core';
+
+  const el = ref(document.body);
+  const isLocked = useScrollLock(el);
 
   const isTouchScreen = ref(null);
 
@@ -29,7 +34,14 @@
     isMainSectionVisible.value = value;
   };
 
+  const isPreloaderVisible = ref(true);
+
   onMounted(() => {
+    isLocked.value = true;
+    window.addEventListener('load', () => {
+      isPreloaderVisible.value = false;
+      isLocked.value = false;
+    });
     console.log(isTouchScreen.value);
 
     if (isTouchScreen.value) {

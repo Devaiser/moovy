@@ -13,3 +13,7 @@ export { default as Roadmap } from './Roadmap.vue';
 export { default as Secured } from './Secured.vue';
 export { default as Experience } from './Experience.vue';
 export { default as SubscribeModal } from './SubscribeModal.vue';
+export { default as Preloader } from './Preloader.vue';
+export { default as TeamPattern } from './TeamPattern.vue';
+export { default as TeamPage } from './TeamPage.vue';
+export { default as TeamAbout } from './TeamAbout.vue';

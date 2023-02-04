@@ -12,3 +12,4 @@ export { default as Social } from './Social.vue';
 export { default as Roadmap } from './Roadmap.vue';
 export { default as Secured } from './Secured.vue';
 export { default as Experience } from './Experience.vue';
+export { default as SubscribeModal } from './SubscribeModal.vue';

@@ -6,12 +6,13 @@
         <source type="video/mp4" :src="movVideo" />
       </video>
     </div>
-    <!-- <div class="roadmap__video-media">
+    <div class="roadmap__video-media">
       <video preload="metadata" autoplay muted playsinline loop>
         <source type="video/webm" src="/video/roadmap-media.webm" />
         <source type="video/mp4" :src="movVideoMedia" />
       </video>
-    </div> -->
+      <div class="gradient"></div>
+    </div>
     <div class="roadmap__title">
       <div class="roadmap__title-logo">
         <img src="/img/logo.svg" alt="moovy-logo" />
@@ -132,9 +133,6 @@
         </ul>
       </div>
     </div>
-    <div class="roadmap__arrow_media">
-      <img src="/img/arrow.png" alt="arrow" />
-    </div>
     <div class="stage stage-3">
       <div class="stage-3__date"><span>Q2 2023</span></div>
       <div
@@ -175,9 +173,6 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="roadmap__arrow_media">
-      <img src="/img/arrow.png" alt="arrow" />
     </div>
     <div class="stage stage-4">
       <div class="stage-4__date"><span>Q3 2023</span></div>
@@ -237,7 +232,7 @@
   const { width, height } = useWindowSize();
 
   const movVideo = '/video/roadmap.mov';
-  // const movVideoMedia = '/video/roadmap-media.mov';
+  const movVideoMedia = '/video/roadmap-media.mov';
 </script>
 <style scoped>
   .roadmap {
@@ -275,6 +270,9 @@
     width: fit-content;
     display: flex;
     position: relative;
+  }
+  .roadmap__video-media {
+    display: none;
   }
   .roadmap__title-logo {
     transform: rotate(90deg);
@@ -534,9 +532,7 @@
     border-radius: 54px;
     transform: rotate(90deg);
   }
-  .roadmap__arrow_media {
-    display: none;
-  }
+
   .stage__date_media {
     display: none;
   }
@@ -572,6 +568,15 @@
       padding: 0 40px;
       overflow: visible !important;
       margin-top: 150px;
+    }
+    .stage-2 {
+      margin-top: 300px;
+    }
+    .stage-3 {
+      margin-top: 500px;
+    }
+    .stage-4 {
+      margin-top: 250px;
     }
     .stage__border {
       display: none;
@@ -621,16 +626,72 @@
     .roadmap__video {
       display: none;
     }
-    .roadmap__arrow_media {
-      display: flex;
-      justify-content: center;
+    .roadmap__video-media {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 83%;
+      /* height: auto; */
+      z-index: 0;
+      margin-top: 350px;
     }
-    .roadmap__arrow_media img {
-      transform: rotate(90deg);
+    .roadmap__video-media::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+    }
+    .roadmap__video-media::before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: -200px;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+      z-index: 3;
+    }
+    .roadmap__video-media .gradient {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .roadmap__video-media .gradient:after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    }
+    .roadmap__video-media .gradient:before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: -200px;
+      left: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+      z-index: 3;
+    }
+    .roadmap__video-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .roadmap::after {
       content: '';
       width: 100%;
@@ -677,6 +738,11 @@
       z-index: 4;
       text-align: center;
     }
+    .stage-3__banner,
+    .stage-4__banner {
+      width: 50vw;
+      min-width: fit-content;
+    }
     .stage-1__banner span,
     .stage-2__banner span,
     .stage-3__banner span,
@@ -692,6 +758,10 @@
       padding: 80px 40px 100px 40px;
       box-sizing: border-box;
     }
+    .stage-2__body,
+    .stage-4__body {
+      padding: 80px 0px 50px 90px;
+    }
     .stage__list-item:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -701,8 +771,19 @@
       margin-bottom: 20px;
       margin-top: 80px;
     }
+
+    .roadmap__video-media {
+      height: 80%;
+      /* height: 78%; */
+    }
     .stage-2 {
-      margin-top: 120px;
+      margin-top: 300px;
+    }
+    .stage-3 {
+      margin-top: 500px;
+    }
+    .stage-4 {
+      margin-top: 180px;
     }
     .stage__body-title {
       font-size: 20px;
@@ -721,6 +802,12 @@
     }
   }
   @media (max-width: 556px) {
+    .roadmap__video-media {
+      width: 100%;
+      /* height: 60%; */
+      height: auto;
+      margin-top: 300px;
+    }
     .roadmap__title-logo {
       transform: rotate(90deg) scale(0.6);
       margin-right: -20px;
@@ -743,7 +830,7 @@
     .stage-2__banner,
     .stage-3__banner,
     .stage-4__banner {
-      min-width: 80vw;
+      min-width: 50vw;
     }
     .stage-1__banner span,
     .stage-2__banner span,
@@ -756,7 +843,11 @@
     .stage-4__body {
       padding: 60px 20px 80px 20px;
       box-sizing: border-box;
-      width: 300px;
+      max-width: 400px;
+    }
+    .stage-2__body,
+    .stage-4__body {
+      padding: 60px 0px 80px 30px;
     }
     .stage__body-title {
       font-size: 18px;
@@ -775,8 +866,28 @@
     .stage-4 {
       padding: 0 20px;
     }
+    .roadmap__video-media {
+      height: 77%;
+    }
+    .stage-2 {
+      margin-top: 200px;
+    }
+    .stage-3 {
+      margin-top: 190px;
+    }
+    .stage-4 {
+      margin-top: 150px;
+    }
+    .stage__list {
+      margin-top: 20px;
+    }
     .stage__date_media {
       top: -80px;
+    }
+    .stage-3__banner,
+    .stage-4__banner {
+      width: 50vw;
+      min-width: fit-content;
     }
   }
   @media (max-width: 420px) {
@@ -790,11 +901,19 @@
     .title__title-text {
       font-size: 90px;
     }
+    .roadmap__video-media {
+      height: 75%;
+    }
     .stage-2__banner,
     .stage-3__banner,
     .stage-4__banner {
       width: 80%;
       min-width: auto;
+    }
+    .stage-3__banner,
+    .stage-4__banner {
+      width: 50vw;
+      min-width: fit-content;
     }
     .stage-1__banner {
       width: 120px;

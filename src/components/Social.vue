@@ -27,7 +27,7 @@
       </video>
       <div class="gradient"></div>
     </div>
-    <div class="subscribe">
+    <div class="subscribe" @click="setPopupVisibility(true)">
       <p class="subscribe__text">Subscribe to our newsteller</p>
       <div class="subscribe__button">
         <span>subscribe</span>
@@ -37,9 +37,23 @@
       </button> -->
     </div>
   </div>
+  <Teleport to="body">
+    <SubscribeModal
+      :isModalVisible="isModalVisible"
+      @close="setPopupVisibility(false)"
+    />
+  </Teleport>
 </template>
 <script setup>
+  import { ref } from 'vue';
+  import { SubscribeModal } from '@/components';
+
   const movVideo = '/video/bbsoftMov.mov';
+  const isModalVisible = ref(false);
+
+  const setPopupVisibility = (value) => {
+    isModalVisible.value = value;
+  };
 </script>
 <style scoped>
   .social {

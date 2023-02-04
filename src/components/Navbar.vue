@@ -28,9 +28,10 @@
               >
             </li>
             <li>
-              <a class="menu__link" target="_blank" href="https://t.me/moovy_io"
+              <!-- <a class="menu__link" target="_blank" href="https://t.me/moovy_io"
                 >wallet connect</a
-              >
+              > -->
+              <w3m-core-button></w3m-core-button>
             </li>
           </ul>
           <div class="header__social">
@@ -55,8 +56,42 @@
   </header>
 </template>
 <script setup>
-  import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
   import { IconTwitter } from '@/components/icons';
+  import { configureChains, createClient } from '@wagmi/core';
+
+  import { arbitrum, mainnet, polygon } from '@wagmi/core/chains';
+
+  import { Web3Modal } from '@web3modal/html';
+
+  import {
+    EthereumClient,
+    modalConnectors,
+    walletConnectProvider,
+  } from '@web3modal/ethereum';
+
+  const PROJECT_ID = import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID;
+
+  const chains = [arbitrum, mainnet, polygon];
+
+  // Wagmi Core Client
+  const { provider } = configureChains(chains, [
+    walletConnectProvider({ projectId: PROJECT_ID }),
+  ]);
+  const wagmiClient = createClient({
+    autoConnect: true,
+    connectors: modalConnectors({
+      projectId: PROJECT_ID,
+      version: '2',
+      appName: 'web3Modal',
+      chains,
+    }),
+    provider,
+  });
+
+  // Web3Modal and Ethereum Client
+  const ethereumClient = new EthereumClient(wagmiClient, chains);
+  const web3modal = new Web3Modal({ projectId: PROJECT_ID }, ethereumClient);
 
   const isMenuVisible = ref(false);
 
@@ -201,7 +236,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                              -webkit-backdrop-filter: blur(20px); */
+                                                                                                    -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

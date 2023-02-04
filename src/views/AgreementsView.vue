@@ -8,8 +8,12 @@
           </svg>
         </a> -->
       </div>
-      <div class="menu-fix">
-        <div class="catalog-filter-close">
+      <div
+        class="menu-fix"
+        :class="{ for__filter__active: isMenuVisible }"
+        ref="target"
+      >
+        <div class="catalog-filter-close" @click="isMenuVisible = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -123,7 +127,7 @@
       </div>
       <div class="agreement__cnt">
         <div class="container">
-          <div class="close-filter-in-mob">
+          <div class="close-filter-in-mob" @click="toggleMenu">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
               <path d="M28,9H11a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"></path>
               <path d="M7,9H4A1,1,0,0,1,4,7H7A1,1,0,0,1,7,9Z"></path>
@@ -297,6 +301,7 @@
                     messages via the contact form and other actions aimed at
                     using the functionality of the Services.
                   </p>
+                  imply
                   <p>
                     The use of the Services after a new version of the User
                     Agreement comes into force shall imply that the User agrees
@@ -2103,12 +2108,25 @@
   </div>
 </template>
 <script setup>
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
+  import { onClickOutside } from '@vueuse/core';
+
+  const target = ref(null);
+
+  onClickOutside(target, () => (isMenuVisible.value = false));
 
   const activeSection = ref('user-agree');
 
+  watch(activeSection, () => {
+    isMenuVisible.value = false;
+  });
+
   const setActiveSection = (value) => {
     activeSection.value = value;
+  };
+  const isMenuVisible = ref(false);
+  const toggleMenu = () => {
+    isMenuVisible.value = !isMenuVisible.value;
   };
 </script>
 <style scoped>

@@ -32,6 +32,8 @@
   .main-section__logo {
     width: 42vw;
     margin-bottom: 80px;
+    pointer-events: none;
+    user-select: none;
   }
   .main-section__logo img {
     width: 100%;

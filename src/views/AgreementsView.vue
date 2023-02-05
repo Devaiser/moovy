@@ -7,6 +7,9 @@
             <use xlink:href="/img/sprite.svg#icon-logo"></use>
           </svg>
         </a> -->
+        <a href="/" class="logo">
+          <img src="/img/logo-new.png" alt="logo" />
+        </a>
       </div>
       <div
         class="menu-fix"
@@ -2130,6 +2133,16 @@
   };
 </script>
 <style scoped>
+  .logo {
+    width: 148px;
+    display: block;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   .fon-agreement {
     background: #ffffff !important;
     width: 100%;
@@ -2144,6 +2157,8 @@
     padding: 15px 15px;
     z-index: 999;
     height: 63px;
+    display: flex;
+    align-items: center;
   }
 
   .menu-fix {

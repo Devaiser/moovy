@@ -231,8 +231,8 @@
 
   const { width, height } = useWindowSize();
 
-  const movVideo = '/video/roadmap.mov';
-  const movVideoMedia = '/video/roadmap-media.mov';
+  const movVideo = '/video/roadmap.mp4';
+  const movVideoMedia = '/video/roadmap-media.mp4';
 </script>
 <style scoped>
   .roadmap {
@@ -258,6 +258,24 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+  }
+  .roadmap__video::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  }
+  .roadmap__video::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
   }
   .roadmap__video video {
     width: 100%;

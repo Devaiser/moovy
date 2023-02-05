@@ -23,7 +23,10 @@
               >
             </li>
             <li>
-              <a href="/pdf/moovyWP.pdf" target="_blank" class="menu__link"
+              <a
+                href="https://moovy-io.gitbook.io/moovy.io-whitepaper/"
+                target="_blank"
+                class="menu__link"
                 >whitepaper</a
               >
             </li>
@@ -35,19 +38,26 @@
             </li>
           </ul>
           <div class="header__social">
-            <!-- <a
-              href="https://discord.gg/yqkyNFVSZf"
+            <a
+              href="https://t.me/moovyglobal"
               target="_blank"
               class="header__social-item"
             >
-              <IconDiscord />
-            </a> -->
+              <IconTelegram :width="33" :height="25" />
+            </a>
             <a
               href="https://twitter.com/moovy_io"
               target="_blank"
               class="header__social-item"
             >
               <IconTwitter />
+            </a>
+            <a
+              href="https://instagram.com/moovy_io"
+              target="_blank"
+              class="header__social-item"
+            >
+              <IconInstagram :width="30" :height="30" />
             </a>
           </div>
         </nav>
@@ -57,7 +67,7 @@
 </template>
 <script setup>
   import { onMounted, ref } from 'vue';
-  import { IconTwitter } from '@/components/icons';
+  import { IconTwitter, IconTelegram, IconInstagram } from '@/components/icons';
   import { configureChains, createClient } from '@wagmi/core';
 
   import { arbitrum, mainnet, polygon } from '@wagmi/core/chains';
@@ -236,7 +246,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                                                                                                    -webkit-backdrop-filter: blur(20px); */
+                                                                                                                                    -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

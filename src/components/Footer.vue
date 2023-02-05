@@ -28,6 +28,13 @@
           <IconTwitter :width="23" :height="18" />
         </a>
         <a
+          href="https://instagram.com/moovy_io"
+          target="_blank"
+          class="footer__social-item"
+        >
+          <IconInstagram :width="23" :height="23" />
+        </a>
+        <a
           href="https://moovy-io.medium.com/"
           target="_blank"
           class="footer__social-item"
@@ -97,8 +104,8 @@
         </div>
       </div>
     </div>
-    <a class="footer__link" target="_blank" href="/agreements"
-      >User Agreement</a
+    <router-link class="footer__link" to="/agreements"
+      >User Agreement</router-link
     >
     <p class="footer__text">
       Copyright © 2022 MOOVY GEM FZE. All rights reserved
@@ -111,6 +118,7 @@
     IconMedium,
     IconTelegram,
     IconTwitter,
+    IconInstagram,
   } from '@/components/icons';
 </script>
 <style scoped>
@@ -120,6 +128,8 @@
     justify-content: center;
     background: #000;
     align-items: center;
+    position: relative;
+    top: -2px;
     padding: 45px 20px 60px 20px;
   }
   .footer__logo {

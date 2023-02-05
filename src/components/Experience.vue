@@ -19,7 +19,14 @@
               <span>How to Moovy?</span>
             </div>
             <div class="slide-img">
-              <img src="/img/tabs/how-to-moovy.jpg" alt="how-to-moovy" />
+              <img
+                alt="how-to-moovy"
+                v-lazy="{
+                  src: '/img/tabs/how-to-moovy.jpg',
+                  loading: '/img/tabs/blured/how-to-moovy.jpg',
+                }"
+              />
+
               <div class="pagination">
                 <span class="active"></span>
                 <span></span>
@@ -52,7 +59,14 @@
               <span>Drive2Earn</span>
             </div>
             <div class="slide-img">
-              <img src="/img/tabs/drive2earn.jpg" alt="drive2earn" />
+              <img
+                alt="drive2earn"
+                v-lazy="{
+                  src: '/img/tabs/drive2earn.jpg',
+                  loading: '/img/tabs/blured/drive2earn.jpg',
+                }"
+              />
+
               <div class="pagination">
                 <span></span>
                 <span class="active"></span>
@@ -84,13 +98,20 @@
             </div>
             <div class="slide-img">
               <img
-                src="/img/tabs/car-metaverse.jpg"
                 alt="car-metaverse"
                 class="desk"
+                v-lazy="{
+                  src: '/img/tabs/car-metaverse.jpg',
+                  loading: '/img/tabs/blured/car-metaverse.jpg',
+                }"
               />
+
               <img
-                src="/img/tabs/car-metaverse-clear.jpg"
                 alt="car-metaverse"
+                v-lazy="{
+                  src: '/img/car-metaverse-clear.jpg',
+                  loading: '/img/tabs/blured/car-metaverse-clear.jpg',
+                }"
                 class="media"
               />
               <div class="pagination">
@@ -132,6 +153,7 @@
                       alt="respect"
                       class="main-block__icon"
                     />
+
                     <p class="main-block__title">Respect</p>
                     <p class="main-block__text">
                       Respect is a marker of prestige when it comes to vehicles.
@@ -146,6 +168,7 @@
                       alt="earning"
                       class="main-block__icon"
                     />
+
                     <p class="main-block__title">Earning Capacity</p>
                     <p class="main-block__text">
                       The MGAS tokens earned during the ride are determined by a
@@ -162,6 +185,7 @@
                       alt="consumption"
                       class="main-block__icon"
                     />
+
                     <p class="main-block__title">Consumption</p>
                     <p class="main-block__text">
                       Monitoring fuel consumption can provide key insight into
@@ -179,6 +203,7 @@
                       alt="efficiency"
                       class="main-block__icon"
                     />
+
                     <p class="main-block__title">Efficiency</p>
                     <p class="main-block__text">
                       At a certain mileage, your vehicle may enter an unexpected
@@ -242,7 +267,14 @@
               <span>Compete</span>
             </div>
             <div class="slide-img">
-              <img src="/img/tabs/compete.jpg" alt="compete" />
+              <img
+                alt="compete"
+                v-lazy="{
+                  src: '/img/tabs/compete.jpg',
+                  loading: '/img/tabs/blured/compete.jpg',
+                }"
+              />
+
               <div class="pagination">
                 <span></span>
                 <span></span>
@@ -274,7 +306,14 @@
               <span>GameFi</span>
             </div>
             <div class="slide-img">
-              <img src="/img/tabs/gamefi.jpg" alt="gamefi" />
+              <img
+                alt="gamefi"
+                v-lazy="{
+                  src: '/img/tabs/gamefi.jpg',
+                  loading: '/img/tabs/blured/gamefi.jpg',
+                }"
+              />
+
               <div class="pagination">
                 <span></span>
                 <span></span>
@@ -306,7 +345,14 @@
               <span>Avatar System</span>
             </div>
             <div class="slide-img">
-              <img src="/img/tabs/avatar-system.jpg" alt="avatar-system" />
+              <img
+                alt="avatar-system"
+                v-lazy="{
+                  src: '/img/tabs/avatar-system.jpg',
+                  loading: '/img/tabs/blured/avatar-system.jpg',
+                }"
+              />
+
               <div class="pagination">
                 <span></span>
                 <span></span>
@@ -345,6 +391,8 @@
   import { ref } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { Navigation } from 'swiper';
+
+  import 'swiper/css/lazy';
 
   const navigation = ref({
     enabled: true,

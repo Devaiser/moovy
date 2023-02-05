@@ -2,14 +2,12 @@
   <div class="preloader" :class="{ active: isVisible }">
     <div class="loader">
       <video preload="metadata" autoplay muted playsinline loop>
-        <source type="video/webm" src="/video/loader.webm" />
-        <source type="video/mp4" :src="movVideo" />
+        <source type="video/mp4" src="/video/loader.mp4" />
       </video>
     </div>
   </div>
 </template>
 <script setup>
-  const movVideo = '/video/loadr.mov';
   const props = defineProps({
     isVisible: {
       type: Boolean,
@@ -25,7 +23,7 @@
     width: 100%;
     height: 100%;
     z-index: 20;
-    background: #62def1;
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;

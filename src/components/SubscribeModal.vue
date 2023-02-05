@@ -38,7 +38,6 @@
 <script setup>
   import { ref, watch } from 'vue';
   import { onClickOutside } from '@vueuse/core';
-  import { useScrollLock } from '@vueuse/core';
 
   const target = ref(null);
 
@@ -52,13 +51,12 @@
     },
   });
 
-  const el = ref(document.body);
-  const isLocked = useScrollLock(el);
-
   watch(
     () => props.isModalVisible,
     (newValue) => {
-      newValue ? (isLocked.value = true) : (isLocked.value = false);
+      newValue
+        ? document.body.classList.add('lock')
+        : document.body.classList.remove('lock');
     }
   );
 

@@ -22,14 +22,13 @@
         playsinline
         class="bg-video"
       >
-        <source type="video/webm" src="/video/bbsoft.webm" />
-        <source type="video/mp4" :src="movVideo" />
+        <source type="video/mp4" src="/video/social.mp4" />
       </video>
       <div class="gradient"></div>
     </div>
-    <div class="subscribe" @click="setPopupVisibility(true)">
+    <div class="subscribe">
       <p class="subscribe__text">Subscribe to our newsteller</p>
-      <div class="subscribe__button">
+      <div class="subscribe__button" @click="setPopupVisibility(true)">
         <span>subscribe</span>
       </div>
       <!-- <button class="subscribe__button">
@@ -61,16 +60,18 @@
     min-height: 100vh;
     position: relative;
     overflow: hidden;
-    z-index: 2;
+    z-index: 6;
+    top: -2px;
   }
   .social::after {
     content: '';
     width: 100%;
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 0;
     height: 200px;
     background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+    z-index: 3;
   }
   .social::before {
     content: '';
@@ -79,13 +80,16 @@
     top: -200px;
     left: 0;
     height: 200px;
-    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    /* background: linear-gradient(to top, #000, rgba(0, 0, 0, 0)); */
+    background: none;
     z-index: 3;
   }
   .social__container {
     margin: 0 auto;
     max-width: 80%;
     padding: 50px 40px;
+    position: relative;
+    z-index: 4;
   }
   .social__content {
     display: flex;
@@ -212,7 +216,7 @@
       top: 0;
       left: 0;
       height: 200px;
-      background: none;
+      background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
     }
     .social::before {
       content: '';
@@ -221,7 +225,7 @@
       top: -200px;
       left: 0;
       height: 200px;
-      background: none;
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
   }
   @media (max-width: 556px) {
@@ -291,6 +295,9 @@
     }
   }
   @media (max-width: 556px) {
+    .social {
+      background: #000;
+    }
     .subscribe {
       margin-top: -100px;
       z-index: 2;

@@ -58,23 +58,23 @@
 
   const videoData = [
     {
-      src: '/video/faq/faq-video-1-in.webm',
-      srcMov: '/video/faq/faq-video-1-in.mov',
+      // src: '/video/faq/faq-video-1-in.webm',
+      srcMov: '/video/faq/faq-video-1-in.mp4',
       title: 'video-1-in',
     },
     {
-      src: '/video/faq/faq-video-1-out.webm',
-      srcMov: '/video/faq/faq-video-1-out.mov',
+      // src: '/video/faq/faq-video-1-out.webm',
+      srcMov: '/video/faq/faq-video-1-out.mp4',
       title: 'video-1-out',
     },
     {
-      src: '/video/faq/faq-video-2-in.webm',
-      srcMov: '/video/faq/faq-video-2-in.mov',
+      // src: '/video/faq/faq-video-2-in.webm',
+      srcMov: '/video/faq/faq-video-2-in.mp4',
       title: 'video-2-in',
     },
     {
-      src: '/video/faq/faq-video-3-in.webm',
-      srcMov: '/video/faq/faq-video-3-in.mov',
+      // src: '/video/faq/faq-video-3-in.webm',
+      srcMov: '/video/faq/faq-video-3-in.mp4',
       title: 'video-3-in',
     },
     {
@@ -83,23 +83,23 @@
       title: 'video-3-out',
     },
     {
-      src: '/video/faq/faq-video-4-in.webm',
-      srcMov: '/video/faq/faq-video-4-in.mov',
+      // src: '/video/faq/faq-video-4-in.webm',
+      srcMov: '/video/faq/faq-video-4-in.mp4',
       title: 'video-4-in',
     },
     {
-      src: '/video/faq/faq-video-4-out.webm',
-      srcMov: '/video/faq/faq-video-4-out.mov',
+      // src: '/video/faq/faq-video-4-out.webm',
+      srcMov: '/video/faq/faq-video-4-out.mp4',
       title: 'video-4-out',
     },
     {
-      src: '/video/faq/faq-video-5-in.webm',
-      srcMov: '/video/faq/faq-video-5-in.mov',
+      // src: '/video/faq/faq-video-5-in.webm',
+      srcMov: '/video/faq/faq-video-5-in.mp4',
       title: 'video-5-in',
     },
     {
-      src: '/video/faq/faq-video-5-out.webm',
-      srcMov: '/video/faq/faq-video-5-out.mov',
+      // src: '/video/faq/faq-video-5-out.webm',
+      srcMov: '/video/faq/faq-video-5-out.mp4',
       title: 'video-5-out',
     },
   ];
@@ -219,14 +219,39 @@
 <style scoped>
   .faq {
     margin-top: 140px;
-    margin-left: 8vw;
-    overflow: hidden;
+    padding-left: 8vw;
+    /* overflow-x: hidden; */
+    background: #000;
+    position: relative;
+  }
+  .faq::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+    z-index: 5;
+  }
+  .faq::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: -200px;
+    left: 0;
+    height: 200px;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    z-index: 5;
   }
   .faq__accordion {
     margin-top: 60px;
+    position: relative;
+    z-index: 1;
   }
   .faq__wrapper {
     display: flex;
+    overflow: hidden;
   }
   .faq__item {
     width: 32vw;
@@ -310,6 +335,8 @@
     height: 900px;
     margin: 20px 80px 0 0;
     margin-top: -100px;
+    z-index: 0;
+    position: relative;
   }
   .faq__img {
     width: 100%;
@@ -333,7 +360,6 @@
   .video {
     display: none;
     position: relative;
-    z-index: -1;
   }
   .video.active {
     display: block;
@@ -369,7 +395,6 @@
       width: 100%;
       height: 100%;
       position: relative;
-      z-index: -1;
     }
   }
   @media (max-width: 556px) {

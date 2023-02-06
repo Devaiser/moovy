@@ -6,7 +6,7 @@
       @click="onClick('Boris')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="985"
@@ -31,7 +31,7 @@
       @click="onClick('Egor')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="1590"
@@ -57,7 +57,7 @@
       v-if="isKirillVisible"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="1640"
@@ -82,7 +82,7 @@
       @click="onClick('Dima')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="1905"
@@ -107,7 +107,7 @@
       @click="onClick('Max')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="1424"
@@ -132,7 +132,7 @@
       @click="onClick('Victor')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="397"
@@ -157,7 +157,7 @@
       @click="onClick('Olya')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="740"
@@ -182,7 +182,7 @@
       @click="onClick('Roman')"
     >
       <foreignObject
-        v-if="!isTouchScreen"
+        v-if="!isTouchScreen && browserName !== 'safari'"
         width="250"
         height="250"
         x="1170"
@@ -208,7 +208,7 @@
   import { TeamAbout } from '@/components';
   import { useWindowSize } from '@vueuse/core';
 
-  const emit = defineEmits(['hover', 'safari']);
+  const emit = defineEmits(['hover', 'safari', 'click']);
 
   const { width, height } = useWindowSize();
 
@@ -251,15 +251,11 @@
   const isKirillVisible = ref(true);
 
   const onClick = (item) => {
-    if (isTouchScreen.value) {
+    if (isTouchScreen.value || browserName.value === 'safari') {
+      // тач ИЛИ сафари
       activeItem.value = item;
-      emit('hover', item);
-      // if (browserName.value === 'safari') {
-      //   emit('safari');
-      // }
-      if (isTouchScreen.value) {
-        emit('safari');
-      }
+      emit('click', item);
+      emit('safari');
     }
   };
 
@@ -268,17 +264,21 @@
     activeItem.value === 'Egor'
       ? (isKirillVisible.value = false)
       : (isKirillVisible.value = true);
-    emit('hover', item);
-    // if (browserName.value === 'safari') {
-    //   emit('safari');
-    // }
-    if (isTouchScreen.value) {
+    if (browserName.value === 'safari') {
+      // === safari
       emit('safari');
+      emit('hover', item);
+    } else {
+      emit('hover', item);
+      emit('click', item);
     }
   };
   const onMouseLeave = () => {
-    activeItem.value = null;
-    emit('hover', null);
+    if (browserName.value !== 'safari') {
+      // НЕ сафари
+      activeItem.value = null;
+      emit('hover', null);
+    }
   };
 
   const BorisData = {

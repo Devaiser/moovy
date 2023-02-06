@@ -32,7 +32,7 @@
         <div class="car-item">
           <div class="car-img">
             <img
-              v-lazy="{ src: car.img, loading: car.blured }"
+              v-lazy="{ src: car.img, loading: car.thumb }"
               :alt="car.name"
             />
           </div>
@@ -85,31 +85,31 @@
       name: 'Avatti Lumia',
       type: 'Type D',
       img: '/img/cars-gallery/benefactor.png',
-      blured: '/img/cars-gallery/blured/benefactor.png',
+      thumb: '/img/cars-gallery/thumb/benefactor.png',
     },
     {
       name: 'Shuman Crystal',
       type: 'Type D',
       img: '/img/cars-gallery/crystall.png',
-      blured: '/img/cars-gallery/blured/crystall.png',
+      thumb: '/img/cars-gallery/thumb/crystall.png',
     },
     {
       name: 'Daitana Katsu',
       type: 'Type A',
       img: '/img/cars-gallery/hawkRS.png',
-      blured: '/img/cars-gallery/blured/hawkRS.png',
+      thumb: '/img/cars-gallery/thumb/hawkRS.png',
     },
     {
       name: 'Tror T7',
       type: 'Type B',
       img: '/img/cars-gallery/buffalo.png',
-      blured: '/img/cars-gallery/blured/buffalo.png',
+      thumb: '/img/cars-gallery/thumb/buffalo.png',
     },
     {
       name: 'Hector Zeus',
       type: 'Type C',
       img: '/img/cars-gallery/stunt.png',
-      blured: '/img/cars-gallery/blured/stunt.png',
+      thumb: '/img/cars-gallery/thumb/stunt.png',
     },
   ];
 </script>

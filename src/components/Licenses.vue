@@ -1,29 +1,30 @@
 <template>
   <div class="licenses">
-    <Transition mode="out-in" class="licenses__titles">
-      <h2 v-if="isFirstTitleVisible" class="big-title">licenses</h2>
-      <h2 v-else class="big-title">talents</h2>
-    </Transition>
-    <div class="licenses__video" id="licenses-section">
-      <!-- <video
-        id="license-video"
-        tabindex="0"
-        autobuffer="autobuffer"
-        preload="preload"
-      >
-        <source type="video/webm" src="/video/licenses.webm" />
-      </video> -->
-      <video
-        preload="metadata"
-        autoplay
-        muted
-        loop
-        playsinline
-        id="license-video"
-      >
-        <source type="video/webm" src="/video/licenses.webm" />
-        <source type="video/mp4" :src="movVideo" />
-      </video>
+    <div class="licenses__body" v-if="browserName !== 'safari'">
+      <Transition mode="out-in" class="licenses__titles">
+        <h2 v-if="isFirstTitleVisible" class="big-title">licenses</h2>
+        <h2 v-else class="big-title">talents</h2>
+      </Transition>
+      <div class="licenses__video" id="licenses-section">
+        <video
+          preload="metadata"
+          autoplay
+          muted
+          loop
+          playsinline
+          id="license-video"
+        >
+          <source type="video/webm" src="/video/licenses.webm" />
+          <source type="video/mp4" :src="movVideo" />
+        </video>
+      </div>
+    </div>
+    <div class="licenses__body_safari" v-else>
+      <div class="licenses__video">
+        <video preload="metadata" autoplay muted loop playsinline>
+          <source type="video/mp4" src="/video/licenses.mp4" />
+        </video>
+      </div>
     </div>
     <p class="section-text">
       Register with Moovy and create your personalized avatar character,
@@ -36,14 +37,36 @@
 <script setup>
   import { onMounted, ref } from 'vue';
   const movVideo = '/video/licensesMov.mov';
+
+  const browserName = ref(null);
+
+  function fnBrowserDetect() {
+    let userAgent = navigator.userAgent;
+
+    if (userAgent.match(/chrome|chromium|crios/i)) {
+      browserName.value = 'chrome';
+    } else if (userAgent.match(/firefox|fxios/i)) {
+      browserName.value = 'firefox';
+    } else if (userAgent.match(/safari/i)) {
+      browserName.value = 'safari';
+    } else if (userAgent.match(/opr\//i)) {
+      browserName.value = 'opera';
+    } else if (userAgent.match(/edg/i)) {
+      browserName.value = 'edge';
+    } else {
+      browserName.value = 'No browser detection';
+    }
+  }
+
   const isFirstTitleVisible = ref(true);
   onMounted(() => {
+    fnBrowserDetect();
     const video = document.getElementById('license-video');
     let duration;
-    video.addEventListener('loadedmetadata', () => {
+    video?.addEventListener('loadedmetadata', () => {
       duration = video.duration;
     });
-    video.addEventListener('timeupdate', () => {
+    video?.addEventListener('timeupdate', () => {
       if (video.currentTime > duration * 0.4) {
         isFirstTitleVisible.value = false;
       } else {
@@ -54,25 +77,43 @@
       }
     });
   });
-  // import { onMounted } from 'vue';
-  // onMounted(() => {
-  //   const frameNumber = 0;
-  //   const playbackConst = 500;
-  //   const setHeight = document.getElementById('licenses-section');
-  //   const vid = document.getElementById('license-video');
-  //   vid.addEventListener('loadedmetadata', () => {
-  //     setHeight.style.height = Math.floor(vid.duration) * playbackConst + 'px';
-  //   });
-  //   const scrollPlay = () => {
-  //     const frameNumber = window.pageYOffset / playbackConst;
-  //     vid.currentTime = frameNumber;
-  //   };
-  //   window.requestAnimationFrame(scrollPlay);
-  // });
 </script>
 <style scoped>
   .licenses {
     margin-top: 150px;
+  }
+  .licenses__body {
+    padding: 0 40px;
+  }
+  .licenses__body_safari {
+    margin-top: 500px;
+    padding: 0 40px;
+    background: #000;
+    position: relative;
+  }
+  .licenses__body_safari::before {
+    content: '';
+    width: 100%;
+    height: 200px;
+    top: -200px;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  }
+
+  .licenses__body_safari::after {
+    content: '';
+    width: 100%;
+    height: 200px;
+    bottom: -200px;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+  }
+  .section-text {
+    z-index: 3;
+    position: relative;
+    margin-top: 40px;
     padding: 0 40px;
   }
   .licenses__titles {
@@ -111,17 +152,30 @@
     .licenses__video {
       margin-top: -200px;
     }
+    .licenses__body_safari {
+      margin-top: 400px;
+    }
   }
   @media (max-width: 768px) {
     .licenses__video {
       margin-top: -190px;
+    }
+    .licenses__body_safari {
+      margin-top: 300px;
     }
   }
   @media (max-width: 556px) {
     .licenses__video {
       margin-top: -80px;
     }
-    .licenses {
+    .licenses__body {
+      padding: 0 20px;
+    }
+    .licenses__body_safari {
+      padding: 0 20px;
+      margin-top: 250px;
+    }
+    .section-text {
       padding: 0 20px;
     }
   }

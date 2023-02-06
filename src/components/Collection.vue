@@ -28,7 +28,7 @@
           <div class="car-image">
             <img
               :alt="`car-${idx + 1}`"
-              v-lazy="{ src: car.img, loading: car.blured }"
+              v-lazy="{ src: car.img, loading: car.thumb }"
             />
           </div>
           <div class="car-model">
@@ -69,105 +69,105 @@
   const carsList = [
     {
       img: '/img/cars-collection/car-1.png',
-      blured: '/img/cars-collection/blured/car-1.png',
+      thumb: '/img/cars-collection/thumb/car-1.png',
       logo: '/img/cars-collection/logos/MoovyVVSLogo.png',
       model: 'VVS 6',
     },
     {
       img: '/img/cars-collection/car-2.png',
-      blured: '/img/cars-collection/blured/car-2.png',
+      thumb: '/img/cars-collection/thumb/car-2.png',
       logo: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
       model: 'Daitana Katsu',
     },
     {
       img: '/img/cars-collection/car-3.png',
-      blured: '/img/cars-collection/blured/car-3.png',
+      thumb: '/img/cars-collection/thumb/car-3.png',
       logo: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
       model: 'Daitana Katsu',
     },
     {
       img: '/img/cars-collection/car-4.png',
-      blured: '/img/cars-collection/blured/car-4.png',
+      thumb: '/img/cars-collection/thumb/car-4.png',
       logo: '/img/cars-collection/logos/MoovyAvattiLogo.png',
       model: 'Avatti Lumia',
     },
     {
       img: '/img/cars-collection/car-5.png',
-      blured: '/img/cars-collection/blured/car-5.png',
+      thumb: '/img/cars-collection/thumb/car-5.png',
       logo: '/img/cars-collection/logos/MoovyVVSLogo.png',
       model: 'VVS 6',
     },
     {
       img: '/img/cars-collection/car-6.png',
-      blured: '/img/cars-collection/blured/car-6.png',
+      thumb: '/img/cars-collection/thumb/car-6.png',
       logo: '/img/cars-collection/logos/MoovyFolkLogo.png',
       model: 'Folk Westen',
     },
     {
       img: '/img/cars-collection/car-7.png',
-      blured: '/img/cars-collection/blured/car-7.png',
+      thumb: '/img/cars-collection/thumb/car-7.png',
       logo: '/img/cars-collection/logos/MoovyAvattiLogo.png',
       model: 'Avatti Lumia',
     },
     {
       img: '/img/cars-collection/MoovyCarAstorX1.png',
-      blured: '/img/cars-collection/blured/MoovyCarAstorX1.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarAstorX1.png',
       logo: '/img/cars-collection/logos/MoovyAstorLogoX.png',
       model: 'Astor Wizard',
     },
     {
       img: '/img/cars-collection/MoovyCarDaitanaX2.png',
-      blured: '/img/cars-collection/blured/MoovyCarDaitanaX2.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarDaitanaX2.png',
       logo: '/img/cars-collection/logos/MoovyDaitanaLogo.png',
       model: 'Daitana X2',
     },
     {
       img: '/img/cars-collection/MoovyCarHectorOffroad.png',
-      blured: '/img/cars-collection/blured/MoovyCarHectorOffroad.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarHectorOffroad.png',
       logo: '/img/cars-collection/logos/MoovyHectorLogo.png',
       model: 'Hector offroad',
     },
     {
       img: '/img/cars-collection/MoovyCarShumanCrystal.png',
-      blured: '/img/cars-collection/blured/MoovyCarShumanCrystal.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarShumanCrystal.png',
       logo: '/img/cars-collection/logos/MoovyShumanLogo.png',
       model: 'Shuman Crystal',
     },
     {
       img: '/img/cars-collection/MoovyCarTrorT7.png',
-      blured: '/img/cars-collection/blured/MoovyCarTrorT7.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarTrorT7.png',
       logo: '/img/cars-collection/logos/MoovyTrorLogo.png',
       model: 'Tror T7',
     },
     {
       img: '/img/cars-collection/MoovyCarTrorX2.png',
-      blured: '/img/cars-collection/blured/MoovyCarTrorX2.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarTrorX2.png',
       logo: '/img/cars-collection/logos/MoovyTrorLogo.png',
       model: 'Tror T1',
     },
     {
       img: '/img/cars-collection/MoovyVesna.png',
-      blured: '/img/cars-collection/blured/MoovyVesna.png',
+      thumb: '/img/cars-collection/thumb/MoovyVesna.png',
       logo: '/img/cars-collection/logos/MoovyVesnaLogo.png',
       model: 'Vesna a27',
     },
     {
       img: '/img/cars-collection/MoovyCarXX.png',
-      blured: '/img/cars-collection/blured/MoovyCarXX.png',
+      thumb: '/img/cars-collection/thumb/MoovyCarXX.png',
       logo: '/img/cars-collection/logos/MoovyHodgeLogo.png',
       model: 'Hodge Model X',
     },
     {
       img: '/img/cars-collection/MoovyHodgeX.png',
-      blured: '/img/cars-collection/blured/MoovyHodgeX.png',
+      thumb: '/img/cars-collection/thumb/MoovyHodgeX.png',
       logo: '/img/cars-collection/logos/MoovyHodgeLogo.png',
       model: 'Hodge Model Z',
     },
     {
       img: '/img/cars-collection/MoovyAvaOld.png',
-      blured: '/img/cars-collection/blured/MoovyAvaOld.png',
+      thumb: '/img/cars-collection/thumb/MoovyAvaOld.png',
       logo: '/img/cars-collection/logos/MoovyAvattiLogo.png',
-      model: 'Avatti Lumia',
+      model: 'Avatti Valkyrie',
     },
   ];
 </script>
@@ -297,6 +297,9 @@
     }
   }
   @media (max-width: 556px) {
+    .car-image .media {
+      display: block;
+    }
     .slide {
       width: 100vw;
     }

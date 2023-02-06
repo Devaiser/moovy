@@ -53,21 +53,21 @@
     </div>
     <div class="team__body" :class="{ 'is-safari': isSafari }">
       <div class="team__main-img">
-        <img alt="team" class="team__main-img" v-lazy="'/img/team/team.jpg'" />
+        <img alt="team" class="team__main-img" src="/img/team/team.jpg" />
         <img
           alt="Egor"
           class="team__item-img-based"
-          v-lazy="'/img/team/Egor-based.png'"
+          src="/img/team/Egor-based.png"
         />
         <img
           alt="Roman"
           class="team__item-img-based"
-          v-lazy="'/img/team/Roman-based.png'"
+          src="/img/team/Roman-based.png"
         />
         <img
           alt="Boris"
           class="team__item-img-based"
-          v-lazy="'/img/team/Boris-based.png'"
+          src="/img/team/Boris-based.png"
         />
         <div v-for="item in team" :key="item.name">
           <Transition>
@@ -75,14 +75,15 @@
               :src="item.img"
               :alt="item.name"
               class="team__item-img"
-              v-if="activeItem === item.name"
+              v-if="activeItemHover === item.name"
             />
           </Transition>
         </div>
       </div>
       <TeamPattern
         class="team__pattern"
-        @hover="setActiveItem"
+        @hover="setActiveHover"
+        @click="setActiveItem"
         @safari="onSafari"
       />
     </div>
@@ -140,14 +141,22 @@
   const isSafari = ref(false);
 
   const activeItem = ref(null);
+  const activeItemHover = ref(null);
 
   onMounted(() => {
-    isTouchScreen.value
-      ? (activeItem.value = 'Boris')
-      : (activeItem.value = null);
+    if (isTouchScreen.value) {
+      activeItemHover.value = 'Boris';
+      activeItem.value = 'Boris';
+    } else {
+      activeItem.value = null;
+      activeItemHover.value = null;
+    }
     isSafari.value = isTouchScreen.value;
   });
 
+  const setActiveHover = (item) => {
+    activeItemHover.value = item;
+  };
   const setActiveItem = (item) => {
     activeItem.value = item;
   };
@@ -219,7 +228,7 @@
     position: relative;
     z-index: 4;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
   .team__body {
@@ -293,6 +302,9 @@
     height: 100%;
     z-index: 3;
   }
+  .on-safari {
+    margin-left: 15%;
+  }
   @media (max-width: 992px) {
     .team__body::after {
       height: 100px;
@@ -300,6 +312,9 @@
     .team__body::before {
       bottom: -100px;
       height: 100px;
+    }
+    .team__container {
+      justify-content: space-between;
     }
   }
   @media (max-width: 767px) {

@@ -45,10 +45,6 @@
       <div class="footer__links">
         <div class="footer__links-column">
           <a href="https://bbsoft.io" target="_blank">BBSOFT</a>
-          <a href="https://bbapp.io" target="_blank">BBAPP</a>
-          <a href="https://bbplace.io" target="_blank">BBPLACE</a>
-        </div>
-        <div class="footer__links-column">
           <a
             href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars"
             target="_blank"
@@ -59,6 +55,8 @@
             target="_blank"
             >TECHNICIAN</a
           >
+        </div>
+        <div class="footer__links-column">
           <a
             href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/avatars/who-are-you-in-the-moovy/driver"
             target="_blank"
@@ -74,13 +72,13 @@
             target="_blank"
             >TALENT SYSTEM</a
           >
-        </div>
-        <div class="footer__links-column">
           <a
             href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars/car-types-and-rarity"
             target="_blank"
             >CAR SYSTEM</a
           >
+        </div>
+        <div class="footer__links-column">
           <a
             href="https://moovy-io.gitbook.io/moovy.io-whitepaper/gamefi-elements/cars/car-types-and-rarity"
             target="_blank"

@@ -23,7 +23,7 @@
                 alt="how-to-moovy"
                 v-lazy="{
                   src: '/img/tabs/how-to-moovy.jpg',
-                  loading: '/img/tabs/blured/how-to-moovy.jpg',
+                  loading: '/img/tabs/thumb/how-to-moovy.jpg',
                 }"
               />
 
@@ -63,7 +63,7 @@
                 alt="drive2earn"
                 v-lazy="{
                   src: '/img/tabs/drive2earn.jpg',
-                  loading: '/img/tabs/blured/drive2earn.jpg',
+                  loading: '/img/tabs/thumb/drive2earn.jpg',
                 }"
               />
 
@@ -102,15 +102,15 @@
                 class="desk"
                 v-lazy="{
                   src: '/img/tabs/car-metaverse.jpg',
-                  loading: '/img/tabs/blured/car-metaverse.jpg',
+                  loading: '/img/tabs/thumb/car-metaverse.jpg',
                 }"
               />
 
               <img
                 alt="car-metaverse"
                 v-lazy="{
-                  src: '/img/car-metaverse-clear.jpg',
-                  loading: '/img/tabs/blured/car-metaverse-clear.jpg',
+                  src: '/img/tabs/car-metaverse-clear.jpg',
+                  loading: '/img/tabs/thumb/car-metaverse-clear.jpg',
                 }"
                 class="media"
               />
@@ -271,7 +271,7 @@
                 alt="compete"
                 v-lazy="{
                   src: '/img/tabs/compete.jpg',
-                  loading: '/img/tabs/blured/compete.jpg',
+                  loading: '/img/tabs/thumb/compete.jpg',
                 }"
               />
 
@@ -310,7 +310,7 @@
                 alt="gamefi"
                 v-lazy="{
                   src: '/img/tabs/gamefi.jpg',
-                  loading: '/img/tabs/blured/gamefi.jpg',
+                  loading: '/img/tabs/thumb/gamefi.jpg',
                 }"
               />
 
@@ -349,7 +349,7 @@
                 alt="avatar-system"
                 v-lazy="{
                   src: '/img/tabs/avatar-system.jpg',
-                  loading: '/img/tabs/blured/avatar-system.jpg',
+                  loading: '/img/tabs/thumb/avatar-system.jpg',
                 }"
               />
 

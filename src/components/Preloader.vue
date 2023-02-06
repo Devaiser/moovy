@@ -35,4 +35,14 @@
     opacity: 1;
     visibility: visible;
   }
+  .loader video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 556px) {
+    .loader {
+      width: 200px;
+    }
+  }
 </style>

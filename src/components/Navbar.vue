@@ -118,7 +118,7 @@
   .header {
     position: fixed;
     z-index: 10;
-    top: 0;
+    top: -2px;
     left: 0;
     width: 100%;
     height: 94px;
@@ -246,7 +246,7 @@
     }
     .menu__body {
       /* backdrop-filter: blur(20px);
-                                                                                                                                    -webkit-backdrop-filter: blur(20px); */
+                                                                                                                                        -webkit-backdrop-filter: blur(20px); */
       position: fixed;
       top: 0;
       left: 100%;

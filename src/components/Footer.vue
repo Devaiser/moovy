@@ -128,6 +128,7 @@
     align-items: center;
     position: relative;
     top: -2px;
+    /* margin-top: -2px; */
     padding: 45px 20px 60px 20px;
   }
   .footer__logo {

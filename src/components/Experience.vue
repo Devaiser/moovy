@@ -78,7 +78,7 @@
               <div class="slide-img-text">
                 <p>
                   Transform your garage into a crypto-maker with NFT Cars &
-                  explore Solo Ride, FreeRide or Rally to earn $MGAS Tokens
+                  explore Solo Ride, FreeRide or Rally to earn $MGAS Tokens.
                 </p>
               </div>
             </div>

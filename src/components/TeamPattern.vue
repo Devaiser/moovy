@@ -261,9 +261,11 @@
 
   const onMouseOver = (item) => {
     activeItem.value = item;
-    activeItem.value === 'Egor'
-      ? (isKirillVisible.value = false)
-      : (isKirillVisible.value = true);
+    if (!isTouchScreen.value) {
+      activeItem.value === 'Egor'
+        ? (isKirillVisible.value = false)
+        : (isKirillVisible.value = true);
+    }
     if (browserName.value === 'safari') {
       // === safari
       emit('safari');
@@ -276,8 +278,9 @@
   const onMouseLeave = () => {
     if (browserName.value !== 'safari') {
       // НЕ сафари
-      activeItem.value = null;
       emit('hover', null);
+      activeItem.value = null;
+      isKirillVisible.value = true;
     }
   };
 
@@ -315,6 +318,8 @@
   const VictorData = {
     name: 'Victor Pirozhenko',
     role: 'Head of Design',
+    twitter: 'https://twitter.com/pirzhnk',
+    linkedin: 'https://www.linkedin.com/in/victor-pirozhenko-158054265/',
   };
   const OlyaData = {
     name: 'Panina Olga',

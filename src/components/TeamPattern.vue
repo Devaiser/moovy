@@ -204,139 +204,136 @@
   </svg>
 </template>
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import { TeamAbout } from '@/components';
-  import { useWindowSize } from '@vueuse/core';
+import { ref, onMounted } from 'vue';
+import { TeamAbout } from '@/components';
 
-  const emit = defineEmits(['hover', 'safari', 'click']);
+const emit = defineEmits(['hover', 'safari', 'click']);
 
-  const { width, height } = useWindowSize();
+const browserName = ref(null);
 
-  const browserName = ref(null);
+function fnBrowserDetect() {
+  let userAgent = navigator.userAgent;
 
-  function fnBrowserDetect() {
-    let userAgent = navigator.userAgent;
-
-    if (userAgent.match(/chrome|chromium|crios/i)) {
-      browserName.value = 'chrome';
-    } else if (userAgent.match(/firefox|fxios/i)) {
-      browserName.value = 'firefox';
-    } else if (userAgent.match(/safari/i)) {
-      browserName.value = 'safari';
-    } else if (userAgent.match(/opr\//i)) {
-      browserName.value = 'opera';
-    } else if (userAgent.match(/edg/i)) {
-      browserName.value = 'edge';
-    } else {
-      browserName.value = 'No browser detection';
-    }
+  if (userAgent.match(/chrome|chromium|crios/i)) {
+    browserName.value = 'chrome';
+  } else if (userAgent.match(/firefox|fxios/i)) {
+    browserName.value = 'firefox';
+  } else if (userAgent.match(/safari/i)) {
+    browserName.value = 'safari';
+  } else if (userAgent.match(/opr\//i)) {
+    browserName.value = 'opera';
+  } else if (userAgent.match(/edg/i)) {
+    browserName.value = 'edge';
+  } else {
+    browserName.value = 'No browser detection';
   }
+}
 
-  onMounted(() => {
-    fnBrowserDetect();
-  });
+onMounted(() => {
+  fnBrowserDetect();
+});
 
-  const isTouchScreen = ref(null);
+const isTouchScreen = ref(null);
 
-  const CheckTouchScreen = () => {
-    isTouchScreen.value =
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0;
-  };
-  CheckTouchScreen();
+const CheckTouchScreen = () => {
+  isTouchScreen.value =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+};
+CheckTouchScreen();
 
-  const activeItem = ref(null);
+const activeItem = ref(null);
 
-  const isKirillVisible = ref(true);
+const isKirillVisible = ref(true);
 
-  const onClick = (item) => {
-    if (isTouchScreen.value || browserName.value === 'safari') {
-      // тач ИЛИ сафари
-      activeItem.value = item;
-      emit('click', item);
-      emit('safari');
-    }
-  };
-
-  const onMouseOver = (item) => {
+const onClick = (item) => {
+  if (isTouchScreen.value || browserName.value === 'safari') {
+    // тач ИЛИ сафари
     activeItem.value = item;
-    if (!isTouchScreen.value) {
-      activeItem.value === 'Egor'
-        ? (isKirillVisible.value = false)
-        : (isKirillVisible.value = true);
-    }
-    if (browserName.value === 'safari') {
-      // === safari
-      emit('safari');
-      emit('hover', item);
-    } else {
-      emit('hover', item);
-      emit('click', item);
-    }
-  };
-  const onMouseLeave = () => {
-    if (browserName.value !== 'safari') {
-      // НЕ сафари
-      emit('hover', null);
-      activeItem.value = null;
-      isKirillVisible.value = true;
-    }
-  };
+    emit('click', item);
+    emit('safari');
+  }
+};
 
-  const BorisData = {
-    name: 'Bogatiy Borya',
-    role: 'CEO',
-    twitter: 'https://twitter.com/bogatiy_borya',
-    linkedin: 'https://www.linkedin.com/mwlite/in/bogatiy-borya',
-    instagram: 'https://www.instagram.com/bogatiy_borya/',
-  };
-  const EgorData = {
-    name: 'Egor Vasilev',
-    role: 'IOS Dev',
-    twitter: 'https://twitter.com/leofriskey',
-    linkedin: 'https://linkedin.com/in/leofriskey',
-  };
-  const KirillData = {
-    name: 'Kirill Drozdov',
-    role: 'IOS Dev',
-    twitter: 'https://twitter.com/kirikikoki',
-    linkedin:
-      'https://www.linkedin.com/in/%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB-%D0%B4%D1%80%D0%BE%D0%B7%D0%B4%D0%BE%D0%B2-7ba685227',
-  };
-  const DimaData = {
-    name: 'Dmitriy Spichakov',
-    role: 'Head of IOS Dev',
-    linkedin: 'https://www.linkedin.com/in/dmitrii-spichakov-7761b623b/',
-  };
-  const MaxData = {
-    name: 'Maxim Khlestkin',
-    role: 'CTO',
-    twitter: 'https://twitter.com/rendering___/',
-    linkedin: 'https://www.linkedin.com/in/max-pavlovich-670874195',
-  };
-  const VictorData = {
-    name: 'Victor Pirozhenko',
-    role: 'Head of Design',
-    twitter: 'https://twitter.com/pirzhnk',
-    linkedin: 'https://www.linkedin.com/in/victor-pirozhenko-158054265/',
-  };
-  const OlyaData = {
-    name: 'Panina Olga',
-    role: 'UX/UI Designer',
-    linkedin: 'https://www.linkedin.com/in/olga-panina-099073265/',
-  };
-  const RomanData = {
-    name: 'Roman Shramko ',
-    role: 'COO',
-    twitter: 'https://twitter.com/xlsrio',
-    linkedin: 'https://www.linkedin.com/in/roman-shramko-0711a0237/',
-  };
+const onMouseOver = (item) => {
+  activeItem.value = item;
+  if (!isTouchScreen.value) {
+    activeItem.value === 'Egor'
+      ? (isKirillVisible.value = false)
+      : (isKirillVisible.value = true);
+  }
+  if (browserName.value === 'safari') {
+    // === safari
+    emit('safari');
+    emit('hover', item);
+  } else {
+    emit('hover', item);
+    emit('click', item);
+  }
+};
+const onMouseLeave = () => {
+  if (browserName.value !== 'safari') {
+    // НЕ сафари
+    emit('hover', null);
+    activeItem.value = null;
+    isKirillVisible.value = true;
+  }
+};
+
+const BorisData = {
+  name: 'Bogatiy Borya',
+  role: 'CEO',
+  twitter: 'https://twitter.com/bogatiy_borya',
+  linkedin: 'https://www.linkedin.com/mwlite/in/bogatiy-borya',
+  instagram: 'https://www.instagram.com/bogatiy_borya/',
+};
+const EgorData = {
+  name: 'Egor Vasilev',
+  role: 'IOS Dev',
+  twitter: 'https://twitter.com/leofriskey',
+  linkedin: 'https://linkedin.com/in/leofriskey',
+};
+const KirillData = {
+  name: 'Kirill Drozdov',
+  role: 'IOS Dev',
+  twitter: 'https://twitter.com/kirikikoki',
+  linkedin:
+    'https://www.linkedin.com/in/%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB-%D0%B4%D1%80%D0%BE%D0%B7%D0%B4%D0%BE%D0%B2-7ba685227',
+};
+const DimaData = {
+  name: 'Dmitriy Spichakov',
+  role: 'Head of IOS Dev',
+  linkedin: 'https://www.linkedin.com/in/dmitrii-spichakov-7761b623b/',
+};
+const MaxData = {
+  name: 'Maxim Khlestkin',
+  role: 'CTO',
+  twitter: 'https://twitter.com/rendering___/',
+  linkedin: 'https://www.linkedin.com/in/max-pavlovich-670874195',
+};
+const VictorData = {
+  name: 'Victor Pirozhenko',
+  role: 'Head of Design',
+  twitter: 'https://twitter.com/pirzhnk',
+  linkedin: 'https://www.linkedin.com/in/victor-pirozhenko-158054265/',
+};
+const OlyaData = {
+  name: 'Panina Olga',
+  role: 'UX/UI Designer',
+  linkedin: 'https://www.linkedin.com/in/olga-panina-099073265/',
+};
+const RomanData = {
+  name: 'Roman Shramko ',
+  role: 'COO',
+  twitter: 'https://twitter.com/xlsrio',
+  linkedin: 'https://www.linkedin.com/in/roman-shramko-0711a0237/',
+};
 </script>
 <style scoped>
-  g {
-    display: block;
-    position: relative;
-    z-index: 2;
-  }
+g {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
 </style>

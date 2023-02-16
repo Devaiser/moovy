@@ -82,6 +82,79 @@ img[lazy='loaded'] {
 .v-leave-to {
   opacity: 0;
 }
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.3s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.cars-section {
+  padding: 60px 40px 0 40px;
+}
+
+.cars-section__title {
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 106%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #21e7d6;
+  text-shadow: 1px 0px 5px rgba(33, 231, 214, 0.7);
+}
+
+.cars-section__text {
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 106%;
+  text-align: center;
+  color: #fff;
+  max-width: 995px;
+  margin-top: 35px;
+}
+
+.gradient-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom, #000 15%, rgba(0, 0, 0, 0));
+  z-index: 0;
+}
+.gradient-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, #000 15%, rgba(0, 0, 0, 0));
+  z-index: 0;
+}
+.gradient-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000, rgba(0, 0, 0, 0));
+  z-index: 5;
+}
+.gradient-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to left, #000, rgba(0, 0, 0, 0));
+  z-index: 5;
+}
 
 @media (max-width: 1400px) {
   .big-title {

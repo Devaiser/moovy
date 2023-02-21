@@ -17,3 +17,4 @@ export { default as Preloader } from './Preloader.vue';
 export { default as TeamPattern } from './TeamPattern.vue';
 export { default as TeamPage } from './TeamPage.vue';
 export { default as TeamAbout } from './TeamAbout.vue';
+export { default as ButtonLink } from './ButtonLink.vue';

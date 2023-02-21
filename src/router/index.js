@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import AgreementsView from '../views/AgreementsView.vue';
-import PageNotFound from '../views/PageNotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
+  },
   routes: [
     {
       path: '/',
@@ -17,14 +22,19 @@ const router = createRouter({
       component: () => import('../views/CarsView.vue'),
     },
     {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue'),
+    },
+    {
       path: '/agreements',
       name: 'agreements',
-      component: AgreementsView,
+      component: () => import('../views/AgreementsView.vue'),
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'PageNotFound',
-      component: PageNotFound,
+      component: () => import('../views/PageNotFound.vue'),
     },
   ],
 });

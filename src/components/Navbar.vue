@@ -2,7 +2,9 @@
   <header class="header">
     <div class="container header__container">
       <div class="header__logo">
-        <a href="/"><img src="/img/logo-new.png" alt="logo" /></a>
+        <router-link to="/"
+          ><img src="/img/logo-new.png" alt="logo"
+        /></router-link>
       </div>
       <div class="menu">
         <div
@@ -14,10 +16,8 @@
         </div>
         <nav class="menu__body" :class="{ active: isMenuVisible }">
           <ul class="menu__list">
-            <li>
-              <router-link class="menu__link" to="/about/cars"
-                >about</router-link
-              >
+            <li @click="toggleMenu">
+              <router-link class="menu__link" to="/about">about</router-link>
               <!-- <a
                 class="menu__link"
                 target="_blank"
@@ -248,14 +248,14 @@ const toggleMenu = () => {
     transform: rotate(45deg) translate(0, 50%);
   }
   .menu__body {
-    /* backdrop-filter: blur(20px);
-                                                                                                                                        -webkit-backdrop-filter: blur(20px); */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
     left: 100%;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.7);
     padding: 100px 74px 160px 55px;
     box-sizing: border-box;
     transition: left 0.5s ease-in-out 0s;

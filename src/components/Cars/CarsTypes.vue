@@ -32,6 +32,77 @@
         <div class="gradient-right"></div>
         <div class="gradient-left"></div>
       </div>
+      <div class="types__about about">
+        <Transition mode="out-in" name="scale">
+          <div class="about__body" v-if="activeType === 'a'">
+            <h3 class="about__title about__title_classic">type a</h3>
+            <div class="about__text">
+              <p>
+                Type A vehicles include the Hatchback, the Sedan, and the
+                Estate.
+              </p>
+              <p>
+                The Hatchback is a versatile passenger car that can accommodate
+                two rows of seats. It's a great option for anyone looking for a
+                car that's easy to handle.
+              </p>
+              <p>
+                The Sedan is a spacious car with a closed body and a trunk
+                that's separate from the main cabin. Finally, the Estate is a
+                vehicle that offers a spacious trunk and combines a stylish
+                design with ample storage space.
+              </p>
+            </div>
+          </div>
+          <div class="about__body" v-else-if="activeType === 'b'">
+            <h3 class="about__title about__title_classic">type b</h3>
+            <div class="about__text">
+              <p>
+                Discover the Type B vehicles in the Moovy collection, the bigger
+                models in our fleet: The Pickup Truck – an open-backed
+                semi-truck with ample ground clearance, perfect for enthusiasts
+                of larger cars.
+              </p>
+            </div>
+          </div>
+          <div class="about__body" v-else-if="activeType === 'c'">
+            <h3 class="about__title about__title_classic">type c</h3>
+            <div class="about__text">
+              <p>
+                Introducing Type C's star vehicle, the SUV - a practical and
+                versatile car that appeals to everyone.
+              </p>
+              <p>
+                The SUV is a popular choice for families and adventure seekers
+                alike, offering ample space for passengers and cargo, as well as
+                impressive off-road capabilities. It's a perfect blend of style,
+                performance, and practicality, making it a top pick for those
+                who want the best of both worlds. Whether you're embarking on a
+                road trip or tackling a tough terrain, an SUV is sure to provide
+                a smooth and comfortable ride.
+              </p>
+            </div>
+          </div>
+          <div class="about__body" v-else-if="activeType === 'd'">
+            <h3 class="about__title about__title_classic">type d</h3>
+            <div class="about__text">
+              <p>Introducing Type D, featuring three exciting car bodies:</p>
+              <p>
+                The Coupe - a sleek two-door passenger car for the stylish
+                driver.
+              </p>
+              <p>
+                The Convertible - a lightweight and speedy option for those who
+                crave a fast ride.
+              </p>
+              <p>
+                The Roadster - an open-top two-seater perfect for a thrilling
+                driving experience.
+              </p>
+            </div>
+          </div>
+        </Transition>
+      </div>
     </div>
   </section>
 </template>
@@ -79,5 +150,48 @@ const onCarClick = (type) => {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.types__about {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -100px;
+}
+.types__about::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  background: linear-gradient(to top, #000 15%, rgba(0, 0, 0, 0));
+}
+.about__body {
+  background: linear-gradient(0deg, #161616 0%, rgba(22, 22, 22, 0) 110.13%);
+  border: 1px solid #fff;
+  border-bottom: none;
+  border-radius: 40px;
+  padding: 30px 45px 70px 45px;
+  position: relative;
+}
+.about__title {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 106%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #e0edf5;
+}
+.about__text {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 106%;
+  text-align: center;
+  color: #fff;
+  /* z-index: 1; */
+  position: relative;
+  text-transform: capitalize;
 }
 </style>

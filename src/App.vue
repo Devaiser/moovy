@@ -5,24 +5,23 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import { RouterView } from 'vue-router';
-  import { Navbar, Preloader } from '@/components';
-  import { useScrollLock } from '@vueuse/core';
+import { ref, onMounted } from 'vue';
+import { RouterView } from 'vue-router';
+import { Navbar, Preloader } from '@/components';
+import { useScrollLock } from '@vueuse/core';
 
-  const isPreloaderVisible = ref(true);
+const isPreloaderVisible = ref(true);
 
-  const el = ref(document.body);
-  const isLocked = useScrollLock(el);
+const el = ref(document.body);
+const isLocked = useScrollLock(el);
 
-  onMounted(() => {
-    isLocked.value = true;
-    window.addEventListener('load', () => {
-      isPreloaderVisible.value = false;
-      isLocked.value = false;
-    });
+onMounted(() => {
+  isLocked.value = true;
+  window.addEventListener('load', () => {
+    isPreloaderVisible.value = false;
+    isLocked.value = false;
   });
+});
 </script>
 
-<style>
-</style>
+<style></style>

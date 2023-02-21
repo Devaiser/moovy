@@ -19,7 +19,7 @@
         <div
           v-for="img in selectList"
           :key="img.img"
-          class="rarity__select-image"
+          class="rarity__select-image rarity__select-image_colors"
         >
           <Transition>
             <img
@@ -135,6 +135,10 @@ const onCarClick = (rarity) => {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+}
+.rarity__select-image_colors {
+  z-index: -1;
 }
 .rarity__about {
   overflow: hidden;

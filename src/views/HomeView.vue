@@ -7,36 +7,35 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import { MainSection } from '@/components/MainSection';
-  import { ScrollView } from '@/components';
+import { ref, onMounted } from 'vue';
+import { MainSection } from '@/components/MainSection';
+import { ScrollView } from '@/components';
 
-  const isTouchScreen = ref(null);
+const isTouchScreen = ref(null);
 
-  const CheckTouchScreen = () => {
-    isTouchScreen.value =
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0;
-  };
+const CheckTouchScreen = () => {
+  isTouchScreen.value =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+};
 
-  CheckTouchScreen();
+CheckTouchScreen();
 
-  const isScrollViewVisible = ref(false);
+const isScrollViewVisible = ref(false);
 
-  const isMainSectionVisible = ref(true);
-  const mainSectionVisibility = (value) => {
-    isMainSectionVisible.value = value;
-  };
+const isMainSectionVisible = ref(true);
+const mainSectionVisibility = (value) => {
+  isMainSectionVisible.value = value;
+};
 
-  onMounted(() => {
-    if (isTouchScreen.value) {
+onMounted(() => {
+  if (isTouchScreen.value) {
+    isScrollViewVisible.value = true;
+  } else {
+    setTimeout(() => {
       isScrollViewVisible.value = true;
-    } else {
-      setTimeout(() => {
-        isScrollViewVisible.value = true;
-      }, 300);
-    }
-  });
+    }, 300);
+  }
+});
 </script>
-

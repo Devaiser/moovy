@@ -13,20 +13,19 @@
   </svg>
 </template>
 <script setup>
-  const props = defineProps({
-    width: {
-      type: Number,
-      default: 38,
-    },
-    height: {
-      type: Number,
-      default: 25,
-    },
-    color: {
-      type: String,
-      default: "#1FE5D3",
-    },
-  });
+defineProps({
+  width: {
+    type: Number,
+    default: 38,
+  },
+  height: {
+    type: Number,
+    default: 25,
+  },
+  color: {
+    type: String,
+    default: '#1FE5D3',
+  },
+});
 </script>
-<style scoped>
-</style>
+<style scoped></style>

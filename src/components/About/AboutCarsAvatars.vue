@@ -1,5 +1,6 @@
 <template>
   <section class="section">
+    <div class="gradient-bottom"></div>
     <Vue3Marquee class="section__marquee marquee" :duration="50">
       <div class="marquee__item" v-for="item in 10" :key="item">
         <p class="marquee__text">Drive 2 earn</p>
@@ -19,6 +20,11 @@
             Ready to Unleash Your Creativity and Showcase Your Unique Style in
             the Moovy Metaverse
           </p>
+          <!-- <ButtonLink
+            @click="enableCSModal"
+            value="Learn More"
+            class="avatars__link"
+          /> -->
           <ButtonLink
             to="/about/avatars"
             value="Learn More"
@@ -37,6 +43,7 @@
       <div class="section__cars cars">
         <div class="cars__image">
           <img src="/img/about/car.png" alt="car" class="image" />
+          <div class="gradient-bottom"></div>
         </div>
         <div class="about__text-item about__text-item_left">
           <h2 class="about-title">
@@ -52,19 +59,30 @@
             ride
           </p>
           <ButtonLink
-            to="/about/cars"
+            @click="enableCSModal"
             value="Ready.Steady"
             class="cars__link"
           />
         </div>
       </div>
     </div>
+    <ComingSoonModal :isVisible="isCSModalVisible" @close="onCSModelClose" />
   </section>
 </template>
 <script setup>
-import { ButtonLink } from '@/components';
+import { ref } from 'vue';
+import { ButtonLink, ComingSoonModal } from '@/components';
 import { Vue3Marquee } from 'vue3-marquee';
 import 'vue3-marquee/dist/style.css';
+
+const isCSModalVisible = ref(false);
+
+const enableCSModal = () => {
+  isCSModalVisible.value = true;
+};
+const onCSModelClose = () => {
+  isCSModalVisible.value = false;
+};
 </script>
 <style scoped>
 .section {
@@ -91,6 +109,10 @@ import 'vue3-marquee/dist/style.css';
   width: 100%;
   background: linear-gradient(180deg, #000 43.23%, rgba(0, 0, 0, 0) 100%);
   z-index: 1;
+}
+.section .gradient-bottom {
+  z-index: 1;
+  height: 50px;
 }
 .marquee__text {
   font-weight: 900;
@@ -207,6 +229,9 @@ import 'vue3-marquee/dist/style.css';
     width: 150%;
     background: linear-gradient(180deg, #000 43.23%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
+  }
+  .cars__image .gradient-bottom {
+    height: 30px;
   }
   .cars__link {
     margin: 0 auto;

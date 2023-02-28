@@ -23,19 +23,19 @@
         </p>
         <div class="coins__links">
           <ButtonLink
-            href="/"
+            @click="enableCSModal"
             value="Tokenomics"
             :small="true"
             class="coins__link"
           />
           <ButtonLink
-            href="/"
+            @click="enableCSModal"
             value="Vesting"
             :small="true"
             class="coins__link"
           />
           <ButtonLink
-            href="/"
+            @click="enableCSModal"
             value="Events"
             :small="true"
             class="coins__link"
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="coins__image coins__image_right">
-        <img src="/img/about/coins.jpg" alt="coins" class="image" />
+        <img src="/img/about/coins-1.jpg" alt="coins" class="image" />
         <div class="gradient-bottom"></div>
         <div class="gradient-top"></div>
         <div class="gradient-left"></div>
@@ -56,10 +56,16 @@
           <img src="/img/about/mobile.png" alt="mobile-app" class="image" />
         </div>
         <div class="how-to-play__image">
-          <img src="/img/about/mobile.png" alt="mobile-app" class="image" />
+          <img src="/img/about/mobile-1.png" alt="mobile-app" class="image" />
         </div>
         <div class="how-to-play__image">
-          <img src="/img/about/mobile.png" alt="mobile-app" class="image" />
+          <img src="/img/about/mobile-2.png" alt="mobile-app" class="image" />
+        </div>
+        <div class="how-to-play__image">
+          <img src="/img/about/mobile-3.png" alt="mobile-app" class="image" />
+        </div>
+        <div class="how-to-play__image">
+          <img src="/img/about/mobile-4.png" alt="mobile-app" class="image" />
         </div>
       </div>
       <p>
@@ -70,12 +76,23 @@
       </p>
     </div>
     <div class="guide__button">
-      <ButtonLink value="How to Moovy" href="/" />
+      <ButtonLink value="How to Moovy" @click="enableCSModal" />
     </div>
+    <ComingSoonModal :isVisible="isCSModalVisible" @close="onCSModelClose" />
   </section>
 </template>
 <script setup>
-import { ButtonLink } from '@/components';
+import { ref } from 'vue';
+import { ButtonLink, ComingSoonModal } from '@/components';
+
+const isCSModalVisible = ref(false);
+
+const enableCSModal = () => {
+  isCSModalVisible.value = true;
+};
+const onCSModelClose = () => {
+  isCSModalVisible.value = false;
+};
 </script>
 <style scoped>
 .guide {
@@ -89,6 +106,7 @@ import { ButtonLink } from '@/components';
 }
 .coins__image {
   position: relative;
+  /* max-width: 450px; */
   width: 40vw;
   height: 40vw;
 }
@@ -109,7 +127,7 @@ import { ButtonLink } from '@/components';
 }
 .gradient-left,
 .gradient-right {
-  width: 70px;
+  width: 30px;
 }
 .about__text-item {
   position: relative;
@@ -138,7 +156,7 @@ import { ButtonLink } from '@/components';
   transform: translateY(-50%);
   left: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -148,6 +166,9 @@ import { ButtonLink } from '@/components';
   margin-top: 20px;
 }
 .coins__image_media {
+  display: none;
+}
+.how-to-play__image:first-child {
   display: none;
 }
 @media (max-width: 992px) {

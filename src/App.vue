@@ -2,12 +2,14 @@
   <Navbar />
   <RouterView />
   <Preloader :isVisible="isPreloaderVisible" />
+  <PromoModal />
+  <FixedFooter />
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { RouterView } from 'vue-router';
-import { Navbar, Preloader } from '@/components';
+import { Navbar, PromoModal, Preloader, FixedFooter } from '@/components';
 import { useScrollLock } from '@vueuse/core';
 
 const isPreloaderVisible = ref(true);

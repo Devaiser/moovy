@@ -4,7 +4,13 @@
       {{ value }}
     </span>
   </router-link>
-  <a :href="href" v-else class="link" :class="{ link_small: small }">
+  <a
+    :href="href"
+    v-else
+    class="link"
+    target="_blanc"
+    :class="{ link_small: small }"
+  >
     <span>
       {{ value }}
     </span>

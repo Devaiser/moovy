@@ -1,5 +1,6 @@
 export { default as Navbar } from './Navbar.vue';
 export { default as Footer } from './Footer.vue';
+export { default as FixedFooter } from './FixedFooter.vue';
 export { default as ScrollView } from './ScrollView.vue';
 export { default as Collection } from './Collection.vue';
 // export { default as TabsSection } from './TabsSection.vue';
@@ -18,3 +19,6 @@ export { default as TeamPattern } from './TeamPattern.vue';
 export { default as TeamPage } from './TeamPage.vue';
 export { default as TeamAbout } from './TeamAbout.vue';
 export { default as ButtonLink } from './ButtonLink.vue';
+export { default as PromoModal } from './PromoModal.vue';
+export { default as ComingSoonModal } from './ComingSoonModal.vue';
+export { default as CounterSection } from './CounterSection.vue';

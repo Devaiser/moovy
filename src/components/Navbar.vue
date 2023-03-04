@@ -255,7 +255,7 @@ const toggleMenu = () => {
     left: 100%;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
     padding: 100px 74px 160px 55px;
     box-sizing: border-box;
     transition: left 0.5s ease-in-out 0s;

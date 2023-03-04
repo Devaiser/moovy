@@ -10,15 +10,20 @@
 <script setup></script>
 <style scoped>
 .main {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
 }
 .main__video {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+@media (max-width: 768px) {
+  .main {
+    margin-top: 76px;
+  }
 }
 </style>

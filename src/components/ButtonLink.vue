@@ -4,6 +4,16 @@
       {{ value }}
     </span>
   </router-link>
+  <button
+    type="submit"
+    v-else-if="submit"
+    class="link"
+    :class="{ link_small: small }"
+  >
+    <span>
+      {{ value }}
+    </span>
+  </button>
   <a
     :href="href"
     v-else
@@ -31,6 +41,9 @@ defineProps({
   href: {
     type: String,
   },
+  submit: {
+    type: Boolean,
+  },
 });
 </script>
 <style scoped>
@@ -44,6 +57,7 @@ defineProps({
   border-radius: 56px;
   width: fit-content;
   cursor: pointer;
+  border: none;
 }
 .link_small {
   padding: 10px 40px;

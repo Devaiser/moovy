@@ -1,35 +1,62 @@
 <template>
   <section class="garages">
-    <div class="gradient-top"></div>
-    <div class="gradient-bottom"></div>
+    <!-- <div class="gradient-top"></div>
+    <div class="gradient-bottom"></div> -->
     <h2 class="garages__title">garage system</h2>
-    <swiper
-      :speed="2000"
-      :long-swipes-ratio="0.01"
-      :follow-finger="false"
-      :watch-slides-progress="true"
-      :parallax="true"
-      :allow-touch-move="false"
-      :modules="modules"
-      @swiper="onSwiper"
-      class="slider"
-    >
-      <swiper-slide class="slide">
-        <div class="slide__body" data-swiper-parallax="50%">
-          <img src="/img/avatars/technician-bg.jpg" alt="technician" />
-        </div>
-      </swiper-slide>
-      <swiper-slide class="slide">
-        <div class="slide__body" data-swiper-parallax="50%">
-          <img src="/img/avatars/driver-bg.jpg" alt="technician" />
-        </div>
-      </swiper-slide>
-      <swiper-slide class="slide">
-        <div class="slide__body" data-swiper-parallax="50%">
-          <img src="/img/avatars/ecologist-bg.jpg" alt="technician" />
-        </div>
-      </swiper-slide>
-    </swiper>
+    <div class="garages__controls control tablet">
+      <div
+        class="control__item"
+        :class="{ active: slider?.activeIndex === 0 }"
+        @click="setActiveSlide(0)"
+      >
+        <IconTechnician :color="slider?.activeIndex === 0 ? '#000' : '#fff'" />
+      </div>
+      <div
+        class="control__item"
+        :class="{ active: slider?.activeIndex === 1 }"
+        @click="setActiveSlide(1)"
+      >
+        <IconsDriver :color="slider?.activeIndex === 1 ? '#000' : '#fff'" />
+      </div>
+      <div
+        class="control__item"
+        :class="{ active: slider?.activeIndex === 2 }"
+        @click="setActiveSlide(2)"
+      >
+        <IconEcologist :color="slider?.activeIndex === 2 ? '#000' : '#fff'" />
+      </div>
+    </div>
+    <div class="slider-wrapper">
+      <div class="gradient-top"></div>
+      <div class="gradient-bottom"></div>
+      <swiper
+        :speed="2000"
+        :long-swipes-ratio="0.01"
+        :follow-finger="false"
+        :watch-slides-progress="true"
+        :parallax="true"
+        :allow-touch-move="false"
+        :modules="modules"
+        @swiper="onSwiper"
+        class="slider"
+      >
+        <swiper-slide class="slide">
+          <div class="slide__body" data-swiper-parallax="50%">
+            <img src="/img/avatars/technician-bg.jpg" alt="technician" />
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+          <div class="slide__body" data-swiper-parallax="50%">
+            <img src="/img/avatars/driver-bg.jpg" alt="technician" />
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+          <div class="slide__body" data-swiper-parallax="50%">
+            <img src="/img/avatars/ecologist-bg.jpg" alt="technician" />
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
     <div class="garages__content content">
       <div class="content__item">
         <h2 class="content__title">GARAGES</h2>
@@ -129,6 +156,9 @@ const setActiveSlide = (slide) => {
   left: 50%;
   transform: translateX(-50%);
 }
+.slider-wrapper {
+  position: relative;
+}
 .slider {
   /* position: absolute;
   top: 0;
@@ -175,6 +205,7 @@ const setActiveSlide = (slide) => {
 .garages__content {
   padding: 0 6.5% 0 10%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   position: absolute;
@@ -268,5 +299,91 @@ const setActiveSlide = (slide) => {
 }
 .buttons__item.active .buttons__head {
   background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
+}
+.garages__controls {
+  display: none;
+}
+@media (max-width: 992px) {
+  .slider {
+    height: 900px;
+  }
+  .content__title {
+    font-size: 50px;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+  .gradient-top {
+    height: 200px;
+  }
+  .gradient-bottom {
+    height: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .slider {
+    height: 600px;
+  }
+  .garages__content {
+    display: none;
+  }
+  .gradient-top {
+    height: 100px;
+  }
+  .gradient-bottom {
+    height: 100px;
+  }
+  .garages__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .control__item {
+    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background: #000;
+    transition: all 0.5s ease 0s;
+    position: relative;
+  }
+  .control__item.active {
+    background: linear-gradient(98.27deg, #21e7d6 0%, #83daff 105.42%);
+    border: 1px solid #21e7d6;
+  }
+  .control__item:not(:last-child) {
+    margin-right: 40px;
+  }
+  .garages__title {
+    margin: 0 auto;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 106%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #e0edf5;
+    text-shadow: 1px 0px 5px rgba(33, 231, 214, 0.7);
+    position: relative;
+    z-index: 2;
+    position: static;
+    transform: translateX(0);
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 556px) {
+  .garages__title {
+    font-size: 32px;
+  }
+
+  .gradient-bottom {
+    height: 50px;
+  }
+  .slider {
+    height: 400px;
+  }
 }
 </style>

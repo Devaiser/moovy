@@ -11,12 +11,37 @@
     </Vue3Marquee>
     <div class="system__content content">
       <div class="content__top-text">
-        <p class="avatars-text">
+        <p class="avatars-text single">
           The Moovy avatar system offers a truly immersive experience that is
           unlike anything else. Through each avatar, users can harness their own
           unique skills and strategies to progress and thrive in the Moovy
           ecosystem
         </p>
+      </div>
+      <div class="system__controls control tablet">
+        <div
+          class="control__item"
+          :class="{ active: activeItem === 'technician' }"
+          @click="setActiveItem('technician')"
+        >
+          <IconTechnician
+            :color="activeItem === 'technician' ? '#000' : '#fff'"
+          />
+        </div>
+        <div
+          class="control__item"
+          :class="{ active: activeItem === 'driver' }"
+          @click="setActiveItem('driver')"
+        >
+          <IconsDriver :color="activeItem === 'driver' ? '#000' : '#fff'" />
+        </div>
+        <div
+          class="control__item"
+          :class="{ active: activeItem === 'ecologist' }"
+          @click="setActiveItem('ecologist')"
+        >
+          <IconEcologist :color="activeItem === 'ecolgist' ? '#000' : '#fff'" />
+        </div>
       </div>
       <div class="content__systems systems">
         <Transition mode="out-in" name="slide">
@@ -27,9 +52,18 @@
                 alt="technician"
                 class="image"
               />
+              <div class="gradient-top"></div>
+              <div class="gradient-bottom"></div>
             </div>
-            <div class="systems__about about">
-              <div class="about__body">
+            <div
+              class="systems__about about"
+              @click="setActiveStatusVisible('technician')"
+              :class="{ active: activeStatus === 'technician' }"
+            >
+              <div
+                class="about__body"
+                :class="{ active: activeStatus === 'technician' }"
+              >
                 <div class="about__title">technician</div>
                 <div class="about__text">
                   <p>
@@ -62,9 +96,18 @@
                 alt="technician"
                 class="image"
               />
+              <div class="gradient-top"></div>
+              <div class="gradient-bottom"></div>
             </div>
-            <div class="systems__about about">
-              <div class="about__body">
+            <div
+              class="systems__about about"
+              @click="setActiveStatusVisible('driver')"
+              :class="{ active: activeStatus === 'driver' }"
+            >
+              <div
+                class="about__body"
+                :class="{ active: activeStatus === 'driver' }"
+              >
                 <div class="about__title">driver</div>
                 <div class="about__text">
                   <p>
@@ -93,9 +136,18 @@
                 alt="technician"
                 class="image"
               />
+              <div class="gradient-top"></div>
+              <div class="gradient-bottom"></div>
             </div>
-            <div class="systems__about about">
-              <div class="about__body">
+            <div
+              class="systems__about about"
+              @click="setActiveStatusVisible('ecologist')"
+              :class="{ active: activeStatus === 'ecologist' }"
+            >
+              <div
+                class="about__body"
+                :class="{ active: activeStatus === 'ecologist' }"
+              >
                 <div class="about__title">ecologist</div>
                 <div class="about__text">
                   <p>
@@ -122,7 +174,7 @@
             </div>
           </div>
         </Transition>
-        <div class="system__controls control">
+        <div class="system__controls control desktop">
           <div
             class="control__item"
             :class="{ active: activeItem === 'technician' }"
@@ -209,11 +261,22 @@ const activeItem = ref('technician');
 const setActiveItem = (item) => {
   activeItem.value = item;
 };
+
+const activeStatus = ref(null);
+const setActiveStatusVisible = (status) => {
+  if (activeStatus.value === status) {
+    activeStatus.value = null;
+  } else {
+    activeStatus.value = status;
+  }
+};
 </script>
 <style scoped>
 .system {
   padding-top: 40px;
   position: relative;
+  overflow: hidden;
+  background-color: #000;
 }
 .system__coins {
   position: absolute;
@@ -249,7 +312,6 @@ const setActiveItem = (item) => {
 }
 .content__systems {
   display: flex;
-  margin-top: 20px;
   justify-content: center;
 }
 .systems__img {
@@ -312,6 +374,7 @@ const setActiveItem = (item) => {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding-right: 40px;
 }
 .control__item {
   border-radius: 16px;
@@ -345,6 +408,7 @@ const setActiveItem = (item) => {
 }
 .systems__text {
   margin-top: 40px;
+  padding: 0 40px;
   display: flex;
   justify-content: center;
 }
@@ -362,7 +426,10 @@ const setActiveItem = (item) => {
   text-align: right;
 }
 .road {
-  margin-top: 40px;
+  padding-top: 40px;
+  position: relative;
+  z-index: 3;
+  background-color: #000;
 }
 .slide-enter-active {
   transition: all 0.3s ease-in-out;
@@ -380,5 +447,278 @@ const setActiveItem = (item) => {
 .slide-leave-to {
   opacity: 0;
   right: -100px;
+}
+.systems__img .gradient-top,
+.systems__img .gradient-bottom {
+  display: none;
+}
+.avatars-text.single {
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+.system__controls.tablet {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .systems__text .avatars-text {
+    max-width: 45%;
+  }
+  .systems__item {
+    margin-right: 40px;
+  }
+  .systems__about {
+    width: 400px;
+    margin-left: 40px;
+  }
+}
+@media (max-width: 992px) {
+  .system__controls.desktop {
+    display: none;
+  }
+  .system__controls.tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 0;
+    z-index: 3;
+    position: relative;
+    background-color: #000;
+    padding-bottom: 20px;
+  }
+  .system__controls.tablet .control__item:not(:last-child) {
+    margin-right: 40px;
+  }
+  .systems__item {
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .system__coins {
+    display: none;
+  }
+  .systems__img {
+    position: relative;
+    height: 750px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    /* width: 100%; */
+    z-index: 0;
+  }
+  .systems__about {
+    margin-left: 0;
+    position: absolute;
+    bottom: -550px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    transition: all 0.7s ease 0s;
+  }
+  .systems__about.active {
+    bottom: 0;
+  }
+  .about__title {
+    z-index: 2;
+    position: relative;
+  }
+  .systems__item {
+    position: relative;
+  }
+  .systems__img .gradient-top {
+    display: block;
+    height: 100px;
+    top: -1px;
+  }
+  .systems__img .gradient-bottom {
+    display: block;
+    height: 100px;
+    z-index: 4;
+    bottom: -1px;
+  }
+  .systems__about::after {
+    border-radius: 40px 40px 0 0;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 2px);
+    bottom: auto;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 15%,
+      rgba(0, 0, 0, 0)
+    );
+    height: 100%;
+  }
+
+  .systems__about.active::before {
+    position: absolute;
+    content: '';
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(138.69deg, #25e6d9 0%, #6ecde8 100%);
+    box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.75), -7px -7px 30px #1f2021;
+    border-radius: 56px;
+    width: 160px;
+    height: 10px;
+    z-index: 3;
+    animation: none;
+  }
+  .systems__about::before {
+    position: absolute;
+    content: '';
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(138.69deg, #25e6d9 0%, #6ecde8 100%);
+    box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.75), -7px -7px 30px #1f2021;
+    border-radius: 56px;
+    width: 160px;
+    height: 10px;
+    z-index: 3;
+    transform-origin: center center;
+    animation: bounce 1.4s infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0) translateX(-50%);
+    }
+    10% {
+      transform: translateY(0) translateX(-50%);
+    }
+    30% {
+      transform: translateY(-10px) translateX(-50%);
+    }
+    50% {
+      transform: translateY(0) translateX(-50%);
+    }
+    100% {
+      transform: translateY(0) translateX(-50%);
+    }
+  }
+  .about__body {
+    background: none;
+    border-radius: 40px 40px 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+  }
+  .about__body.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .systems__text {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 32vw;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    z-index: 3;
+    background-color: #000;
+    position: relative;
+  }
+  .systems__text::-webkit-scrollbar {
+    display: none;
+  }
+  .systems__text .avatars-text {
+    max-width: none;
+    flex: 0 0 60vw;
+    z-index: 3;
+  }
+  .avatars-text_left {
+    margin-right: 270px;
+    padding-left: 500px;
+    position: relative;
+  }
+  .avatars-text_right {
+    margin-right: 100px;
+    position: relative;
+  }
+  .avatars-text_left:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -140px;
+    transform: translateY(-50%);
+    background: linear-gradient(138.69deg, #25e6d9 0%, #6ecde8 100%);
+    box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.75), -7px -7px 30px #1f2021;
+    border-radius: 56px;
+    width: 10px;
+    height: 160px;
+  }
+  .systems__text p {
+    white-space: normal;
+  }
+}
+@media (max-width: 556px) {
+  .about__title {
+    margin-bottom: 10px;
+  }
+  .systems__img {
+    height: 600px;
+    width: 100vw;
+    position: relative;
+    margin-top: -50px;
+  }
+  .systems__img .gradient-top {
+    top: 49px;
+  }
+  .systems__img img {
+    object-position: center top;
+  }
+  .systems__about {
+    width: 90%;
+    max-width: 400px;
+  }
+  .systems__about {
+    bottom: -460px;
+    /* bottom: -80%; */
+  }
+  .about__body {
+    height: 490px;
+    /* height: auto; */
+    padding: 30px 20px;
+  }
+  .systems__text {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 32vw;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .systems__text::-webkit-scrollbar {
+    display: none;
+  }
+  .systems__text .avatars-text {
+    max-width: none;
+    flex: 0 0 80vw;
+  }
+  .avatars-text_left {
+    margin-right: 70px;
+    padding-left: 300px;
+    position: relative;
+  }
+  .avatars-text_right {
+    margin-right: 0px;
+    position: relative;
+  }
+  .avatars-text_left:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    background: linear-gradient(138.69deg, #25e6d9 0%, #6ecde8 100%);
+    box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.75), -7px -7px 30px #1f2021;
+    border-radius: 56px;
+    width: 10px;
+    height: 160px;
+  }
+  .systems__text p {
+    white-space: normal;
+  }
 }
 </style>

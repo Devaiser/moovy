@@ -20,11 +20,6 @@
             Ready to Unleash Your Creativity and Showcase Your Unique Style in
             the Moovy Metaverse
           </p>
-          <!-- <ButtonLink
-            @click="enableCSModal"
-            value="Learn More"
-            class="avatars__link"
-          /> -->
           <ButtonLink
             to="/about/avatars"
             value="Learn More"
@@ -58,8 +53,13 @@
             something for every car enthusiast. So rev your engines and join the
             ride
           </p>
-          <ButtonLink
+          <!-- <ButtonLink
             @click="enableCSModal"
+            value="Ready.Steady"
+            class="cars__link"
+          /> -->
+          <ButtonLink
+            to="/about/cars"
             value="Ready.Steady"
             class="cars__link"
           />

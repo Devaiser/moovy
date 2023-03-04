@@ -15,8 +15,8 @@
             <div class="gradient-left"></div>
             <div class="gradient-right"></div>
           </div>
-          <div class="modal__content">
-            <div class="modal__content-item modal__list">
+          <div class="modal__content column">
+            <!-- <div class="modal__content-item modal__list">
               <div class="modal__list-item">
                 <div class="modal__list-point">
                   <span>1</span>
@@ -45,9 +45,40 @@
                   <span>wait for your code and launch on feb 28</span>
                 </div>
               </div>
+            </div> -->
+            <div class="modal__content-item mb">
+              <p
+                class="modal__list-text modal__list-text_big modal__list-text_blue text-center"
+              >
+                Join waitinglist for Android Beta launch
+              </p>
             </div>
             <div class="modal__content-item modal__links">
-              <ButtonLink href="http://beta.moovy.io" value="Register" />
+              <Transition mode="out-in">
+                <form
+                  class="form"
+                  v-if="isFormVisible"
+                  @submit.prevent="onSubmit"
+                >
+                  <div class="input-wrapper">
+                    <input
+                      name="email"
+                      type="email"
+                      class="form__input"
+                      placeholder="your email"
+                      v-model.trim="email"
+                    />
+                  </div>
+                  <ButtonLink value="Subscribe" :submit="true" />
+                </form>
+                <div
+                  class="modal__list-text modal__list-text_big modal__list-text_blue text-center"
+                  v-else
+                >
+                  Subscribed
+                </div>
+              </Transition>
+              <!-- <ButtonLink href="http://beta.moovy.io" value="Register" /> -->
               <div class="modal__link_small" @click="closePopup">
                 <span>Dismiss</span>
               </div>
@@ -95,7 +126,7 @@ const showPopup = () => {
   if (!window.sessionStorage.getItem('done')) {
     setTimeout(() => {
       isPopupVisible.value = true;
-      document.body.classList.add('lock');
+      // document.body.classList.add('lock');
       sessionStorage.setItem('done', 1);
     }, 2000);
   }
@@ -106,10 +137,33 @@ onMounted(() => {
 
 const closePopup = () => {
   isPopupVisible.value = false;
-  document.body.classList.remove('lock');
+  // document.body.classList.remove('lock');
 };
 
 onClickOutside(target, closePopup);
+
+const isFormVisible = ref(true);
+const email = ref('');
+
+const onSubmit = (e) => {
+  if (email.value) {
+    const formData = new FormData(e.target);
+    fetch('https://getform.io/f/5c28fdc4-ee75-43dc-9cee-e5d461d3c8e2', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then(() => {
+        isFormVisible.value = false;
+        setTimeout(() => {
+          closePopup();
+        }, 5000);
+      })
+      .catch((error) => console.log(error));
+  }
+};
 </script>
 <style scoped>
 .modal {
@@ -175,6 +229,9 @@ onClickOutside(target, closePopup);
   align-items: center;
   justify-content: space-between;
   padding: 0 169px 0 127px;
+}
+.modal__content.column {
+  flex-direction: column;
 }
 .modal__list-item {
   display: flex;
@@ -289,6 +346,46 @@ onClickOutside(target, closePopup);
   color: #fff;
   margin-left: 5px;
 }
+.mb {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+.input-wrapper {
+  width: 500px;
+  max-width: 500px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+  margin-bottom: 20px;
+}
+.form__input {
+  width: 100%;
+  padding: 15px 92px 15px 30px;
+  background: linear-gradient(138.69deg, #141313 0%, #18191b 100%);
+  box-shadow: 0px -6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #e0edf5;
+  transition: all 0.3s ease 0s;
+}
+.form__input:focus {
+  box-shadow: 0px 0px 15px #83daff;
+}
+.form__input::placeholder {
+  color: rgba(255, 255, 255, 0.41);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media (max-width: 1400px) {
   .modal__body {
     transform: scale(0.8);
@@ -337,6 +434,9 @@ onClickOutside(target, closePopup);
   }
 }
 @media (max-width: 556px) {
+  .input-wrapper {
+    width: 100%;
+  }
   .modal__title {
     font-size: 50px;
     margin: 0px 20px 0 20px;

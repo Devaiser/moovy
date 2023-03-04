@@ -210,6 +210,10 @@ img[lazy='loaded'] {
   z-index: 5;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .avatars-text {
   font-weight: 500;
   font-size: 20px;

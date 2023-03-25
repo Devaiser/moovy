@@ -94,7 +94,16 @@ defineProps({
   top: 60px;
   right: 17px;
   width: 60%;
+  height: 57px;
   text-align: right;
+  overflow: auto;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.card__text::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 .card__text_right {
   right: auto;

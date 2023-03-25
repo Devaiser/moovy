@@ -11,6 +11,8 @@
     <Containers />
     <Licenses />
     <Roadmap />
+    <TheMedia />
+    <ThePartners />
     <TeamPage />
     <CounterSection />
     <Social />
@@ -31,6 +33,8 @@ import {
   Experience,
   TeamPage,
   CounterSection,
+  TheMedia,
+  ThePartners,
 } from '@/components';
 import { MainSectionGallery } from '@/components/MainSection';
 import { ref } from 'vue';

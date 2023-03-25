@@ -4,3 +4,4 @@ export { default as CarsTypes } from './CarsTypes.vue';
 export { default as CarsTypesPattern } from './CarsTypesPattern.vue';
 export { default as CarsAttributes } from './CarsAttributes.vue';
 export { default as CarsAttributesCard } from './CarsAttributesCard.vue';
+export { default as CarsMainSection } from './CarsMainSection.vue';

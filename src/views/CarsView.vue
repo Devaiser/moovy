@@ -1,15 +1,19 @@
 <template>
   <div class="page-container">
+    <CarsMainSection />
     <CarsRarity />
     <CarsTypes />
     <CarsAttributes />
+    <Footer />
   </div>
 </template>
 <script setup>
-import { CarsRarity, CarsTypes, CarsAttributes } from '@/components/Cars';
+import {
+  CarsRarity,
+  CarsTypes,
+  CarsAttributes,
+  CarsMainSection,
+} from '@/components/Cars';
+import { Footer } from '@/components';
 </script>
-<style scoped>
-.page-container {
-  margin-top: 94px;
-}
-</style>
+<style scoped></style>

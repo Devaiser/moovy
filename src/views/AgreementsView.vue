@@ -180,11 +180,11 @@
                   </ul>
                   <h1>Responsibility for the content of the pages</h1>
                   <p>
-                    B.B Soft FZE <br />
-                    Al Shmookh Business Center, <br />
-                    One UAQ, <br />
-                    UAQ Free Trade Zone, <br />
-                    Umm Al Quwain, U.A.E.
+                    Moovy IBC <br />
+                    Cutlass Tower, <br />
+                    Road Town, <br />
+                    Tortola, <br />
+                    British Virgin Islands VG1110
                   </p>
                   <h1>Disclaimer</h1>
                   <p>
@@ -228,11 +228,11 @@
                   </p>
                   <h1>Technology and Design</h1>
                   <p>
-                    B.B Soft FZE <br />
-                    Al Shmookh Business Center, <br />
-                    One UAQ, <br />
-                    UAQ Free Trade Zone, <br />
-                    Umm Al Quwain, U.A.E.
+                    Moovy IBC <br />
+                    Cutlass Tower, <br />
+                    Road Town, <br />
+                    Tortola, <br />
+                    British Virgin Islands VG1110
                   </p>
                   <p>
                     Please read the terms of the present USER AGREEMENT
@@ -263,7 +263,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -313,7 +313,7 @@
                   </p>
                   <p><b>Parties</b> – Moovy and the User.</p>
                   <p>
-                    <b>Moovy </b> – Moovy Gem FZE, which has all the necessary
+                    <b>Moovy </b> – Moovy IBC, which has all the necessary
                     rights to the Website to conclude with the User an User
                     Agreement and/or a license agreement and/or other
                     agreement/contract made in the form of an offer or in
@@ -468,7 +468,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -489,8 +489,8 @@
                     The conclusion of the User Agreement is carried out in
                     accordance with the terms of the current version of the User
                     Agreement, posted on the Internet at the URL
-                    <a href="https://documentation.Moovy.io/user_agreement/"
-                      >https://documentation.Moovy.io/user_agreement/</a
+                    <a href="https://moovy.io/agreements"
+                      >https://moovy.io/agreements</a
                     >
                     at the time of Acceptance. If the User uses the Services
                     after a new version of the User Agreement (located in the
@@ -511,7 +511,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -624,7 +624,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -693,7 +693,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -897,7 +897,7 @@
                   <p>
                     The User's requests to Moovy about issues related to the use
                     of the Services are considered in the manner provided for on
-                    the relevant Service or by e-mail: support@moovy.io.
+                    the relevant Service or by e-mail: support@moovy.io
                   </p>
                   <p>
                     Moovy has the right not to consider the User's requests when
@@ -912,7 +912,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -1613,7 +1613,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -1682,6 +1682,8 @@
                         href="https://support.google.com/chrome/answer/95647?hl=en"
                         >https://support.google.com/chrome/answer/95647?hl=en</a
                       >
+                    </li>
+                    <li>
                       Firefox:
                       <a
                         href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
@@ -1704,7 +1706,7 @@
                   </ul>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -1736,11 +1738,11 @@
                     necessary to achieve the Purposes of Personal Data
                     processing or until the User revokes their consent by
                     sending a written request to Moovy by e-mail:
-                    support@moovy.io.
+                    support@moovy.io
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -1863,7 +1865,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -1989,7 +1991,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -2100,7 +2102,7 @@
                   </p>
                 </div>
                 <div class="formacar">
-                  <p>© 2022 Moovy Gem FZE. All rights reserved. 18+</p>
+                  <p>© 2023 Moovy IBC. All rights reserved. 18+</p>
                 </div>
               </div>
             </div>
@@ -2111,356 +2113,356 @@
   </div>
 </template>
 <script setup>
-  import { ref, watch } from 'vue';
-  import { onClickOutside } from '@vueuse/core';
+import { ref, watch } from 'vue';
+import { onClickOutside } from '@vueuse/core';
 
-  const target = ref(null);
+const target = ref(null);
 
-  onClickOutside(target, () => (isMenuVisible.value = false));
+onClickOutside(target, () => (isMenuVisible.value = false));
 
-  const activeSection = ref('user-agree');
+const activeSection = ref('user-agree');
 
-  watch(activeSection, () => {
-    isMenuVisible.value = false;
-  });
+watch(activeSection, () => {
+  isMenuVisible.value = false;
+});
 
-  const setActiveSection = (value) => {
-    activeSection.value = value;
-  };
-  const isMenuVisible = ref(false);
-  const toggleMenu = () => {
-    isMenuVisible.value = !isMenuVisible.value;
-  };
+const setActiveSection = (value) => {
+  activeSection.value = value;
+};
+const isMenuVisible = ref(false);
+const toggleMenu = () => {
+  isMenuVisible.value = !isMenuVisible.value;
+};
 </script>
 <style scoped>
-  .logo {
-    width: 148px;
-    display: block;
-  }
-  .logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .fon-agreement {
-    background: #ffffff !important;
-    width: 100%;
+.logo {
+  width: 148px;
+  display: block;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fon-agreement {
+  background: #ffffff !important;
+  width: 100%;
+}
+
+.for-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  padding: 15px 15px;
+  z-index: 999;
+  height: 63px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  z-index: 99;
+  background: #000000;
+}
+
+.agreement__cnt {
+  margin-left: 300px;
+  padding-top: 100px;
+}
+
+.menu-fix ul {
+  padding: 90px 25px 20px 0;
+}
+
+.menu-fix ul li {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+  padding-left: 15px;
+}
+
+.menu-fix ul li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #21e7d6;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.menu-fix ul .active-href {
+  color: #21e7d6;
+}
+
+.menu-fix ul .active-href:before {
+  opacity: 1;
+}
+
+.agreement__cnt h1 {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 57px;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: unset;
+}
+
+.section-the-user {
+  margin-top: 25px;
+  border-top: 1px solid #000000;
+  padding-top: 25px;
+}
+
+.section-the-user strong {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #000000;
+  display: block;
+  text-align: center;
+}
+
+.style-number {
+  padding-left: 20px;
+  margin-left: 40px;
+  list-style: auto;
+}
+
+.section-the-user ul {
+  margin-top: 25px;
+}
+
+.section-the-user ul li {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.section-the-user .style-number li {
+  margin-top: 5px;
+}
+
+.section-the-user p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.formacar {
+  margin: 30px 0;
+}
+
+.formacar p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.section-the-user p a {
+  color: #007bff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.table-police,
+.agree-table {
+  margin: 25px 0;
+}
+
+.agree-table table tr {
+  border: 1px solid #000000;
+}
+
+.agree-table table tr td {
+  border-bottom: 1px solid #000000;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.agree-table table tr td + td {
+  border-left: 1px solid #000000;
+}
+
+.agree-table table tr td:nth-child(1) {
+  width: 40px;
+}
+
+.agree-table table tr td:nth-child(2) {
+  width: 180px;
+}
+
+.close-filter-in-mob {
+  display: none;
+}
+
+.catalog-filter-close {
+  display: none;
+}
+
+.body__fon__active {
+  overflow: hidden !important;
+}
+
+.body__fon__active:after {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.ul-keterov {
+  list-style: disc;
+  padding-left: 25px;
+}
+
+@media (max-width: 1440px) {
+  .agree-table {
+    overflow-x: scroll;
+    padding-bottom: 15px;
   }
 
-  .for-head {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #000000;
-    padding: 15px 15px;
-    z-index: 999;
-    height: 63px;
+  .agree-table table {
+    width: 950px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .catalog-filter-close {
     display: flex;
-    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .catalog-filter-close svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .catalog-filter-close svg path {
+    stroke: #21e7d6;
+    fill: #21e7d6;
   }
 
   .menu-fix {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -280px;
+    overflow: auto;
+    visibility: hidden;
+    transition: 0.4s;
     width: 280px;
     height: 100%;
-    z-index: 99;
-    background: #000000;
+    z-index: 99999;
   }
 
-  .agreement__cnt {
-    margin-left: 300px;
-    padding-top: 100px;
-  }
-
-  .menu-fix ul {
-    padding: 90px 25px 20px 0;
-  }
-
-  .menu-fix ul li {
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 22px;
-    text-transform: uppercase;
-    transition: 0.3s;
-    cursor: pointer;
-    margin-top: 10px;
-    font-weight: 400;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    position: relative;
-    padding-left: 15px;
-  }
-
-  .menu-fix ul li:before {
-    content: '';
-    position: absolute;
+  .for__filter__active {
+    visibility: visible;
+    transition: 0.5s;
     left: 0;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: #21e7d6;
-    opacity: 0;
-    transition: 0.3s;
-  }
-
-  .menu-fix ul .active-href {
-    color: #21e7d6;
-  }
-
-  .menu-fix ul .active-href:before {
-    opacity: 1;
-  }
-
-  .agreement__cnt h1 {
-    font-weight: 500;
-    font-size: 45px;
-    line-height: 57px;
-    text-transform: uppercase;
-    color: #000000;
-    text-shadow: unset;
-  }
-
-  .section-the-user {
-    margin-top: 25px;
-    border-top: 1px solid #000000;
-    padding-top: 25px;
-  }
-
-  .section-the-user strong {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
-    text-transform: uppercase;
-    color: #000000;
-    display: block;
-    text-align: center;
-  }
-
-  .style-number {
-    padding-left: 20px;
-    margin-left: 40px;
-    list-style: auto;
-  }
-
-  .section-the-user ul {
-    margin-top: 25px;
-  }
-
-  .section-the-user ul li {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    margin-top: 20px;
-  }
-
-  .section-the-user .style-number li {
-    margin-top: 5px;
-  }
-
-  .section-the-user p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    margin-top: 20px;
-  }
-
-  .formacar {
-    margin: 30px 0;
-  }
-
-  .formacar p {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-    color: #000000;
-  }
-
-  .section-the-user p a {
-    color: #007bff;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .table-police,
-  .agree-table {
-    margin: 25px 0;
-  }
-
-  .agree-table table tr {
-    border: 1px solid #000000;
-  }
-
-  .agree-table table tr td {
-    border-bottom: 1px solid #000000;
-    padding: 10px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000;
-  }
-
-  .agree-table table tr td + td {
-    border-left: 1px solid #000000;
-  }
-
-  .agree-table table tr td:nth-child(1) {
-    width: 40px;
-  }
-
-  .agree-table table tr td:nth-child(2) {
-    width: 180px;
   }
 
   .close-filter-in-mob {
-    display: none;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
-  .catalog-filter-close {
-    display: none;
+  .close-filter-in-mob svg {
+    width: 35px;
+    height: 35px;
   }
 
-  .body__fon__active {
-    overflow: hidden !important;
+  .close-filter-in-mob svg path {
+    fill: #21e7d6;
   }
 
-  .body__fon__active:after {
-    content: '';
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+  .close-filter-in-mob span {
+    margin-left: 10px;
+    display: block;
+    color: #000000;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
   }
 
-  .ul-keterov {
-    list-style: disc;
+  .agreement__cnt {
+    margin-left: 0;
+    padding-top: 80px;
+  }
+
+  .menu-fix ul {
+    padding: 60px 20px 20px 0;
+  }
+
+  .agreement__cnt h1 {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 570px) {
+  .agreement__cnt h1 {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .section-the-user strong {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .style-number {
     padding-left: 25px;
+    margin-left: 0;
   }
 
-  @media (max-width: 1440px) {
-    .agree-table {
-      overflow-x: scroll;
-      padding-bottom: 15px;
-    }
-
-    .agree-table table {
-      width: 950px;
-    }
+  .section-the-user p a {
+    display: block;
+    overflow: hidden;
   }
 
-  @media (max-width: 1199px) {
-    .catalog-filter-close {
-      display: flex;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 16px;
-      height: 16px;
-    }
-
-    .catalog-filter-close svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .catalog-filter-close svg path {
-      stroke: #21e7d6;
-      fill: #21e7d6;
-    }
-
-    .menu-fix {
-      position: fixed;
-      top: 0;
-      left: -280px;
-      overflow: auto;
-      visibility: hidden;
-      transition: 0.4s;
-      width: 280px;
-      height: 100%;
-      z-index: 99999;
-    }
-
-    .for__filter__active {
-      visibility: visible;
-      transition: 0.5s;
-      left: 0;
-    }
-
-    .close-filter-in-mob {
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    .close-filter-in-mob svg {
-      width: 35px;
-      height: 35px;
-    }
-
-    .close-filter-in-mob svg path {
-      fill: #21e7d6;
-    }
-
-    .close-filter-in-mob span {
-      margin-left: 10px;
-      display: block;
-      color: #000000;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 20px;
-    }
-
-    .agreement__cnt {
-      margin-left: 0;
-      padding-top: 80px;
-    }
-
-    .menu-fix ul {
-      padding: 60px 20px 20px 0;
-    }
-
-    .agreement__cnt h1 {
-      font-size: 38px;
-      line-height: 50px;
-    }
+  .section-the-user {
+    margin-top: 21px;
+    padding-top: 20px;
   }
-
-  @media (max-width: 570px) {
-    .agreement__cnt h1 {
-      font-size: 26px;
-      line-height: 36px;
-    }
-
-    .section-the-user strong {
-      font-size: 18px;
-      line-height: 32px;
-    }
-
-    .style-number {
-      padding-left: 25px;
-      margin-left: 0;
-    }
-
-    .section-the-user p a {
-      display: block;
-      overflow: hidden;
-    }
-
-    .section-the-user {
-      margin-top: 21px;
-      padding-top: 20px;
-    }
-  }
+}
 </style>

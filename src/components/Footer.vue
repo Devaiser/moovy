@@ -105,9 +105,7 @@
     <router-link class="footer__link" to="/agreements"
       >User Agreement</router-link
     >
-    <p class="footer__text">
-      Copyright © 2022 MOOVY GEM FZE. All rights reserved
-    </p>
+    <p class="footer__text">Copyright © 2023 Moovy IBC. All rights reserved</p>
   </footer>
 </template>
 <script setup>

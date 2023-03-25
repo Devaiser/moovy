@@ -85,11 +85,177 @@
         </div>
       </div>
     </div>
+    <div class="rarity__overview_media">
+      <swiper
+        :space-between="30"
+        :speed="600"
+        :slides-per-view="1"
+        :modules="modules"
+        :parallax="true"
+      >
+        <swiper-slide class="slide">
+          <div class="slide__body">
+            <div class="slide__img">
+              <img
+                src="/img/cars-page/rarity/car-classic.png"
+                alt="classic"
+                class="image"
+              />
+              <div class="gradient-bottom"></div>
+            </div>
+            <div>
+              <div class="rarity__about" data-swiper-parallax="-300">
+                <div class="about__body">
+                  <h3
+                    class="about__title about__title_classic"
+                    data-swiper-parallax="-400"
+                  >
+                    classic
+                  </h3>
+                  <p class="about__text" data-swiper-parallax="-300">
+                    Classic rarity cars are the most basic type of NFT cars in
+                    Moovy. They have standard attributes and offer a solid
+                    foundation for players to build upon
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+          <div class="slide__body">
+            <div class="slide__img">
+              <img
+                src="/img/cars-page/rarity/car-rare.png"
+                alt="rare"
+                class="image"
+              />
+              <div class="gradient-bottom"></div>
+            </div>
+            <div>
+              <div class="rarity__about" data-swiper-parallax="-300">
+                <div class="about__body">
+                  <h3
+                    class="about__title about__title_rare"
+                    data-swiper-parallax="-400"
+                  >
+                    rare
+                  </h3>
+                  <p class="about__text" data-swiper-parallax="-300">
+                    Rare cars have improved attributes compared to Classic cars,
+                    making them more sought after and valuable. They offer a
+                    unique look and increased performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+          <div class="slide__body">
+            <div class="slide__img">
+              <img
+                src="/img/cars-page/rarity/car-epic.png"
+                alt="epic"
+                class="image"
+              />
+              <div class="gradient-bottom"></div>
+            </div>
+            <div>
+              <div class="rarity__about" data-swiper-parallax="-300">
+                <div class="about__body">
+                  <h3
+                    class="about__title about__title_epic"
+                    data-swiper-parallax="-400"
+                  >
+                    epic
+                  </h3>
+                  <p class="about__text" data-swiper-parallax="-300">
+                    Epic cars are highly coveted in the Moovy Metaverse, as they
+                    have the best attributes and offer the highest level of
+                    performance. They stand out with their striking appearance
+                    and are considered a symbol of prestige.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+          <div class="slide__body">
+            <div class="slide__img">
+              <img
+                src="/img/cars-page/rarity/car-legendary.png"
+                alt="legendary"
+                class="image"
+              />
+              <div class="gradient-bottom"></div>
+            </div>
+            <div>
+              <div class="rarity__about" data-swiper-parallax="-300">
+                <div class="about__body">
+                  <h3
+                    class="about__title about__title_legendary"
+                    data-swiper-parallax="-400"
+                  >
+                    legendary
+                  </h3>
+                  <p class="about__text" data-swiper-parallax="-300">
+                    Legendary rarity cars are the epitome of luxury in Moovy.
+                    They possess the best attributes and offer the highest level
+                    of performance. They are the one of the rarest and most
+                    valuable cars in the game and are highly sought after by
+                    players.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+          <div class="slide__body">
+            <div class="slide__img">
+              <img
+                src="/img/cars-page/rarity/car-insane.png"
+                alt="insane"
+                class="image"
+              />
+              <div class="gradient-bottom"></div>
+            </div>
+            <div>
+              <div class="rarity__about" data-swiper-parallax="-300">
+                <div class="about__body">
+                  <h3
+                    class="about__title about__title_insane"
+                    data-swiper-parallax="-400"
+                  >
+                    insane
+                  </h3>
+                  <p class="about__text" data-swiper-parallax="-300">
+                    Insane rarity cars are the most unique and powerful cars in
+                    Moovy. They offer the highest level of performance and have
+                    attributes that set them apart from the rest. These cars are
+                    highly prized and are the ultimate symbol of success in the
+                    game
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
   </section>
 </template>
 <script setup>
 import { ref } from 'vue';
 import { CarsRarityPattern } from '@/components/Cars';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Parallax } from 'swiper';
+import 'swiper/css';
+
+const modules = [Parallax];
+
 const selectList = [
   {
     img: '/img/cars-page/rarity/select-classic.png',
@@ -200,5 +366,56 @@ const onCarClick = (rarity) => {
   color: #fff;
   /* z-index: 1; */
   position: relative;
+}
+.rarity__overview_media {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .gradient-bottom {
+    height: 100px;
+    bottom: -1px;
+  }
+  .rarity__about {
+    margin-top: -40px;
+    z-index: 5;
+  }
+}
+@media (max-width: 768px) {
+  .gradient-right,
+  .gradient-left {
+    width: 20px;
+  }
+}
+@media (max-width: 556px) {
+  .rarity__overview {
+    display: none;
+  }
+  .rarity__overview_media {
+    display: block;
+    margin-top: 60px;
+    position: relative;
+  }
+  .slide__img {
+    position: relative;
+  }
+  .about__text {
+    position: relative;
+    z-index: 3;
+  }
+  .slide__body {
+    /* height: 810px; */
+  }
+  .about__body {
+    padding: 30px 20px 70px 20px;
+  }
+  .cars-section {
+    padding: 60px 0px 0 0px;
+  }
+  .cars-section__text {
+    padding: 0 20px;
+  }
+  .cars-section__title {
+    padding: 0 20px;
+  }
 }
 </style>

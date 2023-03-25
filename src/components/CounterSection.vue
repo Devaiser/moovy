@@ -193,6 +193,7 @@ onMounted(() => {
   .counter__content {
     margin-top: 0px;
     padding-top: 220px;
+    padding-right: 20px;
   }
   .content__image {
     top: 25%;

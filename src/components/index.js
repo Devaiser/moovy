@@ -24,3 +24,6 @@ export { default as ComingSoonModal } from './ComingSoonModal.vue';
 export { default as CounterSection } from './CounterSection.vue';
 export { default as TheMedia } from './TheMedia.vue';
 export { default as ThePartners } from './ThePartners.vue';
+export { default as TheTokenomics } from './TheTokenomics.vue';
+export { default as PersonCard } from './PersonCard.vue';
+export { default as TheWorldMap } from './TheWorldMap.vue';

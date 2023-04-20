@@ -11,6 +11,7 @@
     <Containers />
     <Licenses />
     <Roadmap />
+    <TheTokenomics />
     <TheMedia />
     <ThePartners />
     <TeamPage />
@@ -35,6 +36,7 @@ import {
   CounterSection,
   TheMedia,
   ThePartners,
+  TheTokenomics,
 } from '@/components';
 import { MainSectionGallery } from '@/components/MainSection';
 import { ref } from 'vue';

@@ -213,6 +213,17 @@
                   </p>
                   <h1>Privacy</h1>
                   <p>
+                    Moovy Services are unavailable for residents of certain
+                    countries, including but not limited to the United States
+                    and China, due to regulatory restrictions. We apologize for
+                    any inconvenience this may cause and ask that our users
+                    check their local laws and regulations before using Moovy's
+                    services. Moovy is committed to compliance with all relevant
+                    regulations and will continue to monitor the situation to
+                    ensure the highest level of security and integrity for our
+                    users. Thank you for your understanding.
+                  </p>
+                  <p>
                     We cannot guarantee the security of data transmission on the
                     Internet. In particular, there is a risk of access by third
                     parties when data is transmitted by e-mail. Any use of the

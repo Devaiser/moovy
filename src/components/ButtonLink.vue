@@ -58,6 +58,7 @@ defineProps({
   width: fit-content;
   cursor: pointer;
   border: none;
+  white-space: nowrap;
 }
 .link_small {
   padding: 10px 40px;

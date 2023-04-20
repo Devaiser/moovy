@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container header__container">
       <div class="header__logo">
-        <router-link to="/"
+        <router-link to="/" class="header__logo-link"
           ><img src="/img/logo-new.png" alt="logo"
         /></router-link>
       </div>
@@ -38,6 +38,9 @@
                 >wallet connect</a
               > -->
               <w3m-core-button></w3m-core-button>
+            </li>
+            <li class="top-indent">
+              <p>MOIL - 0xA0a4C12AA90Fe439b07b16657Cd2C12E4d41e25f</p>
             </li>
           </ul>
           <div class="header__social">
@@ -144,6 +147,9 @@ const toggleMenu = () => {
   width: 148px;
   height: 32px;
 }
+.header__logo-link {
+  display: block;
+}
 .header__logo img {
   width: 100%;
   height: 100%;
@@ -158,7 +164,8 @@ const toggleMenu = () => {
   font-size: 15px;
 }
 .menu__list > li:not(:last-child) {
-  margin-right: 120px;
+  /* margin-right: 120px; */
+  margin-right: 60px;
 }
 .menu__list > li a {
   color: inherit;
@@ -178,14 +185,31 @@ const toggleMenu = () => {
     display: flex;
   }
   .menu__list {
+    margin-left: 40px;
     display: flex;
     align-items: center;
-    margin-right: 100px;
+    margin-right: 40px;
+    /* flex-wrap: wrap; */
+  }
+}
+@media (max-width: 1400px) {
+  .header__social {
+    display: none;
+  }
+  .menu__list {
+    margin-right: 0;
   }
 }
 @media (max-width: 1200px) {
   .menu__list li:not(:last-child) {
     margin-right: 60px;
+  }
+  .menu__list {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .top-indent {
+    margin-top: 10px;
   }
 }
 @media (max-width: 992px) {
@@ -197,6 +221,9 @@ const toggleMenu = () => {
   }
 }
 @media (max-width: 768px) {
+  .top-indent {
+    font-size: 14px !important;
+  }
   .header__container {
     padding: 0 20px;
   }
@@ -280,6 +307,11 @@ const toggleMenu = () => {
   }
   .header__social {
     justify-content: flex-end;
+  }
+}
+@media (max-width: 556px) {
+  .top-indent {
+    font-size: 10px !important;
   }
 }
 </style>

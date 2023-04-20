@@ -26,15 +26,12 @@
       </video>
       <div class="gradient"></div>
     </div>
-    <div class="subscribe">
+    <!-- <div class="subscribe">
       <p class="subscribe__text">Subscribe to our newsteller</p>
       <div class="subscribe__button" @click="setPopupVisibility(true)">
         <span>subscribe</span>
       </div>
-      <!-- <button class="subscribe__button">
-        <img src="/img/subscribe-button.png" alt="subscribe-button" />
-      </button> -->
-    </div>
+    </div> -->
   </div>
   <Teleport to="body">
     <SubscribeModal
